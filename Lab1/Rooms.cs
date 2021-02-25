@@ -6,15 +6,15 @@ namespace Hotel
 {
     class Rooms
     {
-        public int HotelId { get; set; }
-        public int PriceInt { get; set; }
-        public int RoomNumberInt { get; set; }
-        public int FreeDatesInt { get; set; }
-        public bool TVBool { get; set; }
-        public string RoomTypeStr { get; set; }
-        public int NumberOfBedsInt { get; set; }
-        public bool BalconyBool { get; set; }
-        public bool SaleBool { get; set; }
+        public int HotelId;
+        public int PriceInt;
+        public int RoomNumberInt;
+        public int FreeDatesInt;
+        public bool TVBool;
+        public string RoomTypeStr;
+        public int NumberOfBedsInt;
+        public bool BalconyBool;
+        public bool SaleBool;
 
         public Rooms(int id, int price, int roomNum, int freeDates,
             bool tvBool, string roomType, int bedsNum, bool balconyBool,

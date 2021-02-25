@@ -12,5 +12,6 @@ namespace Hotel
         int ReviewId;
         string ReviewStr;
         int UserId;
+        public Reviews() { }
     }
 }

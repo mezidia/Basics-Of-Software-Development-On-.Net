@@ -14,5 +14,6 @@ namespace Hotel
         int HotelTypeInt;
         int RatingInt;
         string HotelNameStr;
+        public Hotels() { }
     }
 }

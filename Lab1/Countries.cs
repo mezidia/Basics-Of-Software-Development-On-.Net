@@ -8,5 +8,6 @@ namespace Hotel
     {
         int CountryId;
         string CountryName;
+        public Countries() { }
     }
 }

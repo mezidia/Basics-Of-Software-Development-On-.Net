@@ -12,5 +12,6 @@ namespace Hotel
         string Description;
         DateTime StartDate;
         DateTime EndDate;
+        public Booking() { }
     }
 }
