@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hotel
+﻿namespace Hotel
 {
-    class Unauthorized : User
-    {
-        private void SingUpLogin() { }
-    }
+	class Unauthorized : User
+	{
+		private User SingUpLogin()
+		{
+			return new User();
+		}
+	}
 }
