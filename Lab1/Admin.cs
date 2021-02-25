@@ -6,6 +6,9 @@ namespace Hotel
 {
     class Admin : Authorized
     {
-        private bool ChangePermission() { }
+        private bool ChangePermission()
+        {
+            return true;
+        }
     }
 }
