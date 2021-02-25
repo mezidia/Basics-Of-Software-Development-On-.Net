@@ -2,14 +2,14 @@
 {
 	class Hotels
 	{
-		int CountryId;
-		int OwnerId;
-		int NumberOfStarsInt;
-		string DescriptionStr;
-		int LocationInt;
-		int HotelTypeInt;
-		int RatingInt;
-		string HotelNameStr;
+		int CountryId { get; set; }
+		int OwnerId { get; set; }
+		int NumberOfStarsInt { get; set; }
+		string DescriptionStr { get; set; }
+		int LocationInt { get; set; }
+		int HotelTypeInt { get; set; }
+		int RatingInt { get; set; }
+		string HotelNameStr { get; set; }
 
 		public Hotels(int countryID, int ownerID, int NumOfStars,
 			string description, int location, int hotelType,
