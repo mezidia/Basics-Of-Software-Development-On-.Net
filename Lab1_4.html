@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Labs on .Net">
+    <meta name="author" content="Mezidia">
+
+    <title>Lab 1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/dashboard/">
+
+    <link rel="shortcut icon"
+          href="https://raw.githubusercontent.com/mezgoodle/images/master/MezidiaLogoTransparent.png"
+          type="image/x-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/dropdown.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Mezidia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" target="_blank"
+                       href="https://github.com/mezidia/Basics-Of-Software-Development-On-.Net">Repository</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Labs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="Lab1_1.html">Lab1</a>
+                            <ul type="circle">
+                                <li><a href="Lab1_1.html" class="dropdown-item ml-0">Характеристика об’єкта
+                                    автоматизації</a></li>
+                                <li><a href="Lab1_2.html" class="dropdown-item ml-0">Об’єктно-орієнтована
+                                    декомпозиції предметного
+                                    середовища</a></li>
+                                <li><a href="Lab1_3.html" class="dropdown-item ml-0">Проектування ПЗ</a></li>
+                                <li><a href="Lab1_4.html" class="dropdown-item ml-0">Кодування
+                                    (програмування)</a></li>
+                                <li><a href="Lab1_5.html" class="dropdown-item ml-0">Впровадження та
+                                    супроводження ПЗ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <nav class="d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <div class="dropend p-2 d-grid">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Lab 1
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="Lab1_1.html">Характеристика об’єкта
+                                автоматизації</a></li>
+                            <li><a class="dropdown-item" href="Lab1_2.html">Об’єктно-орієнтована декомпозиції
+                                предметного
+                                середовища</a></li>
+                            <li><a class="dropdown-item" href="Lab1_3.html">Проектування ПЗ</a></li>
+                            <li><a class="dropdown-item" href="Lab1_4.html">Кодування (програмування)</a></li>
+                            <li><a class="dropdown-item" href="Lab1_5.html">Впровадження та супроводження
+                                ПЗ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col-md-6">
+            <article class="blog-post" id="fourth-task">
+                <h2 class="blog-post-title">Кодування (програмування)</h2>
+                <p>Файлова структура проекту (скрін шот Solution explorer).</p>
+                <img src="./images/files.png" class="img-fluid" alt="Files">
+                <p>Специфікації методів у вигляді таблиці з переліком сигнатури методів, семантики методів та їх
+                    параметрів:</p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Прототип функції</th>
+                        <th scope="col">Семантика функції</th>
+                        <th scope="col">Параметри</th>
+                        <th scope="col">Призначення(семантика) параметрів</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>public bool ChangePermissions(int id, int permission)</code></td>
+                        <td>Зміна дозволу користувача</td>
+                        <td><code>int id, int permission</code></td>
+                        <td>Ідентифікатор користувача та змінений дозвіл</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool Book(object[] bookfields)</code></td>
+                        <td>Процес бронювання</td>
+                        <td><code>object[] bookfields</code></td>
+                        <td>Поля з інформацією для бронювання</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object[] CheckBookings(int id)</code></td>
+                        <td>Отримання списку своїх бронювань</td>
+                        <td><code>int id</code></td>
+                        <td>Ідентифікатор користувача</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool Review(object[] reviewfields)</code></td>
+                        <td>Створення відгуку</td>
+                        <td><code>object[] reviewfields</code></td>
+                        <td>Інформація відгуку</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool CancelBooking(int id)</code></td>
+                        <td>Скачування бронювання</td>
+                        <td><code>int id</code></td>
+                        <td>Ідентифікатор користувача</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void ReceiveEmails()</code></td>
+                        <td>Отримання інформації на електронну пошту</td>
+                        <td>Без параметрів</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void ReportReviews()</code></td>
+                        <td>Створення скарг на відгуки</td>
+                        <td>Без параметрів</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><code>public User LogOut()</code></td>
+                        <td>Процес виходу із системи користувача</td>
+                        <td>Без параметрів</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool AddHotel(object[] hotelFields)</code></td>
+                        <td>Додавання готелю</td>
+                        <td><code>object[] hotelFields</code></td>
+                        <td>Інформація про готель</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object[] GetReviews(int reviewId)</code></td>
+                        <td>Отримання інформації про відгук</td>
+                        <td><code>int reviewId</code></td>
+                        <td>Ідентифікатор відгуку</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object GetRoom(int id)</code></td>
+                        <td>Отримання інформації про кімнату</td>
+                        <td><code>int id</code></td>
+                        <td>Ідентифікатор кімнати</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object[] GetUser(int id)</code></td>
+                        <td>Отримання інформації про користувача</td>
+                        <td><code>int id</code></td>
+                        <td>Ідентифікатор користувача</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object GetHotel(int id)</code></td>
+                        <td>Отримання інформації про готель</td>
+                        <td><code>int id</code></td>
+                        <td>Ідентифікатор готелю</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool UpdateHotelInfo(object[] hotelFields)</code></td>
+                        <td>Оновлення інформації про готель</td>
+                        <td><code>object[] hotelFields</code></td>
+                        <td>Оновлена інформація готеля</td>
+                    </tr>
+                    <tr>
+                        <td><code>public bool UpdateRoom(object[] fields)</code></td>
+                        <td>Оновлення інформації про кімнату</td>
+                        <td><code>object[] fields</code></td>
+                        <td>Оновлена інформація кімнати</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void CheckHotelBookings()</code></td>
+                        <td>Отримати інформацію про свої бронювання</td>
+                        <td>Без параметрів</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void ChangeAccess(object[] hotelfields)</code></td>
+                        <td>Змінити доступ користувача</td>
+                        <td><code>object[] hotelfields</code></td>
+                        <td>Параметри готелю</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void RemoveHotel(int hotel_id)</code></td>
+                        <td>Видалити готель</td>
+                        <td><code>int hotel_id</code></td>
+                        <td>Ідентифікатор готелю</td>
+                    </tr>
+                    <tr>
+                        <td><code>public void RemoveHotel(int hotel_id)</code></td>
+                        <td>Видалити готель</td>
+                        <td><code>int hotel_id</code></td>
+                        <td>Ідентифікатор готелю</td>
+                    </tr>
+                    <tr>
+                        <td><code>public object SearchForInfo(object[] fields)</code></td>
+                        <td>Процес пошуку за інформацією</td>
+                        <td><code>object[] fields</code></td>
+                        <td>Поля для пошуку</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+        <div class="col-4">
+            <div class="p-4 mb-3 rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Перша лабораторна робота, четверте завдання.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>
