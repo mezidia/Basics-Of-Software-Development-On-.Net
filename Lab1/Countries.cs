@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hotel
+﻿namespace Hotel
 {
-    class Countries
-    {
-        int CountryId;
-        string CountryName;
-    }
+	class Countries
+	{
+		int CountryId { get; set; }
+		string CountryName { get; set; }
+
+		public Countries(int country, string name)
+		{
+			CountryId = country;
+			CountryName = name;
+		}
+	}
 }
