@@ -16,8 +16,19 @@ namespace Hotel
         public bool BalconyBool { get; set; }
         public bool SaleBool { get; set; }
 
-
+        public Rooms(int id, int price, int roomNum, int freeDates,
+            bool tvBool, string roomType, int bedsNum, bool balconyBool,
+            bool saleBool)
+        {
+            HotelId = id;
+            PriceInt = price;
+            RoomNumberInt = roomNum;
+            FreeDatesInt = freeDates;
+            TVBool = tvBool;
+            RoomTypeStr = roomType;
+            NumberOfBedsInt = bedsNum;
+            BalconyBool = balconyBool;
+            SaleBool = saleBool;
+        }
     }
 }
-
-
