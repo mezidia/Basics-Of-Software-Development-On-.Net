@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hotel
+﻿namespace Hotel
 {
-    class HotelAdmin : Authorized
-    {
-        protected int HotelId;
-        public void UpdateHotelInfo() { }
-        public void CheckHotelBooking() { }
-        public void UpdateRoom() { }
-    }
+	class HotelAdmin : Authorized
+	{
+		protected int HotelId;
+
+		public bool UpdateHotelInfo()
+		{
+			return true;
+		}
+
+		public void CheckHotelBooking()
+		{
+
+		}
+
+		public bool UpdateRoom()
+		{
+			return true;
+		}
+	}
 }
