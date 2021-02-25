@@ -16,29 +16,29 @@
 			return true;
 		}
 
-		public void CheckBooking()
+		public Booking CheckBooking()
 		{
-
+			return new Booking();
 		}
 
-		public void Review()
+		public bool Review()
 		{
-
+			return true;
 		}
 
-		public void CancelBooking()
+		public bool CancelBooking()
 		{
-
+			return true;
 		}
 
-		public void LogOut()
+		public User LogOut()
 		{
-
+			return new Unauthorized();
 		}
 
-		public void AddHotel()
+		public bool AddHotel()
 		{
-
+			return true;
 		}
 	}
 }
