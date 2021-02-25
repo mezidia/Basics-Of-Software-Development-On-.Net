@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hotel
+﻿namespace Hotel
 {
-    class User
-    {
-        public void SearchForInfo() { }
-    }
+	class User
+	{
+		public Hotels SearchForInfo()
+		{
+			return new Hotels();
+		}
+	}
 }
