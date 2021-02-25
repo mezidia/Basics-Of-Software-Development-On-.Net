@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Hotel
 {
-    class HotelAdmon
+    class Admin : Authorized
     {
+        private void ChangePermission() { }
     }
 }

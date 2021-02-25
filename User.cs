@@ -6,5 +6,6 @@ namespace Hotel
 {
     class User
     {
+        public void SearchForInfo() { }
     }
 }

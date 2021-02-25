@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Hotel
 {
-    class HotelAdmon
+    class HotelAdmin : Authorized
     {
+        protected int HotelId;
+        public void UpdateHotelInfo() { }
+        public void CheckHotelBooking() { }
+        public void UpdateRoom() { }
     }
 }

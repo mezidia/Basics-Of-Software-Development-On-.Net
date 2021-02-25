@@ -6,5 +6,7 @@ namespace Hotel
 {
     class Countries
     {
+        int CountryId;
+        string CountryName;
     }
 }

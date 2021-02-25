@@ -6,5 +6,11 @@ namespace Hotel
 {
     class Reviews
     {
+        DateTime CreationDate;
+        int HotelId;
+        int RatingInt;
+        int ReviewId;
+        string ReviewStr;
+        int UserId;
     }
 }

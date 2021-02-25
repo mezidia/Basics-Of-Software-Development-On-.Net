@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Hotel
 {
-    class Authorized
+    class Unauthorized : User
     {
+        private void SingUpLogin() { }
     }
 }

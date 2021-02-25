@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Hotel
 {
-    class HotelOwner
+    class HotelOwner : HotelAdmin
     {
+        public void ChangeAccess() { }
+        public void RemoveHotel() { }
     }
 }
