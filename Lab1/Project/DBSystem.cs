@@ -23,7 +23,7 @@ namespace Hotel
 
 		public Hotels GetHotel(int id)
 		{
-			return Hotels();
+			return new Hotels();
 		}
 	}
 }
