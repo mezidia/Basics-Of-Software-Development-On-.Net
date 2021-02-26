@@ -70,7 +70,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="Lab1_3.html" class="dropdown-item ml-0">Проектування ПЗ</a>
+                                    <a href="Lab1_3_1.html" class="dropdown-item ml-0">Проектування ПЗ</a>
                                     <ul>
                                         <li><a tabindex="-1" href="#" class="dropdown-item">3.1. Проектування структури
                                             ПЗ</a></li>
@@ -139,7 +139,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="Lab1_3.html">Проектування ПЗ</a>
+                                <a class="dropdown-item" href="Lab1_3_1.html">Проектування ПЗ</a>
                                 <ul class="dropdown-menu">
                                     <li><a tabindex="-1" href="#" class="dropdown-item">3.1. Проектування структури
                                         ПЗ</a></li>
@@ -171,20 +171,36 @@
         <div class="col-md-6">
             <article class="blog-post">
                 <h2 class="blog-post-title">Проектування ПЗ</h2>
-                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
-                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere
-                    consectetur
-                    est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                <blockquote>
-                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare
-                        vel eu
-                        leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </blockquote>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
-                    fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo
-                    luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.</p>
+                <ol start="1">
+                    <li>
+                        <br>
+                        <img src="./images/classes.png" class="img-fluid" alt="Classes uml-diagram image">
+                        <p>User, Unauthorized, Authorized, Admin, HotelAdmin, HotelOwner - мають зв'язки наслідування.
+                        </p>
+                        <p>Композиція Rooms-Booking: Кімната може мати скільки завгодно бронювань, а Бронювання
+                            стосується тільки однієї кімнати; Бронювання не може існувати без кімнати.</p>
+                        <p>Композиція Authorized-Booking: Авторизований користувач може мати скільки завгодно бронювань,
+                            а Бронювання належить тільки одному Авторизованому; Бронювання не може існувати без
+                            Авторизованого.</p>
+                        <p>Композиція Countries-Authorized: Авторизований користувач може належати до однієї Країни, а
+                            Країна може мати скільки завгодно Авторизованих; Авторизований не може існувати без
+                            Країни.</p>
+                        <p>Композиція Countries-Hotels: Готель може належати до однієї Країни, а Країна може мати
+                            скільки завгодно Готелів; Готель не може існувати без Країни.</p>
+                        <p>Композиція Hotels-Reviews: Ревью може належати тільки до одного Готелю, а Готель може мати
+                            скільки завгодно Ревью; Ревью не може існувати без Готелю.</p>
+                        <p>Композиція Hotels-HotelAdmin: Адміністратор готелю може належати хоча б до одного Готелю, а
+                            Готель може мати скільки завгодно Адміністраторів готелю; Адміністратор готелю не може
+                            існувати без Готелю.</p>
+                        <p>Композиція Hotels-HotelOwner: Власник готелю може належати хоча б до одного Готелю, а Готель
+                            може мати тільки одного Власника; Власник не може існувати без Готелю.</p>
+                        <p>Композиція Hotels-Rooms: Готель може мати скільки завгодно Кімнат, а Кімнат може належати
+                            тільки одному Готелю; Кімната не може існувати без Готелю.</p>
+                        <p>Композиція Authorized-Reviews: Ревью може належати тільки одному Авторизованому, а
+                            Авторизований може мати скільки завгодно Ревью; Ревью не може існувати без
+                            Авторизованого.</p>
+                    </li>
+                </ol>
             </article>
         </div>
         <div class="col-4">
