@@ -169,150 +169,20 @@
         </div>
 
         <div class="col-md-6">
-            <article class="blog-post" id="fourth-task">
-                <h2 class="blog-post-title">Кодування (програмування)</h2>
-                <p>Файлова структура проекту (скрін шот Solution explorer).</p>
-                <img src="./images/files.png" class="img-fluid" alt="Files">
-                <p>Специфікації методів у вигляді таблиці з переліком сигнатури методів, семантики методів та їх
-                    параметрів:</p>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">Прототип функції</th>
-                        <th scope="col">Семантика функції</th>
-                        <th scope="col">Параметри</th>
-                        <th scope="col">Призначення(семантика) параметрів</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><code>public bool ChangePermissions(int id, int permission)</code></td>
-                        <td>Зміна дозволу користувача</td>
-                        <td><code>int id, int permission</code></td>
-                        <td>Ідентифікатор користувача та змінений дозвіл</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool Book(object[] bookfields)</code></td>
-                        <td>Процес бронювання</td>
-                        <td><code>object[] bookfields</code></td>
-                        <td>Поля з інформацією для бронювання</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object[] CheckBookings(int id)</code></td>
-                        <td>Отримання списку своїх бронювань</td>
-                        <td><code>int id</code></td>
-                        <td>Ідентифікатор користувача</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool Review(object[] reviewfields)</code></td>
-                        <td>Створення відгуку</td>
-                        <td><code>object[] reviewfields</code></td>
-                        <td>Інформація відгуку</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool CancelBooking(int id)</code></td>
-                        <td>Скачування бронювання</td>
-                        <td><code>int id</code></td>
-                        <td>Ідентифікатор користувача</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void ReceiveEmails()</code></td>
-                        <td>Отримання інформації на електронну пошту</td>
-                        <td>Без параметрів</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void ReportReviews()</code></td>
-                        <td>Створення скарг на відгуки</td>
-                        <td>Без параметрів</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><code>public User LogOut()</code></td>
-                        <td>Процес виходу із системи користувача</td>
-                        <td>Без параметрів</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool AddHotel(object[] hotelFields)</code></td>
-                        <td>Додавання готелю</td>
-                        <td><code>object[] hotelFields</code></td>
-                        <td>Інформація про готель</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object[] GetReviews(int reviewId)</code></td>
-                        <td>Отримання інформації про відгук</td>
-                        <td><code>int reviewId</code></td>
-                        <td>Ідентифікатор відгуку</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object GetRoom(int id)</code></td>
-                        <td>Отримання інформації про кімнату</td>
-                        <td><code>int id</code></td>
-                        <td>Ідентифікатор кімнати</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object[] GetUser(int id)</code></td>
-                        <td>Отримання інформації про користувача</td>
-                        <td><code>int id</code></td>
-                        <td>Ідентифікатор користувача</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object GetHotel(int id)</code></td>
-                        <td>Отримання інформації про готель</td>
-                        <td><code>int id</code></td>
-                        <td>Ідентифікатор готелю</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool UpdateHotelInfo(object[] hotelFields)</code></td>
-                        <td>Оновлення інформації про готель</td>
-                        <td><code>object[] hotelFields</code></td>
-                        <td>Оновлена інформація готеля</td>
-                    </tr>
-                    <tr>
-                        <td><code>public bool UpdateRoom(object[] fields)</code></td>
-                        <td>Оновлення інформації про кімнату</td>
-                        <td><code>object[] fields</code></td>
-                        <td>Оновлена інформація кімнати</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void CheckHotelBookings()</code></td>
-                        <td>Отримати інформацію про свої бронювання</td>
-                        <td>Без параметрів</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void ChangeAccess(object[] hotelfields)</code></td>
-                        <td>Змінити доступ користувача</td>
-                        <td><code>object[] hotelfields</code></td>
-                        <td>Параметри готелю</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void RemoveHotel(int hotel_id)</code></td>
-                        <td>Видалити готель</td>
-                        <td><code>int hotel_id</code></td>
-                        <td>Ідентифікатор готелю</td>
-                    </tr>
-                    <tr>
-                        <td><code>public void RemoveHotel(int hotel_id)</code></td>
-                        <td>Видалити готель</td>
-                        <td><code>int hotel_id</code></td>
-                        <td>Ідентифікатор готелю</td>
-                    </tr>
-                    <tr>
-                        <td><code>public object SearchForInfo(object[] fields)</code></td>
-                        <td>Процес пошуку за інформацією</td>
-                        <td><code>object[] fields</code></td>
-                        <td>Поля для пошуку</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <article class="blog-post">
+                <h2 class="blog-post-title">Об’єктно-орієнтована декомпозиції предметного середовища</h2>
+                <ol start="2">
+                    <li>
+                        <p>Об’єктно-орієнтовна декомпозиція предметного середовища (діаграма об’єктів):</p>
+                        <img src="./images/objects_diagram.png" class="img-fluid" alt="Objects diagram image">
+                    </li>
+                </ol>
             </article>
         </div>
         <div class="col-4">
             <div class="p-4 mb-3 rounded">
                 <h4 class="font-italic">About</h4>
-                <p class="mb-0">Перша лабораторна робота, четверте завдання.</p>
+                <p class="mb-0">Перша лабораторна робота, друге завдання.</p>
             </div>
         </div>
     </div>

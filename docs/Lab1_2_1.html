@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Labs on .Net">
+    <meta name="author" content="Mezidia">
+
+    <title>Lab 1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/dashboard/">
+
+    <link rel="shortcut icon"
+          href="https://raw.githubusercontent.com/mezgoodle/images/master/MezidiaLogoTransparent.png"
+          type="image/x-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/dropdown.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Mezidia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" target="_blank"
+                       href="https://github.com/mezidia/Basics-Of-Software-Development-On-.Net">Repository</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Labs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="Lab1_1_1.html">Lab1</a>
+                            <ul type="circle">
+                                <li>
+                                    <a href="Lab1_1_1.html" class="dropdown-item ml-0">Характеристика об’єкта
+                                        автоматизації</a>
+                                    <ul>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">1.1. Детальний опис
+                                            предметного
+                                            середовища</a></li>
+                                        <li><a href="#" class="dropdown-item">1.2. Мета розробки проекту</a></li>
+                                        <li><a href="#" class="dropdown-item">1.3. Бізнес-задачі</a></li>
+                                        <li><a href="#" class="dropdown-item">1.4. Бізнес-процеси</a></li>
+                                        <li><a href="#" class="dropdown-item">1.5. Сценарій дій системи</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Lab1_2_1.html" class="dropdown-item ml-0">Об’єктно-орієнтована
+                                        декомпозиції предметного
+                                        середовища</a>
+                                    <ul>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">2.1. Аналіз опису об’єкту
+                                            управління</a></li>
+                                        <li><a href="#" class="dropdown-item">2.2. ООД предметного середовища</a></li>
+                                        <li><a href="#" class="dropdown-item">2.3. Функціональні вимоги замовника</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Lab1_3.html" class="dropdown-item ml-0">Проектування ПЗ</a>
+                                    <ul>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">3.1. Проектування структури
+                                            ПЗ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Lab1_4.html" class="dropdown-item ml-0">Кодування
+                                        (програмування)</a>
+                                    <ul>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">4.1 Файлова структура
+                                            проекту</a></li>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">4.2 Специфікації методів у
+                                            вигляді таблиці</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Lab1_5.html" class="dropdown-item ml-0">Впровадження та
+                                        супроводження ПЗ</a>
+                                    <ul>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">5.1. Посилання на папку з
+                                            проектом</a></li>
+                                        <li><a tabindex="-1" href="#" class="dropdown-item">5.2. Запуск ехе-файла</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <nav class="d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <div class="dropend p-2 d-grid">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Lab 1
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="Lab1_1_1.html">Характеристика об’єкта
+                                    автоматизації</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">1.1. Детальний опис предметного
+                                        середовища</a></li>
+                                    <li><a href="#" class="dropdown-item">1.2. Мета розробки проекту</a></li>
+                                    <li><a href="#" class="dropdown-item">1.3. Бізнес-задачі</a></li>
+                                    <li><a href="#" class="dropdown-item">1.4. Бізнес-процеси</a></li>
+                                    <li><a href="#" class="dropdown-item">1.5. Сценарій дій системи</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="Lab1_2_1.html">ООД
+                                    предметного середовища</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">2.1. Аналіз опису об’єкту
+                                        управління</a></li>
+                                    <li><a href="#" class="dropdown-item">2.2. ООД предметного середовища</a></li>
+                                    <li><a href="#" class="dropdown-item">2.3. Функціональні вимоги замовника</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="Lab1_3.html">Проектування ПЗ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">3.1. Проектування структури
+                                        ПЗ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="Lab1_4.html">Кодування (програмування)</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">4.1 Файлова структура
+                                        проекту</a></li>
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">4.2 Специфікації методів у
+                                        вигляді таблиці</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="Lab1_5.html">Впровадження та супроводження ПЗ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">5.1. Посилання на папку з
+                                        проектом</a></li>
+                                    <li><a tabindex="-1" href="#" class="dropdown-item">5.2. Запуск ехе-файла</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col-md-6">
+            <article class="blog-post">
+                <h2 class="blog-post-title">Об’єктно-орієнтована декомпозиції предметного середовища</h2>
+                <ol start="1">
+                    <li>
+                        <ol>
+                            <br>
+                            <li>
+                                <p>Результати лінгвістичного інформаційного аналізу у вигляді таблиці іменників
+                                    (іменникових
+                                    груп) –
+                                    претендентів на роль класів та атрибутів:</p>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Іменник</th>
+                                        <th scope="col">Відношення до ООА</th>
+                                        <th scope="col">Пояснення</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Система баз даних готелів</td>
+                                        <td>Клас</td>
+                                        <td>Моделює роботу готелів</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Користувач (зареєстрований та незареєстрований)</td>
+                                        <td>Клас</td>
+                                        <td>Описує користувача</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Адмін готелю</td>
+                                        <td>Клас</td>
+                                        <td>Описує адміна готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Адмін</td>
+                                        <td>Клас</td>
+                                        <td>Описує адміна</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Власник готелю</td>
+                                        <td>Клас</td>
+                                        <td>Описує власника готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Країни</td>
+                                        <td>Клас</td>
+                                        <td>Описує країни</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Відгуки</td>
+                                        <td>Клас</td>
+                                        <td>Описує відгуки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Готелі</td>
+                                        <td>Клас</td>
+                                        <td>Описує готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Бронювання</td>
+                                        <td>Клас</td>
+                                        <td>Описує бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Кімнати</td>
+                                        <td>Клас</td>
+                                        <td>Описує кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Адреса електронної пошти</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Логін</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Пароль</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вік</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Номер телефону</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Країна</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу зарєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID готелю</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класів відгуки, власник готелю та кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID країни</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класів країни та готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ім'я країни</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу країни</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Дата створення</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу відгуки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Рейтинг</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класів відгуки та готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID відгуку</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу відгуки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Відгук</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу відгуки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID користувача</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу відгуки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Опис</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класів готелі та бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ім'я готелю</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип готелю</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип готелю</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Місцезнаходження</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Кількість зірок</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID власника</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу готелі</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Бронювання</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Кінцева дата</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Кімната</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Стартова дата</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Користувач</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу бронювання</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Балкон</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Дата виселення</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Кількість ліжок</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ціна</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Номер кімнати</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип кімнати</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Знижка</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Телевізор</td>
+                                        <td>Атрибут</td>
+                                        <td>Атрибут класу кімнати</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                <p>Результати лінгвістичного інформаційного аналізу у вигляді таблиці дієслів
+                                    (дієслівних груп)
+                                    –
+                                    претендентів на роль зв’язків та методів класів:</p>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Дієслово</th>
+                                        <th scope="col">Критерій належності до класу</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Отримати відгук</td>
+                                        <td>Метод класу система баз даних готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Отримати кімнату</td>
+                                        <td>Метод класу система баз даних готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Отримати користувача</td>
+                                        <td>Метод класу система баз даних готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Отримати готель</td>
+                                        <td>Метод класу система баз даних готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Пошук інформації</td>
+                                        <td>Метод класу користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Забронювати</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Перевірити бронювання</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Залишити відгук</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Відмінити бронювання</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вийти</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Додати готель</td>
+                                        <td>Метод класу зареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Увійти</td>
+                                        <td>Метод класу незареєстрований користувач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Оновити інформацію про готель</td>
+                                        <td>Метод класу адмін готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Перевірити бронювання готелю</td>
+                                        <td>Метод класу адмін готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Оновити кімнату</td>
+                                        <td>Метод класу адмін готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Змінити повноваження</td>
+                                        <td>Метод класу адмін</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Змінити доступ</td>
+                                        <td>Метод класу власник готелю</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Видалити готель</td>
+                                        <td>Метод класу власник готелю</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ol>
+
+                    </li>
+                </ol>
+                <p>Результати лінгвістичного інформаційного аналізу у вигляді таблиці дієслів (дієслівних груп) –
+                    претендентів на роль зв’язків та методів класів:</p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Дієслово</th>
+                        <th scope="col">Критерій належності до класу</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Отримати відгук</td>
+                        <td>Метод класу система баз даних готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Отримати кімнату</td>
+                        <td>Метод класу система баз даних готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Отримати користувача</td>
+                        <td>Метод класу система баз даних готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Отримати готель</td>
+                        <td>Метод класу система баз даних готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Пошук інформації</td>
+                        <td>Метод класу користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Забронювати</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Перевірити бронювання</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Залишити відгук</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Відмінити бронювання</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Вийти</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Додати готель</td>
+                        <td>Метод класу зареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Увійти</td>
+                        <td>Метод класу незареєстрований користувач</td>
+                    </tr>
+                    <tr>
+                        <td>Оновити інформацію про готель</td>
+                        <td>Метод класу адмін готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Перевірити бронювання готелю</td>
+                        <td>Метод класу адмін готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Оновити кімнату</td>
+                        <td>Метод класу адмін готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Змінити повноваження</td>
+                        <td>Метод класу адмін</td>
+                    </tr>
+                    <tr>
+                        <td>Змінити доступ</td>
+                        <td>Метод класу власник готелю</td>
+                    </tr>
+                    <tr>
+                        <td>Видалити готель</td>
+                        <td>Метод класу власник готелю</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>Об’єктно-орієнтовна декомпозиція предметного середовища (діаграма об’єктів):</p>
+                <img src="./images/objects_diagram.png" class="img-fluid" alt="Objects diagram image">
+                <p>Функціональні вимоги замовника - UML-діаграми (прецедентів (use-cаse):</p>
+                <img src="./images/use_cases.png" class="img-fluid" alt="Use cases"/>
+            </article>
+        </div>
+        <div class="col-4">
+            <div class="p-4 mb-3 rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Перша лабораторна робота, друге завдання.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>
