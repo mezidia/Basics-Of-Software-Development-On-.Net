@@ -2,7 +2,7 @@
 
 namespace Hotel
 {
-	class MainClass
+	class Program
 	{
 		static void Main()
 		{
