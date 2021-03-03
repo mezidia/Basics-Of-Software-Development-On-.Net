@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Hotel
 {
-    class Countries
+    public enum Country
     {
-        int CountryId;
-        string CountryName;
-        public Countries() { }
+        //Ї
+        Ukraine = 1
     }
 }
