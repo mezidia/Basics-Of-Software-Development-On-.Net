@@ -14,13 +14,11 @@ namespace Hotel
 		public decimal Price { get; set; }
 		public string Comment { get; set; }
 
-		public OrderDetail(int OrderDetailID, int OrderID, DateTime DateStart, DateTime DateEnd, decimal Price, string Comment)
+		public OrderDetail(int OrderDetailID, int OrderID,
+			DateTime DateStart, DateTime DateEnd,
+			decimal Price, string Comment)
 		{
-			this.OrderDetailID = OrderDetailID;
-			this.DateStart = DateStart;
-			this.DateEnd = DateEnd;
-			this.Price = Price;
-			this.Comment = Comment;
+
 		}
 	}
 }

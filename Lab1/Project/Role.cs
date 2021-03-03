@@ -10,8 +10,7 @@ namespace Hotel
 		public string RoleName { get; set; }
 		public Role(int RoleID, string RoleName)
 		{
-			this.RoleID = RoleID;
-			this.RoleName = RoleName;
+
 		}
 	}
 }

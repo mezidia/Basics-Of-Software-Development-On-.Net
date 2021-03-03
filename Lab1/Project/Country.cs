@@ -6,7 +6,7 @@ namespace Hotel
 {
     public enum Country
     {
-        //Ї
+        // First Country
         Ukraine = 1
     }
 }

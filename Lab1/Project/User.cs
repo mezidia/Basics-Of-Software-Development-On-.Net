@@ -14,13 +14,10 @@ namespace Hotel
         public string UserMail { get; set; }
         public string UserPhone { get; set; }
         public List<Role> Roles { get; set; } = new List<Role>();
-        public User(int UserID, short UserType, string UserName, string UserMail, string UserPhone)
+        public User(int UserID, short UserType,
+            string UserName, string UserMail, string UserPhone)
         {
-            this.UserID = UserID;
-            this.UserType = UserType;
-            this.UserName = UserName;
-            this.UserMail = UserMail;
-            this.UserPhone = UserPhone;
+
         }
         public void SearchForInfo() { }
         public void Book() { }

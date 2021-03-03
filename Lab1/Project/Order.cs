@@ -14,8 +14,7 @@ namespace Hotel
 
         public Order(int OrderID, string OrderNumber)
         {
-            this.OrderID = OrderID;
-            this.OrderNumber = OrderNumber;
+
         }
 
     }

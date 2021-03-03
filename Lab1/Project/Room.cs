@@ -20,10 +20,7 @@ namespace Hotel
 
         public Room(int RoomID, string RoomName, int RoomSize, int HotelID)
         {
-            this.RoomID = RoomID;
-            this.RoomName = RoomName;
-            this.RoomSize = RoomSize;
-            this.HotelID = HotelID;
+
         }
     }
 }

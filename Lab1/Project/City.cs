@@ -11,8 +11,7 @@ namespace Hotel
 		public Country Country { get; set; }
 		public City(int CityID, string CityName)
 		{
-			this.CityID = CityID;
-			this.CityName = CityName;
+
 		}
 	}
 }

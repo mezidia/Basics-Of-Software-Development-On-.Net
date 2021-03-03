@@ -16,9 +16,7 @@ namespace Hotel
 
         public Hotel(int HotelID, string HotelName, string Adress)
         {
-            this.HotelID = HotelID;
-            this.HotelName = HotelName;
-            this.Adress = Adress;
+
         }
     }
 }

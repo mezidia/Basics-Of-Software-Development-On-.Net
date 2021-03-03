@@ -12,11 +12,9 @@ namespace Hotel
         int Rating { get; set; }
         string Description { get; set; }
         User User { get; set; }
-        public Review(int RatingInt, int Rating, string Description) 
+        public Review(int RatingInt, int Rating, string Description)
         {
-            this.Rating = Rating;
-            this.ReviewId = ReviewId;
-            this.Description = Description;
+
         }
     }
 }
