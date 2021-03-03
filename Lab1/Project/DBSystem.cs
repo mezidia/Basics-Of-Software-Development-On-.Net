@@ -8,7 +8,7 @@ namespace Hotel
 	{
 		public DBSystem()
 		{
-
+			Console.WriteLine("DBSystem has started");
 		}
 	}
 }
