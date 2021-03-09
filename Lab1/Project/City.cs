@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Hotel
 {
-    public enum Country
-    {
-        //Ї
-        Ukraine = 1
-    }
+	public enum City
+	{
+		Kyiv
+	}	
 }
