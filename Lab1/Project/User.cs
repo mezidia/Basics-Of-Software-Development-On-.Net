@@ -35,3 +35,4 @@ namespace Hotel
         public void RemoveHotel() { }
     }
 }
+
