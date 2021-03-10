@@ -13,6 +13,7 @@ namespace Hotel
         public string UserName { get; set; }
         public string UserMail { get; set; }
         public string UserPhone { get; set; }
+        public List<Order> Orders = new List<Order>();
         public User(int UserID, short UserType, string UserName, string UserMail, string UserPhone)
         {
             this.UserID = UserID;
@@ -28,15 +29,16 @@ namespace Hotel
         public void CheckBooking() { }
         public void CancelBooking() { }
         public void LogOut() { }
-        public void AddHotel(int HotelID, string HotelName, string Adress, City city)
+        public void AddHotel(/*int HotelID, string HotelName, string Adress, City city*/)
         {
-            Hotel newHotel = new Hotel(HotelID, HotelName, Adress)
-            {
-                City = city
-            };
-            // Add hotel to the DB
-            Console.WriteLine($"{newHotel} is added");
+            //Hotel newHotel = new Hotel(HotelID, HotelName, Adress)
+            //{
+            //    City = city
+            //};
+            //// Add hotel to the DB
+            //Console.WriteLine($"{newHotel} is added");
         }
+        public void AddCity(string city) { }
         private void SingUpLogin() { }
         public void UpdateHotelInfo() { }
         public void CheckHotelBooking() { }
