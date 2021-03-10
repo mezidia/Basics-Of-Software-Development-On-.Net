@@ -28,10 +28,14 @@ namespace Hotel
         public void CheckBooking() { }
         public void CancelBooking() { }
         public void LogOut() { }
-        public void AddHotel(Hotel hotel)
+        public void AddHotel(int HotelID, string HotelName, string Adress, City city)
         {
+            Hotel newHotel = new Hotel(HotelID, HotelName, Adress)
+            {
+                City = city
+            };
             // Add hotel to the DB
-            Console.WriteLine($"{hotel} is added");
+            Console.WriteLine($"{newHotel} is added");
         }
         private void SingUpLogin() { }
         public void UpdateHotelInfo() { }
