@@ -16,16 +16,10 @@ namespace Hotel
 		public List<Order> Orders = new List<Order>();
 
 		/// <summary>
-		/// Constructor with default values
+		/// Constructor by default
 		/// </summary>
 		public User()
 		{
-			UserID = 999;
-			UserType = 1;
-			UserName = "Valeera";
-			UserMail = "SomeMail@gmail.com";
-			UserPhone = "+380111111111";
-
 			Console.WriteLine("Default User is created");
 		}
 
@@ -45,7 +39,7 @@ namespace Hotel
 		}
 
 		/// <summary>
-		/// Constructor created by Us
+		/// Initialization Constructor
 		/// </summary>
 		/// <param name="UserID"></param>
 		/// <param name="UserType"></param>
