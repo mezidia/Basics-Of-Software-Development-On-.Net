@@ -24,6 +24,7 @@ namespace Hotel
             this.RoomName = RoomName;
             this.RoomSize = RoomSize;
             this.HotelID = HotelID;
+            Console.WriteLine("Room is Created");
         }
     }
 }

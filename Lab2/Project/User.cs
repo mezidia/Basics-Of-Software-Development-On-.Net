@@ -20,13 +20,19 @@ namespace Hotel
             this.UserName = UserName;
             this.UserMail = UserMail;
             this.UserPhone = UserPhone;
+
+            Console.WriteLine("User is created");
         }
         public void SearchForInfo() { }
         public void Book() { }
         public void CheckBooking() { }
         public void CancelBooking() { }
         public void LogOut() { }
-        public void AddHotel() { }
+        public void AddHotel(Hotel hotel)
+        {
+            // Add hotel to the DB
+            Console.WriteLine($"{hotel} is added");
+        }
         private void SingUpLogin() { }
         public void UpdateHotelInfo() { }
         public void CheckHotelBooking() { }

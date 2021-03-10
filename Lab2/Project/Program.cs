@@ -10,6 +10,8 @@ namespace Hotel
                 "+0690696969");
             Hotel Hotel1 = new Hotel(1, "Адам", "вул. Т. Шевченка");
             Hotel1.City = City.Kyiv;
+
+            Hotel1.CreateRoom(2, "First", 1, Hotel1.HotelID);
             Console.WriteLine("First Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
                 "Sichkar Tetiana,\nDominskyi Valentyn");
             Console.ReadLine();
