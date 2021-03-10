@@ -13,6 +13,7 @@ namespace Hotel
         public string HotelName { get; set; }
         public City City { get; set; }
         public string Adress { get; set; }
+        
 
         public Hotel(int HotelID, string HotelName, string Adress)
         {

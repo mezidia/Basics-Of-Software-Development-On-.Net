@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hotel
+﻿namespace Hotel
 {
 	public enum City
 	{
 		Kyiv
-	}	
+	}
 }

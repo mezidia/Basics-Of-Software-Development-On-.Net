@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Hotel": {
+      "commandName": "Executable",
+      "executablePath": "D:\\ForStudy\\Basics-Of-Software-Development-On-.Net\\Lab1\\bin\\Release\\netcoreapp3.1\\Hotel.exe"
+    }
+  }
+}

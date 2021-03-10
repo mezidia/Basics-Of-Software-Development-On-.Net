@@ -17,6 +17,5 @@ namespace Hotel
             this.OrderID = OrderID;
             this.OrderNumber = OrderNumber;
         }
-
     }
 }
