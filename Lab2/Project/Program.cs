@@ -17,6 +17,9 @@ namespace Hotel
 
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1");
 
+			// Constructor by default
+			User GreatValeera = new User();
+
 			Console.WriteLine("First Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");
 			Console.ReadLine();
