@@ -12,13 +12,13 @@ namespace Hotel
         public int HotelID { get; set; }
         public string HotelName { get; set; }
         public City City { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
-        public Hotel(int HotelID, string HotelName, string Adress)
+        public Hotel(int HotelID, string HotelName, string Address)
         {
             this.HotelID = HotelID;
             this.HotelName = HotelName;
-            this.Adress = Adress;
+            this.Address = Address;
         }
     }
 }
