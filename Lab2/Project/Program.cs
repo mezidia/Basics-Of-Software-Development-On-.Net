@@ -6,12 +6,14 @@ namespace Hotel
 		static void Main()
 		{
 			Console.WriteLine("Second Lab has started\n");
-			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
-				"+0690696969");
+
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка", "Something")
 			{
 				City = City.Kyiv
 			};
+
+			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
+				"+0690696969");
 
 			RedHotel.CreateRoom(2, "Red", 1, RedHotel.HotelID, 200);
 
@@ -19,6 +21,7 @@ namespace Hotel
 
 			// Constructor by default
 			User GreatValeera = new User();
+
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
 
