@@ -38,10 +38,11 @@ namespace Hotel
 		}
 
 		public void CreateOrder(int OrderID, decimal Sum,
-			Hotel Hotel, User User, string OrderNumber)
+			Hotel Hotel, User User, string OrderNumber,
+			Room Room, DateTime Start, DateTime End)
 		{
 			Order order = new Order(OrderID, Sum, Hotel,
-				User, OrderNumber);
+				User, OrderNumber, Room, Start, End);
 			User.Orders.Add(order);
 			Hotel.Orders.Add(order);
 		}
