@@ -17,7 +17,7 @@ namespace Hotel
 
 			RedHotel.CreateRoom(2, "Red", 1, RedHotel.HotelID, 200);
 
-			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0], 
+			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));
 
 			// Constructor by default
