@@ -46,7 +46,8 @@ namespace Hotel
 		/// <param name="UserName"></param>
 		/// <param name="UserMail"></param>
 		/// <param name="UserPhone"></param>
-		public User(int UserID, short UserType, string UserName, string UserMail, string UserPhone)
+		public User(int UserID, short UserType,
+		            string UserName, string UserMail, string UserPhone)
 		{
 			this.UserID = UserID;
 			this.UserType = UserType;
