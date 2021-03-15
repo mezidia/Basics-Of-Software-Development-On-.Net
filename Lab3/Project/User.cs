@@ -8,8 +8,30 @@ namespace Hotel
     {
         private string usermail;
         private string userphone;
+        private string password;
         public string Login { get; set; }
-        public string Password { get; set; }
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                var hasNumber = new Regex(@"[0-9]+");
+                var hasUpperChar = new Regex(@"[A-Z]+");
+                var hasMinimum8Chars = new Regex(@".{8,}");
+
+                if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value) && hasMinimum8Chars.IsMatch(value))
+                {
+                    password = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть коректний парооль. Має бути мінімум одна цифра, одна велика буква, і довжина паролю має бути мінімум 8 символів.");
+                }
+            }
+        }
         public int UserID { get; set; }
         public short UserType { get; set; }
         public string UserName { get; set; }
