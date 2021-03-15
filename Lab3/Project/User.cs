@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Hotel
 {
     public class User
     {
         private string usermail;
+        private string userphone;
         public string Login { get; set; }
         public string Password { get; set; }
         public int UserID { get; set; }
@@ -15,7 +17,7 @@ namespace Hotel
         {
             get
             {
-                return usermail;   
+                return usermail;
             }
             set
             {
@@ -30,7 +32,24 @@ namespace Hotel
                 }
             }
         }
-        public string UserPhone { get; set; }
+        public string UserPhone
+        {
+            get
+            {
+                return userphone;
+            }
+            set
+            {
+                if (Regex.IsMatch(value, @"^(\+[0-9]{9})$"))
+                {
+                    userphone = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть коректний номер телефону");
+                }
+            }
+        }
         public List<Order> Orders = new List<Order>();
 
         /// <summary>
