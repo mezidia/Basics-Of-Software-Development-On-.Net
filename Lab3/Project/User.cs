@@ -9,7 +9,25 @@ namespace Hotel
         private string usermail;
         private string userphone;
         private string password;
-        public string Login { get; set; }
+        private string login;
+        public string Login
+        {
+            get
+            {
+                return login;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    login = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непустий логін");
+                }
+            }
+        }
         public string Password
         {
             get
