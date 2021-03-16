@@ -12,6 +12,7 @@ namespace Hotel
         private string login;
         private int userid;
         private short usertype;
+        private string username;
         public string Login
         {
             get
@@ -89,7 +90,24 @@ namespace Hotel
             }
 
         }
-        public string UserName { get; set; }
+        public string UserName
+        {
+            get
+            {
+                return username;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    username = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непусте ім'я");
+                }
+            }
+        }
         public string UserMail
         {
             get
