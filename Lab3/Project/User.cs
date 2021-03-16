@@ -10,6 +10,7 @@ namespace Hotel
         private string userphone;
         private string password;
         private string login;
+        private int userid;
         public string Login
         {
             get
@@ -50,7 +51,24 @@ namespace Hotel
                 }
             }
         }
-        public int UserID { get; set; }
+        public int UserID
+        {
+            get
+            {
+                return userid;
+            }
+            set
+            {
+                if (value.ToString() != null)
+                {
+                    userid = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непустий ідентифікатор");
+                }
+            }
+        }
         public short UserType { get; set; }
         public string UserName { get; set; }
         public string UserMail
