@@ -6,14 +6,14 @@ namespace Hotel
 {
     public class Order
     {
-        public int OrderID { get; set; }
-        public decimal Sum { get; set; }
-        public Hotel Hotel { get; set; }
-        public User User { get; set; }
-        public string OrderNumber { get; set; }
-        public Room Room { get; set; }
-        public DateTime DateStart { get; set; }
-        public DateTime DateEnd { get; set; }
+        public int orderID { get; set; }
+        public decimal sum { get; set; }
+        public Hotel hotel { get; set; }
+        public User user { get; set; }
+        public string orderNumber { get; set; }
+        public Room room { get; set; }
+        public DateTime dateStart { get; set; }
+        public DateTime dateEnd { get; set; }
 
         public Order(int OrderID, decimal Sum,
             Hotel Hotel, User User, string OrderNumber,
