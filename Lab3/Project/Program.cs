@@ -15,7 +15,7 @@ namespace Hotel
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
 				"+0690696969");
 
-			RedHotel.CreateRoom(2, "Red", 1, RedHotel.HotelID, 200);
+			RedHotel.CreateRoom(2, 1, "Red", 1, RedHotel, true, "Big", 5, true);
 
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));
