@@ -7,107 +7,10 @@ namespace Hotel
     public class User
     {
         private string usermail;
-        private string userphone;
-        private string password;
-        private string login;
-        private int userid;
-        private short usertype;
-        private string username;
-        public string Login
-        {
-            get
-            {
-                return login;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    login = value;
-                }
-                else
-                {
-                    Console.WriteLine("Введіть непустий логін");
-                }
-            }
-        }
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-            set
-            {
-                var hasNumber = new Regex(@"[0-9]+");
-                var hasUpperChar = new Regex(@"[A-Z]+");
-                var hasMinimum8Chars = new Regex(@".{8,}");
-
-                if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value) && hasMinimum8Chars.IsMatch(value))
-                {
-                    password = value;
-                }
-                else
-                {
-                    Console.WriteLine("Введіть коректний парооль. Має бути мінімум одна цифра, одна велика буква, і довжина паролю має бути мінімум 8 символів.");
-                }
-            }
-        }
-        public int UserID
-        {
-            get
-            {
-                return userid;
-            }
-            set
-            {
-                if (value.ToString() != null)
-                {
-                    userid = value;
-                }
-                else
-                {
-                    Console.WriteLine("Введіть непустий ідентифікатор");
-                }
-            }
-        }
-        public short UserType
-        {
-            get
-            {
-                return usertype;
-            }
-            set
-            {
-                if (value.ToString() != null)
-                {
-                    usertype = value;
-                }
-                else
-                {
-                    Console.WriteLine("Введіть непустий тип");
-                }
-            }
-
-        }
-        public string UserName
-        {
-            get
-            {
-                return username;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    username = value;
-                }
-                else
-                {
-                    Console.WriteLine("Введіть непусте ім'я");
-                }
-            }
-        }
+        /// <summary>
+        /// We need this to get and set UserMail.
+        /// Also We check if value is a valid mail address
+        /// </summary>
         public string UserMail
         {
             get
@@ -127,6 +30,11 @@ namespace Hotel
                 }
             }
         }
+        private string userphone;
+        /// <summary>
+        /// We need this to get and set UserPhone.
+        /// Also We check if value matches the regular expression
+        /// </summary>
         public string UserPhone
         {
             get
@@ -142,6 +50,126 @@ namespace Hotel
                 else
                 {
                     Console.WriteLine("Введіть коректний номер телефону");
+                }
+            }
+        }
+        private string password;
+        /// <summary>
+        /// We need this to get and set Password.
+        /// Also We check if value has number, upper case and minimum 8 characters
+        /// </summary>
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                var hasNumber = new Regex(@"[0-9]+");
+                var hasUpperChar = new Regex(@"[A-Z]+");
+                var hasMinimum8Chars = new Regex(@".{8,}");
+
+                if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value) && hasMinimum8Chars.IsMatch(value))
+                {
+                    password = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть коректний пароль. Має бути мінімум одна цифра, одна велика буква, і довжина паролю має бути мінімум 8 символів.");
+                }
+            }
+        }
+        private string login;
+        /// <summary>
+        /// We need this to get and set Login.
+        /// Also We check if value isn't null
+        /// </summary>
+        public string Login
+        {
+            get
+            {
+                return login;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    login = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непорожній логін");
+                }
+            }
+        }
+        private int userid;
+        /// <summary>
+        /// We need this to get and set UserId.
+        /// Also We check if value isn't null
+        /// </summary>
+        public int UserID
+        {
+            get
+            {
+                return userid;
+            }
+            set
+            {
+                if (value.ToString() != null)
+                {
+                    userid = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непорожній ідентифікатор");
+                }
+            }
+        }
+        private short usertype;
+        /// <summary>
+        /// We need this to get and set UserType.
+        /// Also We check if value isn't null
+        /// </summary>
+        public short UserType
+        {
+            get
+            {
+                return usertype;
+            }
+            set
+            {
+                if (value.ToString() != null)
+                {
+                    usertype = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непорожній тип");
+                }
+            }
+
+        }
+        private string username;
+        /// <summary>
+        /// We need this to get and set UserName.
+        /// Also We check if value isn't null
+        /// </summary>
+        public string UserName
+        {
+            get
+            {
+                return username;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    username = value;
+                }
+                else
+                {
+                    Console.WriteLine("Введіть непорожн' ім'я");
                 }
             }
         }
