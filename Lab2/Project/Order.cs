@@ -58,7 +58,32 @@ namespace Hotel
 			}
 		}
 
-		private Hotel hotel { get; set; }
+		private Hotel hotel;
+
+		/// <summary>
+		/// We need this to get and set Hotel.
+		/// Also We check if value isn't null
+		/// </summary>
+		public Hotel Hotel
+		{
+			get
+			{
+				return hotel;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					hotel = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожній готель");
+				}
+			}
+		}
+
 		private User user { get; set; }
 		private string orderNumber { get; set; }
 		private Room room { get; set; }
