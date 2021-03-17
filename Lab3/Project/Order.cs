@@ -25,7 +25,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожній ID");
+					Console.WriteLine("Введiть непорожнiй ID");
 				}
 			}
 		}
@@ -51,7 +51,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожню суму");
+					Console.WriteLine("Введiть непорожню суму");
 				}
 			}
 		}
@@ -77,7 +77,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожній готель");
+					Console.WriteLine("Введiть непорожнiй готель");
 				}
 			}
 		}
@@ -103,7 +103,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожнього користувача");
+					Console.WriteLine("Введiть непорожнього користувача");
 				}
 			}
 		}
@@ -129,7 +129,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожній номер замовлення");
+					Console.WriteLine("Введiть непорожнiй номер замовлення");
 				}
 			}
 		}
@@ -155,7 +155,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожню кімнату");
+					Console.WriteLine("Введiть непорожню кiмнату");
 				}
 			}
 		}
@@ -177,11 +177,11 @@ namespace Hotel
 			{
 				if (value != null)
 				{
-					dateStart = value;
+					DateTime.TryParse(value.ToString(), out dateStart);
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожню дату початку");
+					Console.WriteLine("Введiть непорожню дату початку");
 				}
 			}
 		}
@@ -203,11 +203,11 @@ namespace Hotel
 			{
 				if (value != null)
 				{
-					dateEnd = value;
+					DateTime.TryParse(value.ToString(), out dateEnd);
 				}
 				else
 				{
-					Console.WriteLine("Введіть непорожню дату закінчення");
+					Console.WriteLine("Введiть непорожню дату закiнчення");
 				}
 			}
 		}
