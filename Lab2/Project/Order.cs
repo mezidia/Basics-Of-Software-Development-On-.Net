@@ -214,18 +214,18 @@ namespace Hotel
 			}
 		}
 
-		public Order(int OrderID, decimal Sum,
-			Hotel Hotel, User User, string OrderNumber,
-			Room Room, DateTime Start, DateTime End)
+		public Order(int orderID, decimal sum,
+			Hotel hotel, User user, string orderNumber,
+			Room room, DateTime start, DateTime end)
 		{
-			this.OrderID = OrderID;
-			this.Sum = Sum;
-			this.Hotel = Hotel;
-			this.User = User;
-			this.OrderNumber = OrderNumber;
-			this.Room = Room;
-			this.DateStart = Start;
-			this.DateEnd = End;
+			OrderID = orderID;
+			Sum = sum;
+			Hotel = hotel;
+			User = user;
+			OrderNumber = orderNumber;
+			Room = room;
+			DateStart = start;
+			DateEnd = end;
 
 			Console.WriteLine("Order is created");
 		}
