@@ -6,13 +6,112 @@ namespace Hotel
 {
 	public class Hotel
 	{
-		public int NumberOfStars;
-		public string Description;
-		public int RatingInt;
-		public int HotelID { get; set; }
-		public string HotelName { get; set; }
+		private int numberOfStars;
+		/// <summary>
+		/// We need this to get and set numberOfStars.
+		/// Also We check if value isn't null.
+		/// </summary>
+		public int NumberOfStars
+        {
+			get
+			{
+				return numberOfStars;
+			}
+			set
+			{
+				if (value.ToString() != null && value >= 1 && value <= 5) numberOfStars = value;
+				else Console.WriteLine("Введіть правильну кількість зірок.");
+			}
+        }
+
+        private string description;
+		/// <summary>
+		/// We need this to get and set description.
+		/// Also We check if value > 20.
+		/// </summary>
+		public string Description
+        {
+			get
+			{
+				return description;
+			}
+			set
+			{
+				if (value.Length() > 20) description = value;
+				else Console.WriteLine("Введіть більшу кількість символів");
+			}
+        }
+		private int rating;
+		/// <summary>
+		/// We need this to get and set rating.
+		/// Also We check if value isn't null.
+		/// </summary>
+		public int Rating
+        {
+			get
+			{
+				return rating;
+			}
+			set
+            {
+				if (value.ToString() != null) rating = value;
+				else Console.WriteLine("Введіть не пустий ідентифікатор рейтингу");
+            }
+        }
+
+		private int hotelID;
+		/// <summary>
+		/// We need this to get and set hotelID.
+		/// Also We check if value isn't null.
+		/// </summary>
+		public int HotelID
+		{
+			get
+			{
+				return hotelID;
+			}
+			set
+			{
+				if (value.ToString() != null) hotelID = value;
+				else Console.WriteLine("Введіть не пустий ідентифікатор готелю.");
+			}
+		}
+		private string hotelName;
+		/// <summary>
+		/// We need this to get and set hotelName.
+		/// Also We check if value < 15.
+		/// </summary>
+		public string HotelName 
+		{ 
+			get
+            {
+				return hotelname;
+            }
+			set
+            {
+				if (value.Length() < 15) hotelName = value;
+				else Console.WriteLine("Забагато символів для імені готелю.");
+            }
+		}
+		private string adress;
+		/// <summary>
+		/// We need this to get and set hotelName.
+		/// Also We check if value < 15.
+		/// </summary>
+		public string Adress 
+		{
+			get 
+			{
+				return adress;
+			}
+			set
+            {
+				if (value.Length() < 1) adress = value;
+				else Console.WriteLine("Невірна адреса");
+            }
+		}
+
 		public City City { get; set; }
-		public string Adress { get; set; }
 		public List<Room> Rooms = new List<Room>();
 		public List<Order> Orders = new List<Order>();
 
