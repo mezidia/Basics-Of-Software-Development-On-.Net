@@ -136,7 +136,32 @@ namespace Hotel
 			}
 		}
 
-		private Room room { get; set; }
+		private Room room;
+
+		/// <summary>
+		/// We need this to get and set Order.
+		/// Also We check if value isn't null
+		/// </summary>
+		public Room Room
+		{
+			get
+			{
+				return room;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					room = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожню кімнату");
+				}
+			}
+		}
+
 		private DateTime dateStart { get; set; }
 		private DateTime dateEnd { get; set; }
 
