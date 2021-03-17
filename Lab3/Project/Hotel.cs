@@ -23,7 +23,7 @@ namespace Hotel
 				{
 					numberOfStars = value;
 				}
-				else Console.WriteLine("Введіть правильну кількість зірок.");
+				else Console.WriteLine("Введiть правильну кiлькiсть зiрок");
 			}
 		}
 
@@ -41,8 +41,11 @@ namespace Hotel
 			}
 			set
 			{
-				if (value.Length > 20) description = value;
-				else Console.WriteLine("Введіть більшу кількість символів");
+				if (value.Length > 20)
+				{
+					description = value;
+				}
+				else Console.WriteLine("Введiть бiльшу кiлькiсть символiв");
 			}
 		}
 
@@ -61,7 +64,7 @@ namespace Hotel
 			set
 			{
 				if (value.ToString() != null) rating = value;
-				else Console.WriteLine("Введіть не пустий ідентифікатор рейтингу");
+				else Console.WriteLine("Введiть не пустий iдентифiкатор рейтингу");
 			}
 		}
 
@@ -80,7 +83,7 @@ namespace Hotel
 			set
 			{
 				if (value.ToString() != null) hotelID = value;
-				else Console.WriteLine("Введіть не пустий ідентифікатор готелю.");
+				else Console.WriteLine("Введiть не пустий iдентифiкатор готелю");
 			}
 		}
 
@@ -99,7 +102,7 @@ namespace Hotel
 			set
 			{
 				if (value.Length < 15) hotelName = value;
-				else Console.WriteLine("Забагато символів для імені готелю.");
+				else Console.WriteLine("Забагато символiв для iменi готелю");
 			}
 		}
 
@@ -118,7 +121,7 @@ namespace Hotel
 			set
 			{
 				if (value.Length < 1) adress = value;
-				else Console.WriteLine("Невірна адреса");
+				else Console.WriteLine("Невiрна адреса");
 			}
 		}
 
@@ -138,7 +141,7 @@ namespace Hotel
 			Room FirstRoom = new Room(1, 1, "First", 1,
 				this, true, "Big", 5, true);
 			Rooms.Add(FirstRoom);
-			Console.WriteLine("Hotel is Created");
+			Console.WriteLine($"Готель {hotelName} створено");
 		}
 
 		public void CreateRoom(int roomID, int roomNumber,

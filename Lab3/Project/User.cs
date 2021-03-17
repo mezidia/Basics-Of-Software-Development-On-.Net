@@ -27,7 +27,7 @@ namespace Hotel
                 }
                 catch
                 {
-                    Console.WriteLine("Введіть дійсну електронну пошту");
+                    Console.WriteLine("Введiть дiйсну електронну пошту");
                 }
             }
         }
@@ -52,7 +52,7 @@ namespace Hotel
                 }
                 else
                 {
-                    Console.WriteLine("Введіть коректний номер телефону");
+                    Console.WriteLine("Введiть коректний номер телефону");
                 }
             }
         }
@@ -75,13 +75,16 @@ namespace Hotel
                 var hasUpperChar = new Regex(@"[A-Z]+");
                 var hasMinimum8Chars = new Regex(@".{8,}");
 
-                if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value) && hasMinimum8Chars.IsMatch(value))
+                if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value)
+                    && hasMinimum8Chars.IsMatch(value))
                 {
                     password = value;
                 }
                 else
                 {
-                    Console.WriteLine("Введіть коректний пароль. Має бути мінімум одна цифра, одна велика буква, і довжина паролю має бути мінімум 8 символів.");
+                    Console.WriteLine("Введiть коректний пароль. " +
+                        "Має бути мiнiмум одна цифра, одна велика " +
+                        "буква, i довжина паролю має бути мiнiмум 8 символiв.");
                 }
             }
         }
@@ -106,7 +109,7 @@ namespace Hotel
                 }
                 else
                 {
-                    Console.WriteLine("Введіть непорожній логін");
+                    Console.WriteLine("Введiть непорожнiй логiн");
                 }
             }
         }
@@ -125,13 +128,13 @@ namespace Hotel
             }
             set
             {
-                if (value.ToString() != null)
+                if (value.ToString() != null && value > 0)
                 {
                     userID = value;
                 }
                 else
                 {
-                    Console.WriteLine("Введіть непорожній ідентифікатор");
+                    Console.WriteLine("Введiть непорожнiй iдентифiкатор");
                 }
             }
         }
@@ -156,7 +159,7 @@ namespace Hotel
                 }
                 else
                 {
-                    Console.WriteLine("Введіть непорожній тип");
+                    Console.WriteLine("Введiть непорожнiй тип");
                 }
             }
 
@@ -182,7 +185,7 @@ namespace Hotel
                 }
                 else
                 {
-                    Console.WriteLine("Введіть непорожн' ім'я");
+                    Console.WriteLine("Введiть непорожне iм'я");
                 }
             }
         }
@@ -194,7 +197,7 @@ namespace Hotel
         /// </summary>
         public User()
         {
-            Console.WriteLine("Default User is created");
+            Console.WriteLine("Користувача за замовченням створено");
         }
 
         /// <summary>
@@ -209,7 +212,7 @@ namespace Hotel
             UserMail = user.UserMail;
             UserPhone = user.UserPhone;
 
-            Console.WriteLine("Copy User is created");
+            Console.WriteLine($"Копiю користувача {UserName} створено");
         }
 
         /// <summary>
@@ -229,7 +232,7 @@ namespace Hotel
             UserMail = userMail;
             UserPhone = userPhone;
 
-            Console.WriteLine("User is created");
+            Console.WriteLine($"Користувач {UserName} створений");
         }
 
         public void SearchForInfo() { }

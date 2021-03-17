@@ -225,7 +225,8 @@ namespace Hotel
 			DateStart = start;
 			DateEnd = end;
 
-			Console.WriteLine("Order is created");
+			Console.WriteLine($"Бронювання {OrderNumber} користувача" +
+				$"{User} готово");
 		}
 	}
 }

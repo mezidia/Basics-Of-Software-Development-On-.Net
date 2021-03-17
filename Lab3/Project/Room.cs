@@ -24,7 +24,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("ID має бути більшим від 0");
+					Console.WriteLine("ID має бути бiльшим вiд 0");
 				}
 			}
 		}
@@ -49,7 +49,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Номер кімнати має бути більшим від 0");
+					Console.WriteLine("Номер кiмнати має бути бiльшим від 0");
 				}
 			}
 		}
@@ -75,7 +75,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Назва кімнати не повинна бути пустою");
+					Console.WriteLine("Назва кiмнати не повинна бути пустою");
 				}
 			}
 		}
@@ -100,7 +100,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Розмір кімнати має бути більшим від 0");
+					Console.WriteLine("Розмiр кiмнати має бути бiльшим вiд 0");
 				}
 			}
 		}
@@ -125,7 +125,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Кімната має належати до готелю");
+					Console.WriteLine("Кiмната має належати до готелю");
 				}
 			}
 		}
@@ -150,7 +150,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть значення про наявність телевізора");
+					Console.WriteLine("Введiть значення про наявнiсть телевiзора");
 				}
 			}
 		}
@@ -175,7 +175,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Задайте тип кімнати");
+					Console.WriteLine("Задайте тип кiмнати");
 				}
 			}
 		}
@@ -199,7 +199,8 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Кількість спальних місць має бути більша від 0");
+					Console.WriteLine("Кiлькість спальних мiсць " +
+						"має бути бiльша вiд 0");
 				}
 			}
 		}
@@ -224,7 +225,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введіть значення про наявність балкону");
+					Console.WriteLine("Введiть значення про наявнiсть балкону");
 				}
 			}
 		}
@@ -241,7 +242,9 @@ namespace Hotel
 		/// <param name="roomType"></param>
 		/// <param name="numberOfBeds"></param>
 		/// <param name="balcony"></param>
-		public Room(int roomID, int roomNumber, string roomName, int roomSize, Hotel hotel, bool? tv, string roomType, int numberOfBeds, bool? balcony)
+		public Room(int roomID, int roomNumber, string roomName,
+			int roomSize, Hotel hotel, bool? tv, string roomType,
+			int numberOfBeds, bool? balcony)
 		{
 			RoomID = roomID;
 			RoomNumber = roomNumber;
@@ -253,7 +256,7 @@ namespace Hotel
 			NumberOfBeds = numberOfBeds;
 			Balcony = balcony;
 
-			Console.WriteLine("Додано кімнату");
+			Console.WriteLine("Додано кiмнату");
 		}
 
 		/// <summary>
@@ -272,7 +275,7 @@ namespace Hotel
 			NumberOfBeds = room.NumberOfBeds;
 			Balcony = room.Balcony;
 
-			Console.WriteLine("Додано копію кімнати");
+			Console.WriteLine("Додано копiю кiмнати");
 		}
 	}
 }
