@@ -25,15 +25,16 @@ namespace Hotel
 			this.Description = Description;
 
 			// Temp for Composition
-			Room FirstRoom = new Room(1, "First", 1, HotelID, 100);
+			Room FirstRoom = new Room(1, 1, "First", 1, this, true, "Big", 5, true);
 			Rooms.Add(FirstRoom);
 			Console.WriteLine("Hotel is Created");
 		}
 
-		public void CreateRoom(int ID, string name,
-			int size, int hotelID, decimal price)
+		public void CreateRoom(int roomID, int roomNumber, string roomName, int roomSize, Hotel hotel, bool? tv,
+			string roomType, int numberOfBeds, bool? balcony)
+
 		{
-			Room room = new Room(ID, name, size, hotelID, price);
+			Room room = new Room(roomID, roomNumber, roomName, roomSize, hotel, tv, roomType, numberOfBeds, balcony);
 			Rooms.Add(room);
 		}
 
