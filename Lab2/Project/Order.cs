@@ -162,8 +162,57 @@ namespace Hotel
 			}
 		}
 
-		private DateTime dateStart { get; set; }
-		private DateTime dateEnd { get; set; }
+		private DateTime dateStart;
+
+		/// <summary>
+		/// We need this to get and set Order.
+		/// Also We check if value isn't null
+		/// </summary>
+		public DateTime DateStart
+		{
+			get
+			{
+				return dateStart;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					dateStart = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожню дату початку");
+				}
+			}
+		}
+
+		private DateTime dateEnd;
+
+		/// <summary>
+		/// We need this to get and set Order.
+		/// Also We check if value isn't null
+		/// </summary>
+		public DateTime DateEnd
+		{
+			get
+			{
+				return dateEnd;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					dateEnd = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожню дату закінчення");
+				}
+			}
+		}
 
 		public Order(int OrderID, decimal Sum,
 			Hotel Hotel, User User, string OrderNumber,
