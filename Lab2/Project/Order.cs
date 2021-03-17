@@ -84,8 +84,58 @@ namespace Hotel
 			}
 		}
 
-		private User user { get; set; }
-		private string orderNumber { get; set; }
+		private User user;
+
+		/// <summary>
+		/// We need this to get and set User.
+		/// Also We check if value isn't null
+		/// </summary>
+		public User User
+		{
+			get
+			{
+				return user;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					user = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожнього користувача");
+				}
+			}
+		}
+
+		private string orderNumber;
+
+		/// <summary>
+		/// We need this to get and set OrderNumber.
+		/// Also We check if value isn't null
+		/// </summary>
+		public string OrderNumber
+		{
+			get
+			{
+				return orderNumber;
+			}
+
+			set
+			{
+				if (value != null)
+				{
+					orderNumber = value;
+				}
+				else
+				{
+					Console.WriteLine("Введіть непорожній номер замовлення");
+				}
+			}
+		}
+
 		private Room room { get; set; }
 		private DateTime dateStart { get; set; }
 		private DateTime dateEnd { get; set; }
