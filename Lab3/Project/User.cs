@@ -46,7 +46,7 @@ namespace Hotel
             }
             set
             {
-                if (Regex.IsMatch(value, @"^(\+[0-9]{9})$"))
+                if (value != null && Regex.IsMatch(value, @"^(\+[0-9]{9})$"))
                 {
                     userPhone = value;
                 }

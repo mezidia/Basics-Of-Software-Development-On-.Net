@@ -13,7 +13,7 @@ namespace Hotel
 			};
 
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
-				"+0690696969");
+				"+069069696");
 
 			RedHotel.CreateRoom(2, 1, "Red", 1, RedHotel, true, "Big", 5, true);
 
