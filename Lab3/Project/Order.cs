@@ -123,7 +123,7 @@ namespace Hotel
 
 			set
 			{
-				if (value != null)
+				if (value != null && value.Length != 0)
 				{
 					orderNumber = value;
 				}
