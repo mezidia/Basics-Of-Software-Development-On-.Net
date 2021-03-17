@@ -120,8 +120,14 @@ namespace Hotel
 			}
 			set
 			{
-				if (value.Length < 1) adress = value;
-				else Console.WriteLine("Невiрна адреса");
+				if (value.Length > 1)
+				{
+					adress = value;
+				}
+				else
+				{
+					Console.WriteLine("Невiрна адреса");
+				}
 			}
 		}
 
@@ -147,7 +153,6 @@ namespace Hotel
 		public void CreateRoom(int roomID, int roomNumber,
 			string roomName, int roomSize, Hotel hotel, bool? tv,
 			string roomType, int numberOfBeds, bool? balcony)
-
 		{
 			Room room = new Room(roomID, roomNumber, roomName,
 				roomSize, hotel, tv, roomType, numberOfBeds, balcony);

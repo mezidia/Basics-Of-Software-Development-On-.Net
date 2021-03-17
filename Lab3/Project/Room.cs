@@ -256,7 +256,8 @@ namespace Hotel
 			NumberOfBeds = numberOfBeds;
 			Balcony = balcony;
 
-			Console.WriteLine("Додано кiмнату");
+			Console.WriteLine($"Додано кiмнату номер {RoomNumber} готелю " +
+				$"{Hotel.HotelName}");
 		}
 
 		/// <summary>

@@ -7,7 +7,9 @@ namespace Hotel
 		{
 			Console.WriteLine("Третя лабораторна робота\n");
 
-			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка", "Something")
+			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
+				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
+				"подобається")
 			{
 				City = City.Kyiv
 			};
@@ -15,7 +17,7 @@ namespace Hotel
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
 				"+069069696");
 
-			RedHotel.CreateRoom(2, 1, "Red", 1, RedHotel, true, "Big", 5, true);
+			RedHotel.CreateRoom(2, 2, "Red", 1, RedHotel, true, "Big", 5, true);
 
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));

@@ -19,7 +19,7 @@ namespace Hotel
 
 			set
 			{
-				if (value.ToString() != null && value < 0)
+				if (value.ToString() != null && value > 0)
 				{
 					orderID = value;
 				}
@@ -45,7 +45,7 @@ namespace Hotel
 
 			set
 			{
-				if (value.ToString() != null && value < 0)
+				if (value.ToString() != null && value > 0)
 				{
 					sum = value;
 				}
@@ -225,7 +225,7 @@ namespace Hotel
 			DateStart = start;
 			DateEnd = end;
 
-			Console.WriteLine($"Бронювання користувача " +
+			Console.WriteLine($"Бронювання користувача номер {OrderNumber} " +
 				$"{User.UserName} готово");
 		}
 	}
