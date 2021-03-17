@@ -162,7 +162,6 @@ namespace Hotel
                     Console.WriteLine("Введiть непорожнiй тип");
                 }
             }
-
         }
 
         private string userName;

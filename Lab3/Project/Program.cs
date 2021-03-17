@@ -5,7 +5,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			Console.WriteLine("Second Lab has started\n");
+			Console.WriteLine("Третя лабораторна робота\n");
 
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка", "Something")
 			{
@@ -20,13 +20,18 @@ namespace Hotel
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));
 
-			Order order = new Order(2, 300, RedHotel, AdminV, "2", RedHotel.Rooms[1],
-				DateTime.Now, DateTime.Now.AddDays(7));
-
-			order.DateStart = DateTime.Parse("22.01.2002");
+			Order order = new Order(2, 300, RedHotel, AdminV,
+				"2", RedHotel.Rooms[1],
+				DateTime.Now, DateTime.Now.AddDays(7))
+			{
+				DateStart = DateTime.Parse("22.01.2002")
+			};
 
 			// Constructor by default
-			User GreatValeera = new User();
+			User GreatValeera = new User
+			{
+				UserName = "GreatValeera"
+			};
 
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
