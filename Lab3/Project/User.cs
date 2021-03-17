@@ -6,7 +6,8 @@ namespace Hotel
 {
     public class User
     {
-        private string usermail;
+        private string userMail;
+
         /// <summary>
         /// We need this to get and set UserMail.
         /// Also We check if value is a valid mail address
@@ -15,14 +16,14 @@ namespace Hotel
         {
             get
             {
-                return usermail;
+                return userMail;
             }
             set
             {
                 try
                 {
                     var address = new System.Net.Mail.MailAddress(value);
-                    usermail = address.Address;
+                    userMail = address.Address;
                 }
                 catch
                 {
@@ -30,7 +31,9 @@ namespace Hotel
                 }
             }
         }
-        private string userphone;
+
+        private string userPhone;
+
         /// <summary>
         /// We need this to get and set UserPhone.
         /// Also We check if value matches the regular expression
@@ -39,13 +42,13 @@ namespace Hotel
         {
             get
             {
-                return userphone;
+                return userPhone;
             }
             set
             {
                 if (Regex.IsMatch(value, @"^(\+[0-9]{9})$"))
                 {
-                    userphone = value;
+                    userPhone = value;
                 }
                 else
                 {
@@ -53,7 +56,9 @@ namespace Hotel
                 }
             }
         }
+
         private string password;
+
         /// <summary>
         /// We need this to get and set Password.
         /// Also We check if value has number, upper case and minimum 8 characters
@@ -80,7 +85,9 @@ namespace Hotel
                 }
             }
         }
+
         private string login;
+
         /// <summary>
         /// We need this to get and set Login.
         /// Also We check if value isn't null
@@ -103,7 +110,9 @@ namespace Hotel
                 }
             }
         }
-        private int userid;
+
+        private int userID;
+
         /// <summary>
         /// We need this to get and set UserId.
         /// Also We check if value isn't null
@@ -112,13 +121,13 @@ namespace Hotel
         {
             get
             {
-                return userid;
+                return userID;
             }
             set
             {
                 if (value.ToString() != null)
                 {
-                    userid = value;
+                    userID = value;
                 }
                 else
                 {
@@ -126,7 +135,9 @@ namespace Hotel
                 }
             }
         }
-        private short usertype;
+
+        private short userType;
+
         /// <summary>
         /// We need this to get and set UserType.
         /// Also We check if value isn't null
@@ -135,13 +146,13 @@ namespace Hotel
         {
             get
             {
-                return usertype;
+                return userType;
             }
             set
             {
                 if (value.ToString() != null)
                 {
-                    usertype = value;
+                    userType = value;
                 }
                 else
                 {
@@ -150,7 +161,9 @@ namespace Hotel
             }
 
         }
-        private string username;
+
+        private string userName;
+
         /// <summary>
         /// We need this to get and set UserName.
         /// Also We check if value isn't null
@@ -159,13 +172,13 @@ namespace Hotel
         {
             get
             {
-                return username;
+                return userName;
             }
             set
             {
                 if (value != null)
                 {
-                    username = value;
+                    userName = value;
                 }
                 else
                 {
@@ -173,6 +186,7 @@ namespace Hotel
                 }
             }
         }
+
         public List<Order> Orders = new List<Order>();
 
         /// <summary>
@@ -189,8 +203,8 @@ namespace Hotel
         /// <param name="tech"></param>
         public User(User user)
         {
-            UserID = user.UserID;
-            UserType = user.UserType;
+            userID = user.UserID;
+            userType = user.UserType;
             UserName = user.UserName;
             UserMail = user.UserMail;
             UserPhone = user.UserPhone;
@@ -206,14 +220,14 @@ namespace Hotel
         /// <param name="UserName"></param>
         /// <param name="UserMail"></param>
         /// <param name="UserPhone"></param>
-        public User(int UserID, short UserType,
-                    string UserName, string UserMail, string UserPhone)
+        public User(int userID, short userType,
+                    string userName, string userMail, string userPhone)
         {
-            this.UserID = UserID;
-            this.UserType = UserType;
-            this.UserName = UserName;
-            this.UserMail = UserMail;
-            this.UserPhone = UserPhone;
+            UserID = userID;
+            UserType = userType;
+            UserName = userName;
+            UserMail = userMail;
+            UserPhone = userPhone;
 
             Console.WriteLine("User is created");
         }
