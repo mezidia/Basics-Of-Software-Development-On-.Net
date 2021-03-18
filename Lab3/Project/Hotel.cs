@@ -106,23 +106,23 @@ namespace Hotel
 			}
 		}
 
-		private string adress;
+		private string address;
 
 		/// <summary>
 		/// We need this to get and set hotelName.
 		/// Also We check if value < 15.
 		/// </summary>
-		public string Adress
+		public string Address
 		{
 			get
 			{
-				return adress;
+				return address;
 			}
 			set
 			{
 				if (value.Length > 1)
 				{
-					adress = value;
+					address = value;
 				}
 				else
 				{
@@ -136,11 +136,11 @@ namespace Hotel
 		public List<Order> Orders = new List<Order>();
 
 		public Hotel(int hotelID, string hotelName,
-			string adress, string description)
+			string address, string description)
 		{
 			HotelID = hotelID;
 			HotelName = hotelName;
-			Adress = adress;
+			Address = address;
 			Description = description;
 
 			// Temp for Composition
