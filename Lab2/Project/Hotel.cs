@@ -6,27 +6,27 @@ namespace Hotel
 {
 	public class Hotel
 	{
-		public int NumberOfStars;
-		public string Description;
-		public int RatingInt;
-		public int HotelID { get; set; }
-		public string HotelName { get; set; }
-		public City City { get; set; }
-		public string Adress { get; set; }
-		public List<Room> Rooms = new List<Room>();
-		public List<Order> Orders = new List<Order>();
+		public int numberOfStars;
+		public string description;
+		public int ratingInt;
+		public int hotelID;
+		public string hotelName;
+		public City city;
+		public string address;
+		public List<Room> rooms = new List<Room>();
+		public List<Order> orders = new List<Order>();
 
 		public Hotel(int HotelID, string HotelName,
 			string Adress, string Description)
 		{
-			this.HotelID = HotelID;
-			this.HotelName = HotelName;
-			this.Adress = Adress;
-			this.Description = Description;
+			hotelID = HotelID;
+			hotelName = HotelName;
+			address = Adress;
+			description = Description;
 
 			// Temp for Composition
 			Room FirstRoom = new Room(1, "First", 1, HotelID, 100);
-			Rooms.Add(FirstRoom);
+			rooms.Add(FirstRoom);
 			Console.WriteLine("Hotel is Created");
 		}
 
@@ -34,7 +34,7 @@ namespace Hotel
 			int size, int hotelID, decimal price)
 		{
 			Room room = new Room(ID, name, size, hotelID, price);
-			Rooms.Add(room);
+			rooms.Add(room);
 		}
 
 		public void CreateOrder(int OrderID, decimal Sum,
@@ -43,8 +43,8 @@ namespace Hotel
 		{
 			Order order = new Order(OrderID, Sum, Hotel,
 				User, OrderNumber, Room, Start, End);
-			User.Orders.Add(order);
-			Hotel.Orders.Add(order);
+			User.orders.Add(order);
+			Hotel.orders.Add(order);
 		}
 	}
 }
