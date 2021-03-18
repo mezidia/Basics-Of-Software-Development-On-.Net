@@ -6,14 +6,14 @@ namespace Hotel
 {
 	public class User
 	{
-		public string Login { get; set; }
-		public string Password { get; set; }
-		public int UserID { get; set; }
-		public short UserType { get; set; }
-		public string UserName { get; set; }
-		public string UserMail { get; set; }
-		public string UserPhone { get; set; }
-		public List<Order> Orders = new List<Order>();
+		public string login;
+		public string password;
+		public int userID;
+		public short userType;
+		public string userName;
+		public string userMail;
+		public string userPhone;
+		public List<Order> orders = new List<Order>();
 
 		/// <summary>
 		/// Constructor by default
@@ -29,11 +29,11 @@ namespace Hotel
 		/// <param name="tech"></param>
 		public User(User user)
 		{
-			UserID = user.UserID;
-			UserType = user.UserType;
-			UserName = user.UserName;
-			UserMail = user.UserMail;
-			UserPhone = user.UserPhone;
+			userID = user.userID;
+			userType = user.userType;
+			userName = user.userName;
+			userMail = user.userMail;
+			userPhone = user.userPhone;
 
 			Console.WriteLine("Copy User is created");
 		}
@@ -49,11 +49,11 @@ namespace Hotel
 		public User(int UserID, short UserType,
 		            string UserName, string UserMail, string UserPhone)
 		{
-			this.UserID = UserID;
-			this.UserType = UserType;
-			this.UserName = UserName;
-			this.UserMail = UserMail;
-			this.UserPhone = UserPhone;
+			userID = UserID;
+			userType = UserType;
+			userName = UserName;
+			userMail = UserMail;
+			userPhone = UserPhone;
 
 			Console.WriteLine("User is created");
 		}

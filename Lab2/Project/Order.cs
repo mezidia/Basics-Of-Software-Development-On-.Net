@@ -6,27 +6,27 @@ namespace Hotel
 {
     public class Order
     {
-        public int OrderID { get; set; }
-        public decimal Sum { get; set; }
-        public Hotel Hotel { get; set; }
-        public User User { get; set; }
-        public string OrderNumber { get; set; }
-        public Room Room { get; set; }
-        public DateTime DateStart { get; set; }
-        public DateTime DateEnd { get; set; }
+        public int orderID;
+        public decimal sum;
+        public Hotel hotel;
+        public User user;
+        public string orderNumber;
+        public Room room;
+        public DateTime dateStart;
+        public DateTime dateEnd;
 
         public Order(int OrderID, decimal Sum,
             Hotel Hotel, User User, string OrderNumber,
             Room Room, DateTime Start, DateTime End)
         {
-            this.OrderID = OrderID;
-            this.Sum = Sum;
-            this.Hotel = Hotel;
-            this.User = User;
-            this.OrderNumber = OrderNumber;
-            this.Room = Room;
-            this.DateStart = Start;
-            this.DateEnd = End;
+            orderID = OrderID;
+            sum = Sum;
+            hotel = Hotel;
+            user = User;
+            orderNumber = OrderNumber;
+            room = Room;
+            dateStart = Start;
+            dateEnd = End;
 
             Console.WriteLine("Order is created");
         }
