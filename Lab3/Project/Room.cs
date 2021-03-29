@@ -179,6 +179,7 @@ namespace Hotel
 				}
 			}
 		}
+
 		private int numberOfBeds;
 
 		/// <summary>
