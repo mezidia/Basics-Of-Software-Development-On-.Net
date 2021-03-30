@@ -279,5 +279,49 @@ namespace Hotel
 
 			Console.WriteLine("Додано копiю кiмнати");
 		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Room"/> class.
+		/// </summary>
+		public Room() { }
+
+		public static Room operator +(Room r1, Room r2)
+		{
+			int tempID = r1.RoomID;
+
+			r1.Hotel.Rooms.RemoveAt(r1.RoomID);
+			r2.Hotel.Rooms.RemoveAt(r2.RoomID);
+
+			int id = tempID;
+
+			int number = r1.RoomNumber;
+			string name = r1.RoomName;
+			int size = r1.RoomSize + r2.RoomSize;
+			Hotel hotel = r1.Hotel;
+			bool? tv = r1.TV | r2.TV;
+			string type = r1.RoomType;
+			int beds = r1.NumberOfBeds + r2.NumberOfBeds;
+			bool? balcony = r1.Balcony | r2.Balcony;
+
+			Room newRoom = new Room(id, number, name,
+				size, hotel, tv, type, beds, balcony)
+			{
+				RoomID = id,
+				RoomNumber = number,
+				RoomName = name,
+				RoomSize = size,
+				Hotel = hotel,
+				TV = tv,
+				RoomType = type,
+				NumberOfBeds = beds,
+				Balcony = balcony
+			};
+
+
+
+			r1.Hotel.Rooms.Add(newRoom);
+
+			return newRoom;
+		}
 	}
 }

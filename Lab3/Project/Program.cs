@@ -38,6 +38,26 @@ namespace Hotel
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
 
+			#region overloading
+
+			Console.WriteLine("Ім'я першої кімнати = "
+				+ RedHotel.Rooms[0].RoomName);
+			Console.WriteLine("Ім'я другої кімнати = "
+				+ RedHotel.Rooms[1].RoomName);
+
+			Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
+
+			Console.WriteLine("Ім'я нової першої кімнати = "
+				+ RedHotel.Rooms[0].RoomName);
+
+			Console.WriteLine($"Size of the first room is " +
+				$"{RedHotel.Rooms[0].RoomSize},\nSize of the" +
+				$" second room is {RedHotel.Rooms[1].RoomSize},\n" +
+				$"And Size of the new combined room is " +
+				$"{newRoom.RoomSize}");
+
+			#endregion overloading
+
 			Console.WriteLine("\nFirst Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");
 			Console.ReadLine();
