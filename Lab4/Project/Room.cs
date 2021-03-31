@@ -231,6 +231,38 @@ namespace Hotel
 			}
 		}
 
+		// Перевантажуємо логічний оператор &
+		public static bool operator &(Room room1, Room room2)
+		{
+			if (room1.TV == true && room2.TV == true)
+				return true;
+			return false;
+		}
+
+		// Перевантажуємо логічний оператор !
+		public static bool operator !(Room room)
+		{
+			if (room.balcony == true)
+				return true;
+			return false;
+		}
+
+		// Перевантажуємо оператор true
+		public static bool operator true(Room room)
+		{
+			if (room.TV == true)
+				return true;
+			return false;
+		}
+
+		// Перевантажуємо оператор false
+		public static bool operator false(Room room)
+		{
+			if (room.TV == false)
+				return true;
+			return false;
+		}
+
 		/// <summary>
 		/// Initialization Constructor
 		/// </summary>
@@ -329,6 +361,30 @@ namespace Hotel
 			r2.Hotel.DeleteRoom(ref r2);
 
 			return newRoom;
+
+      /// Implements the operator ++.
+		/// </summary>
+		/// <param name="r">room.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static Room operator ++(Room r)
+		{
+			r.NumberOfBeds++;
+			return r;
+		}
+
+		/// <summary>
+		/// Implements the operator --.
+		/// </summary>
+		/// <param name="r">room.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static Room operator --(Room r)
+		{
+			r.NumberOfBeds--;
+			return r;
 		}
 	}
 }

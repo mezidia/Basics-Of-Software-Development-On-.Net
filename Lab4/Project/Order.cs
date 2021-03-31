@@ -212,6 +212,36 @@ namespace Hotel
 			}
 		}
 
+		// Перевантажуємо логічний оператор !
+		public static bool operator !(Order order)
+		{
+			DateTime now = DateTime.Now;
+			System.TimeSpan difference = order.DateEnd.Subtract(now);
+			if (difference.TotalDays > 0)
+				return false;
+			return true;
+		}
+
+		// Перевантажуємо оператор true
+		public static bool operator true(Order order)
+		{
+			DateTime now = DateTime.Now;
+			System.TimeSpan difference = order.DateEnd.Subtract(now);
+			if (difference.TotalDays > 0)
+				return true;
+			return false;
+		}
+
+		// Перевантажуємо оператор false
+		public static bool operator false(Order order)
+		{
+			DateTime now = DateTime.Now;
+			System.TimeSpan difference = order.DateEnd.Subtract(now);
+			if (difference.TotalDays > 0)
+				return false;
+			return true;
+		}
+
 		public Order(int orderID, decimal sum,
 			Hotel hotel, User user, string orderNumber,
 			Room room, DateTime start, DateTime end)
