@@ -11,7 +11,7 @@ namespace Hotel
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
 				"подобається")
 			{
-				City = City.Kyiv, Rating = 32
+				City = City.Kyiv, Rating = 32, NumberOfStars = 3
 			};
 
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
@@ -39,6 +39,9 @@ namespace Hotel
 			User GreaterValeera = new User(GreatValeera);
 
 			#region overloading
+        
+      Console.WriteLine("\nПеревантаження логічних операторів:\n");
+        
 			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
 			RedHotel.Rating = -23;
 			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
@@ -56,6 +59,15 @@ namespace Hotel
             {
 				Console.WriteLine("Користувачi мають пошту та телефон");
 			}
+
+			Console.WriteLine("\nПеревантаження унарних операторів:\n");
+      
+			Console.WriteLine($"Кiлькiсть зiрок: {RedHotel.NumberOfStars}");
+			++RedHotel;
+			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення: {RedHotel.NumberOfStars}");
+			Console.WriteLine($"Кiлькiсть лiжок: {RedHotel.Rooms[0].NumberOfBeds}");
+			++RedHotel.Rooms[0];
+			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення: {RedHotel.Rooms[0].NumberOfBeds}");
 
 			#endregion overloading
 
