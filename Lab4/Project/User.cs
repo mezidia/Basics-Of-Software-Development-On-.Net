@@ -191,6 +191,39 @@ namespace Hotel
 
         public List<Order> Orders = new List<Order>();
 
+        // Перевантажуємо логічний оператор &
+        public static bool operator &(User user1, User user2)
+        {
+            if (string.IsNullOrEmpty(user1.UserMail) == true && string.IsNullOrEmpty(user1.UserPhone) == true &&
+                string.IsNullOrEmpty(user2.UserMail) == true && string.IsNullOrEmpty(user2.UserPhone) == true)
+                return false;
+            return true;
+        }
+
+        // Перевантажуємо логічний оператор !
+        public static bool operator !(User user)
+        {
+            if (string.IsNullOrEmpty(user.UserMail) == true && string.IsNullOrEmpty(user.UserPhone) == true)
+                return true;
+            return false;
+        }
+
+        // Перевантажуємо оператор true
+        public static bool operator true(User user)
+        {
+            if (string.IsNullOrEmpty(user.UserMail) == true && string.IsNullOrEmpty(user.UserPhone) == true)
+                return false;
+            return true;
+        }
+
+        // Перевантажуємо оператор false
+        public static bool operator false(User user)
+        {
+            if (string.IsNullOrEmpty(user.UserMail) == true && string.IsNullOrEmpty(user.UserPhone) == true)
+                return true;
+            return false;
+        }
+
         /// <summary>
         /// Constructor by default
         /// </summary>

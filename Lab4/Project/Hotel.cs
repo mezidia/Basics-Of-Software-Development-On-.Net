@@ -131,6 +131,31 @@ namespace Hotel
 			}
 		}
 
+		// Перевантажуємо логічний оператор !
+		public static bool operator !(Hotel hotel)
+		{
+			if (hotel.Rating > 0)
+				return false;
+			return true;
+		}
+
+		// Перевантажуємо оператор true
+		public static bool operator true(Hotel hotel)
+		{
+			if (hotel.Rating > 0)
+				return true;
+			return false;
+		}
+
+		// Перевантажуємо оператор false
+		public static bool operator false(Hotel hotel)
+		{
+			if (hotel.Rating > 0)
+				return false;
+			return true;
+		}
+
+
 		public City City { get; set; }
 		public List<Room> Rooms = new List<Room>();
 		public List<Order> Orders = new List<Order>();

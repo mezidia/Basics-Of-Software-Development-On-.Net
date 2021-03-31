@@ -11,7 +11,7 @@ namespace Hotel
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
 				"подобається")
 			{
-				City = City.Kyiv, NumberOfStars = 3
+				City = City.Kyiv, Rating = 32, NumberOfStars = 3
 			};
 
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
@@ -39,8 +39,29 @@ namespace Hotel
 			User GreaterValeera = new User(GreatValeera);
 
 			#region overloading
+        
+      Console.WriteLine("\nПеревантаження логічних операторів:\n");
+        
+			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
+			RedHotel.Rating = -23;
+			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
 
-			Console.WriteLine("\nПеревантаження оператора ++:\n");
+			if (order) Console.WriteLine("Замовлення ще активне");
+			order.DateEnd = DateTime.Parse("22.01.2002");
+			if (!order) Console.WriteLine("Замовлення вже не активне");
+
+			if (AdminV) Console.WriteLine("Користувач має пошту та телефон");
+			GreatValeera.UserMail = "shemsedinov@gmail.com";
+			GreaterValeera.UserMail = "shemsedinov@gmail.com";
+			GreatValeera.UserPhone = "+069069696";
+			GreaterValeera.UserPhone = "+069069696";
+			if (GreatValeera & GreaterValeera)
+            {
+				Console.WriteLine("Користувачi мають пошту та телефон");
+			}
+
+			Console.WriteLine("\nПеревантаження унарних операторів:\n");
+      
 			Console.WriteLine($"Кiлькiсть зiрок: {RedHotel.NumberOfStars}");
 			++RedHotel;
 			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення: {RedHotel.NumberOfStars}");
