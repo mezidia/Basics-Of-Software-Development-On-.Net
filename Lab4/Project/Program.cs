@@ -40,7 +40,8 @@ namespace Hotel
 
 			#region overloading
 
-			Console.WriteLine("\nПеревантаження\n");
+			Console.WriteLine("\nПеревантаження операторiв +");
+			Console.WriteLine("Кiмнати \n");
 
 			Console.WriteLine("Iм'я першої кiмнати = "
 				+ RedHotel.Rooms[0].RoomName);
@@ -58,10 +59,6 @@ namespace Hotel
 
 			Console.WriteLine($"Та розмiр нової, об'єднаної кiмнати " +
 				$"{newRoom.RoomSize}");
-
-			Console.WriteLine();
-
-			RedHotel.DeleteItself(ref RedHotel);
 
 			#endregion overloading
 
