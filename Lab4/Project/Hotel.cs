@@ -193,10 +193,31 @@ namespace Hotel
 			User.Orders.Add(order);
 			Hotel.Orders.Add(order);
 		}
+
+		/// <summary>
+		/// Implements the operator ++.
+		/// </summary>
+		/// <param name="h">The hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
 		public static Hotel operator ++(Hotel h)
-        {
+		{
 			h.NumberOfStars++;
 			return h;
-        }
+		}
+
+		/// <summary>
+		/// Implements the operator --.
+		/// </summary>
+		/// <param name="h">The hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static Hotel operator --(Hotel h)
+		{
+			h.NumberOfStars--;
+			return h;
+		}
 	}
 }
