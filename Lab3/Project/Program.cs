@@ -5,7 +5,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			Console.WriteLine("Четверта лабораторна робота\n");
+			Console.WriteLine("Третя лабораторна робота\n");
 
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
@@ -37,33 +37,6 @@ namespace Hotel
 
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
-
-			#region overloading
-
-			Console.WriteLine("\nПеревантаження\n");
-
-			Console.WriteLine("Iм'я першої кiмнати = "
-				+ RedHotel.Rooms[0].RoomName);
-			Console.WriteLine("Iм'я другої кiмнати = "
-				+ RedHotel.Rooms[1].RoomName);
-
-			Console.WriteLine($"Розмiр першої кiмнати = " +
-				$"{RedHotel.Rooms[0].RoomSize},\nРозмiр другої " +
-				$"кiмнати = {RedHotel.Rooms[1].RoomSize},\n");
-
-			Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
-
-			Console.WriteLine("Iм'я нової першої кiмнати = "
-				+ RedHotel.Rooms[0].RoomName);
-
-			Console.WriteLine($"Та розмiр нової, об'єднаної кiмнати " +
-				$"{newRoom.RoomSize}");
-
-			Console.WriteLine();
-
-			RedHotel.DeleteItself(ref RedHotel);
-
-			#endregion overloading
 
 			Console.WriteLine("\nFirst Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");

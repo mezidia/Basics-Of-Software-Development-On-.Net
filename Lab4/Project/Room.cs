@@ -279,5 +279,56 @@ namespace Hotel
 
 			Console.WriteLine("Додано копiю кiмнати");
 		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Room"/> class.
+		/// </summary>
+		public Room() { }
+
+		/// <summary>
+		/// Overload + operator to easily combine two rooms
+		/// </summary>
+		/// <param name="r1"></param>
+		/// <param name="r2"></param>
+		/// <returns></returns>
+		public static Room operator +(Room r1, Room r2)
+		{
+			r1.Hotel.Rooms.Remove(r1);
+			r2.Hotel.Rooms.Remove(r2);
+
+			int id = r1.RoomID;
+			int number = r1.RoomNumber;
+			string name = r1.RoomName + " об'єднана з " + r2.RoomName;
+			int size = r1.RoomSize + r2.RoomSize;
+			Hotel hotel = r1.Hotel;
+			bool? tv = r1.TV | r2.TV;
+			string type = r1.RoomType;
+			int beds = r1.NumberOfBeds + r2.NumberOfBeds;
+			bool? balcony = r1.Balcony | r2.Balcony;
+
+			Room newRoom = new Room(id, number, name,
+				size, hotel, tv, type, beds, balcony)
+			{
+				RoomID = id,
+				RoomNumber = number,
+				RoomName = name,
+				RoomSize = size,
+				Hotel = hotel,
+				TV = tv,
+				RoomType = type,
+				NumberOfBeds = beds,
+				Balcony = balcony
+			};
+
+			r1.Hotel.Rooms.Add(newRoom);
+
+			Console.WriteLine($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
+				$"{r1.Hotel.HotelName} були видаленi");
+
+			r1.Hotel.DeleteRoom(ref r1);
+			r2.Hotel.DeleteRoom(ref r2);
+
+			return newRoom;
+		}
 	}
 }
