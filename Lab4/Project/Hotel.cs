@@ -168,5 +168,10 @@ namespace Hotel
 			User.Orders.Add(order);
 			Hotel.Orders.Add(order);
 		}
+		public static Hotel operator ++(Hotel h)
+        {
+			h.NumberOfStars++;
+			return h;
+        }
 	}
 }
