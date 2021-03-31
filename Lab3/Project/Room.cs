@@ -287,15 +287,15 @@ namespace Hotel
 
 		public static Room operator +(Room r1, Room r2)
 		{
-			int tempID = r1.RoomID;
+			r1.Hotel.Rooms.Remove(r1);
+			r2.Hotel.Rooms.Remove(r2);
 
-			r1.Hotel.Rooms.RemoveAt(r1.RoomID);
-			r2.Hotel.Rooms.RemoveAt(r2.RoomID);
+			Console.WriteLine($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
+				$"{r1.Hotel.HotelName} були видаленi");
 
-			int id = tempID;
-
+			int id = r1.RoomID;
 			int number = r1.RoomNumber;
-			string name = r1.RoomName;
+			string name = r1.RoomName + " об'єднана з " + r2.RoomName;
 			int size = r1.RoomSize + r2.RoomSize;
 			Hotel hotel = r1.Hotel;
 			bool? tv = r1.TV | r2.TV;
@@ -316,8 +316,6 @@ namespace Hotel
 				NumberOfBeds = beds,
 				Balcony = balcony
 			};
-
-
 
 			r1.Hotel.Rooms.Add(newRoom);
 
