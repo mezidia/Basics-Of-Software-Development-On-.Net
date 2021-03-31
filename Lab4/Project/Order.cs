@@ -218,8 +218,8 @@ namespace Hotel
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
 			if (difference.TotalDays > 0)
-				return true;
-			return false;
+				return false;
+			return true;
 		}
 
 		// Перевантажуємо оператор true
