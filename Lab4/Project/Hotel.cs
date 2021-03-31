@@ -169,7 +169,7 @@ namespace Hotel
 			Description = description;
 
 			// Temp for Composition
-			Room FirstRoom = new Room(1, 1, "First", 1,
+			Room FirstRoom = new Room(1, 1, "First", 2,
 				this, true, "Big", 5, true);
 			Rooms.Add(FirstRoom);
 			Console.WriteLine($"Готель {hotelName} створено");
@@ -182,6 +182,15 @@ namespace Hotel
 			Room room = new Room(roomID, roomNumber, roomName,
 				roomSize, hotel, tv, roomType, numberOfBeds, balcony);
 			Rooms.Add(room);
+		}
+
+		/// <summary>
+		/// Deletes the room.
+		/// </summary>
+		/// <param name="room">The room.</param>
+		public void DeleteRoom(ref Room room)
+		{
+			room = null;
 		}
 
 		public void CreateOrder(int OrderID, decimal Sum,
