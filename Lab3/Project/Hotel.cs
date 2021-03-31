@@ -150,6 +150,40 @@ namespace Hotel
 			Console.WriteLine($"Готель {hotelName} створено");
 		}
 
+		/// <summary>
+		/// Overload + operator to easily combine two hotels
+		/// </summary>
+		/// <param name="h1"></param>
+		/// <param name="h2"></param>
+		/// <returns></returns>
+		public static Hotel operator +(Hotel h1, Hotel h2)
+		{
+			int id = h1.HotelID;
+			string name = h1.HotelName + " об'єднаний з " + h2.HotelName;
+			string address = h1.Address;
+			string description = h1.Description;
+			int stars = Math.Max(h1.NumberOfStars, h2.NumberOfStars);
+			int rating = Math.Max(h1.Rating, h2.Rating);
+
+			h1.Rooms.AddRange(h2.Rooms);
+
+			Hotel newHotel = new Hotel(id, name, address, description)
+			{
+				HotelID = id,
+				HotelName = name,
+				Address = address,
+				Description = description
+			};
+
+			newHotel.NumberOfStars = stars;
+			newHotel.Rating = rating;
+
+			h1.DeleteItself(ref h1);
+			h2.DeleteItself(ref h2);
+
+			return newHotel;
+		}
+
 		public void CreateRoom(int roomID, int roomNumber,
 			string roomName, int roomSize, Hotel hotel, bool? tv,
 			string roomType, int numberOfBeds, bool? balcony)
@@ -157,6 +191,24 @@ namespace Hotel
 			Room room = new Room(roomID, roomNumber, roomName,
 				roomSize, hotel, tv, roomType, numberOfBeds, balcony);
 			Rooms.Add(room);
+		}
+
+		/// <summary>
+		/// Delete itself.
+		/// </summary>
+		/// <param name="hotel">The hotel.</param>
+		public void DeleteItself(ref Hotel hotel)
+		{
+			hotel = null;
+		}
+
+		/// <summary>
+		/// Deletes the room.
+		/// </summary>
+		/// <param name="room">The room.</param>
+		public void DeleteRoom(ref Room room)
+		{
+			room = null;
 		}
 
 		public void CreateOrder(int OrderID, decimal Sum,

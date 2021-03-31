@@ -285,13 +285,16 @@ namespace Hotel
 		/// </summary>
 		public Room() { }
 
+		/// <summary>
+		/// Overload + operator to easily combine two rooms
+		/// </summary>
+		/// <param name="r1"></param>
+		/// <param name="r2"></param>
+		/// <returns></returns>
 		public static Room operator +(Room r1, Room r2)
 		{
 			r1.Hotel.Rooms.Remove(r1);
 			r2.Hotel.Rooms.Remove(r2);
-
-			Console.WriteLine($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
-				$"{r1.Hotel.HotelName} були видаленi");
 
 			int id = r1.RoomID;
 			int number = r1.RoomNumber;
@@ -318,6 +321,12 @@ namespace Hotel
 			};
 
 			r1.Hotel.Rooms.Add(newRoom);
+
+			Console.WriteLine($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
+				$"{r1.Hotel.HotelName} були видаленi");
+
+			r1.Hotel.DeleteRoom(ref r1);
+			r2.Hotel.DeleteRoom(ref r2);
 
 			return newRoom;
 		}

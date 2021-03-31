@@ -5,7 +5,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			Console.WriteLine("Третя лабораторна робота\n");
+			Console.WriteLine("Четверта лабораторна робота\n");
 
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
@@ -58,6 +58,10 @@ namespace Hotel
 
 			Console.WriteLine($"Та розмiр нової, об'єднаної кiмнати " +
 				$"{newRoom.RoomSize}");
+
+			Console.WriteLine();
+
+			RedHotel.DeleteItself(ref RedHotel);
 
 			#endregion overloading
 
