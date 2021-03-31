@@ -97,11 +97,10 @@ namespace Hotel
 				$" {RedHotel.Rooms[0].NumberOfBeds}");
 
 			#endregion Unary
-        
-      #region Binary
-      
-			Console.WriteLine("\nПеревантаження операторiв +");
-			Console.WriteLine("Кiмнати \n");
+
+			#region Binary
+
+			Console.WriteLine("\n--Перевантаження бiнарних операторiв:--\n");
 
 			Console.WriteLine("Iм'я першої кiмнати = "
 				+ RedHotel.Rooms[0].RoomName);
@@ -109,19 +108,19 @@ namespace Hotel
 				+ RedHotel.Rooms[1].RoomName);
 
 			Console.WriteLine($"Розмiр першої кiмнати = " +
-				$"{RedHotel.Rooms[0].RoomSize},\nРозмiр другої " +
-				$"кiмнати = {RedHotel.Rooms[1].RoomSize},\n");
+				$"{RedHotel.Rooms[0].RoomSize}\nРозмiр другої " +
+				$"кiмнати = {RedHotel.Rooms[1].RoomSize}\n");
 
 			Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
 
 			Console.WriteLine("Iм'я нової першої кiмнати = "
 				+ RedHotel.Rooms[0].RoomName);
 
-			Console.WriteLine($"Та розмiр нової, об'єднаної кiмнати " +
+			Console.WriteLine($"Розмiр нової, об'єднаної кiмнати = " +
 				$"{newRoom.RoomSize}");
 
-      #endregion Binary
-      
+			#endregion Binary
+
 			#endregion Lab4
 
 			Console.WriteLine("\n--------Credits-------");

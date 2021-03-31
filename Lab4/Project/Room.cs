@@ -361,8 +361,9 @@ namespace Hotel
 			r2.Hotel.DeleteRoom(ref r2);
 
 			return newRoom;
+		}
 
-      /// Implements the operator ++.
+		/// Implements the operator ++.
 		/// </summary>
 		/// <param name="r">room.</param>
 		/// <returns>
