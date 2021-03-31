@@ -279,5 +279,10 @@ namespace Hotel
 
 			Console.WriteLine("Додано копiю кiмнати");
 		}
+
+		public static Room operator ++(Room r) {
+			r.NumberOfBeds++;
+			return r;
+		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Hotel
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
 				"подобається")
 			{
-				City = City.Kyiv
+				City = City.Kyiv, NumberOfStars = 3
 			};
 
 			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
@@ -37,6 +37,18 @@ namespace Hotel
 
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
+
+			#region overloading
+
+			Console.WriteLine("\nПеревантаження оператора ++:\n");
+			Console.WriteLine($"Кiлькiсть зiрок: {RedHotel.NumberOfStars}");
+			++RedHotel;
+			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення: {RedHotel.NumberOfStars}");
+			Console.WriteLine($"Кiлькiсть лiжок: {RedHotel.Rooms[0].NumberOfBeds}");
+			++RedHotel.Rooms[0];
+			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення: {RedHotel.Rooms[0].NumberOfBeds}");
+
+			#endregion overloading
 
 			Console.WriteLine("\nFirst Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");
