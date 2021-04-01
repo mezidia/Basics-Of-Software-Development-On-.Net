@@ -420,17 +420,17 @@ namespace Hotel
 			return (r1.NumberOfBeds == r2.NumberOfBeds) && (r1.RoomSize == r2.RoomSize) &&
 				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony);
 		}
+
 		public static bool operator !=(Room r1, Room r2)
 		{
 			// If parameter is null, return true.
-			if (Object.ReferenceEquals(r1, null) ||
-			   Object.ReferenceEquals(r2, null))
+			if (r1 is null || r2 is null)
 			{
 				return true;
 			}
 
 			// Optimization for a common success case.
-			if (Object.ReferenceEquals(r1, r2))
+			if (ReferenceEquals(r1, r2))
 			{
 				return false;
 			}
