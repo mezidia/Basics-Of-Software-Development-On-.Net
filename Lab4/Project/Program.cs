@@ -99,7 +99,33 @@ namespace Hotel
 			#endregion Unary
 
 			#region Binary
-			Hotel BlueHotel = new Hotel(2, "Адам", "вул. Т. Шевченка",
+
+			Console.WriteLine("\n--Перевантаження бiнарних операторiв:--\n");
+
+			Console.WriteLine("Iм'я першої кiмнати = "
+				+ RedHotel.Rooms[0].RoomName);
+			Console.WriteLine("Iм'я другої кiмнати = "
+				+ RedHotel.Rooms[1].RoomName);
+
+			Console.WriteLine($"Розмiр першої кiмнати = " +
+				$"{RedHotel.Rooms[0].RoomSize}\nРозмiр другої " +
+				$"кiмнати = {RedHotel.Rooms[1].RoomSize}\n");
+
+			Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
+
+			Console.WriteLine("Iм'я нової першої кiмнати = "
+				+ RedHotel.Rooms[0].RoomName);
+
+			Console.WriteLine($"Розмiр нової, об'єднаної кiмнати = " +
+				$"{newRoom.RoomSize}");
+
+			#endregion Binary
+        
+      #region Comparison
+        
+      Console.WriteLine("\n--Перевантаження операторiв порівняння:--\n");
+        
+      Hotel BlueHotel = new Hotel(2, "Адам", "вул. Т. Шевченка",
 				"Не дуже крутий опис не дуже крутого готелю, який не всiм не дуже " +
 				"не подобається")
 			{
@@ -110,9 +136,7 @@ namespace Hotel
 
 			BlueHotel.CreateRoom(2, 2, "Blue", 5, BlueHotel, false, "Big", 15, true);
 
-            Console.WriteLine("\n--Перевантаження бiнарних операторiв:--\n");
-
-            Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель 1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
+      Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель 1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
 			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель 2: {BlueHotel.NumberOfStars}, {BlueHotel.Rating}");
 			bool Hcomp = RedHotel == BlueHotel;
 			bool HcompAnti = RedHotel != BlueHotel;
@@ -125,9 +149,9 @@ namespace Hotel
 		
 			Console.WriteLine($"Перевiряємо рiвнозначнiсть Кiмнати 1 та Кiмнати 2: {RedHotel.Rooms[0] == BlueHotel.Rooms[0]}");
 			Console.WriteLine($"Перевiряємо нерiвнозначнiсть Кiмнати 1 та Кiмнати 2: {RedHotel.Rooms[0] != BlueHotel.Rooms[0]}");
+        
+      #endregion Comparison
 
-
-			#endregion Binary
 			#endregion Lab4
 
 			Console.WriteLine("\n--------Credits-------");
