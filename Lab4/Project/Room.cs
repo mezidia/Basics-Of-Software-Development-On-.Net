@@ -399,14 +399,13 @@ namespace Hotel
 		public static bool operator ==(Room r1, Room r2)
 		{
 			// If parameter is null, return false.
-			if (Object.ReferenceEquals(r1, null) ||
-			   Object.ReferenceEquals(r2, null))
+			if (r1 is null || r2 is null)
 			{
 				return false;
 			}
 
 			// Optimization for a common success case.
-			if (Object.ReferenceEquals(r1, r2))
+			if (ReferenceEquals(r1, r2))
 			{
 				return true;
 			}

@@ -155,7 +155,6 @@ namespace Hotel
 			return true;
 		}
 
-
 		public City City { get; set; }
 		public List<Room> Rooms = new List<Room>();
 		public List<Order> Orders = new List<Order>();
@@ -228,8 +227,8 @@ namespace Hotel
 			h.NumberOfStars--;
 			return h;
 		}
-	
-	/// <summary>
+
+		/// <summary>
 		/// Implements the operator ==.
 		/// </summary>
 		/// <param name="h1">The 1 hotel.</param>
@@ -240,14 +239,13 @@ namespace Hotel
 		public static bool operator ==(Hotel h1, Hotel h2)
 		{
 			// If parameter is null, return false.
-			if (Object.ReferenceEquals(h1, null) ||
-			   Object.ReferenceEquals(h2, null))
+			if (h1 is null || h2 is null)
 			{
 				return false;
 			}
 
 			// Optimization for a common success case.
-			if (Object.ReferenceEquals(h1, h2))
+			if (ReferenceEquals(h1, h2))
 			{
 				return true;
 			}
@@ -259,7 +257,8 @@ namespace Hotel
 			}
 
 			// Return true if the fields match.
-			return (h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating);
+			return (h1.NumberOfStars == h2.NumberOfStars)
+				&& (h1.Rating == h2.Rating);
 		}
 
 		/// <summary>
@@ -273,26 +272,25 @@ namespace Hotel
 		public static bool operator !=(Hotel h1, Hotel h2)
 		{
 			// If parameter is null, return true.
-			if (Object.ReferenceEquals(h1, null) ||
-			   Object.ReferenceEquals(h2, null))
+			if (!(h1 is null) && !(h2 is null))
 			{
-				return true;
-			}
+				// Optimization for a common success case.
+				if (ReferenceEquals(h1, h2))
+				{
+					return false;
+				}
 
-			// Optimization for a common success case.
-			if (Object.ReferenceEquals(h1, h2))
-			{
-				return false;
-			}
+				// If run-time types are not exactly the same, return true.
+				if (h1.GetType() != h2.GetType())
+				{
+					return true;
+				}
 
-			// If run-time types are not exactly the same, return true.
-			if (h1.GetType() != h2.GetType())
-			{
-				return true;
+				// Return true if the fields match.
+				return !((h1.NumberOfStars == h2.NumberOfStars)
+					&& (h1.Rating == h2.Rating));
 			}
-
-			// Return true if the fields match.
-			return !((h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating));
+			return true;
 		}
 	}
 }

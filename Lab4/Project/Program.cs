@@ -123,9 +123,9 @@ namespace Hotel
 
 			#region Comparison
 
-			Console.WriteLine("\n--Перевантаження операторiв порівняння:--\n");
+			Console.WriteLine("\n--Перевантаження операторiв порiвняння:--\n");
 
-			Hotel BlueHotel = new Hotel(2, "Адам", "вул. Т. Шевченка",
+			Hotel BlueHotel = new Hotel(2, "Єва", "вул. Т. Шевченка",
 				"Не дуже крутий опис не дуже крутого готелю, який не всiм не дуже " +
 				"не подобається")
 			{
