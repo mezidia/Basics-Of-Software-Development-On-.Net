@@ -387,5 +387,64 @@ namespace Hotel
 			r.NumberOfBeds--;
 			return r;
 		}
+
+		/// <summary>
+		/// Implements the operator ==.
+		/// </summary>
+		/// <param name="r1">The 1 room.</param>
+		/// <param name="r2">The 2 room.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static bool operator ==(Room r1, Room r2)
+		{
+			// If parameter is null, return false.
+			if (Object.ReferenceEquals(r1, null) ||
+			   Object.ReferenceEquals(r2, null))
+			{
+				return false;
+			}
+
+			// Optimization for a common success case.
+			if (Object.ReferenceEquals(r1, r2))
+			{
+				return true;
+			}
+
+			// If run-time types are not exactly the same, return false.
+			if (r1.GetType() != r2.GetType())
+			{
+				return false;
+			}
+
+			// Return true if the fields match.
+			return (r1.NumberOfBeds == r2.NumberOfBeds) && (r1.RoomSize == r2.RoomSize) &&
+				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony);
+		}
+		public static bool operator !=(Room r1, Room r2)
+		{
+			// If parameter is null, return true.
+			if (Object.ReferenceEquals(r1, null) ||
+			   Object.ReferenceEquals(r2, null))
+			{
+				return true;
+			}
+
+			// Optimization for a common success case.
+			if (Object.ReferenceEquals(r1, r2))
+			{
+				return false;
+			}
+
+			// If run-time types are not exactly the same, return true.
+			if (r1.GetType() != r2.GetType())
+			{
+				return true;
+			}
+
+			// Return true if the fields match.
+			return !((r1.NumberOfBeds == r2.NumberOfBeds) && (r1.RoomSize == r2.RoomSize) &&
+				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony));
+		}
 	}
 }

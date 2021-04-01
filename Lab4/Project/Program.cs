@@ -51,7 +51,7 @@ namespace Hotel
 			Console.WriteLine("\n--Перевантаження логiчних операторiв:--\n");
 
 			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
-			RedHotel.Rating = -23;
+			RedHotel.Rating = 23;
 			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
 
 			Console.WriteLine();
@@ -120,6 +120,37 @@ namespace Hotel
 				$"{newRoom.RoomSize}");
 
 			#endregion Binary
+        
+      #region Comparison
+        
+      Console.WriteLine("\n--Перевантаження операторiв порівняння:--\n");
+        
+      Hotel BlueHotel = new Hotel(2, "Адам", "вул. Т. Шевченка",
+				"Не дуже крутий опис не дуже крутого готелю, який не всiм не дуже " +
+				"не подобається")
+			{
+				City = City.Kyiv,
+				Rating = 32,
+				NumberOfStars = 3
+			};
+
+			BlueHotel.CreateRoom(2, 2, "Blue", 5, BlueHotel, false, "Big", 15, true);
+
+      Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель 1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
+			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель 2: {BlueHotel.NumberOfStars}, {BlueHotel.Rating}");
+			bool Hcomp = RedHotel == BlueHotel;
+			bool HcompAnti = RedHotel != BlueHotel;
+            Console.WriteLine($"Перевiряємо рiвнозначнiсть Готелю 1 та Готелю 2: {RedHotel == BlueHotel}");
+			Console.WriteLine($"Перевiряємо нерiвнозначнiсть Готелю 1 та Готелю 2: {RedHotel != BlueHotel}");
+			Console.WriteLine();
+
+            Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть телевiзора та балкону в Кiмнатi 1: {RedHotel.Rooms[0].NumberOfBeds}, {RedHotel.Rooms[0].RoomSize}, {RedHotel.Rooms[0].TV}, {RedHotel.Rooms[0].Balcony}");
+			Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть телевiзора та балкону в Кiмнатi 2: {BlueHotel.Rooms[0].NumberOfBeds}, {BlueHotel.Rooms[0].RoomSize}, {BlueHotel.Rooms[0].TV}, {BlueHotel.Rooms[0].Balcony}");
+		
+			Console.WriteLine($"Перевiряємо рiвнозначнiсть Кiмнати 1 та Кiмнати 2: {RedHotel.Rooms[0] == BlueHotel.Rooms[0]}");
+			Console.WriteLine($"Перевiряємо нерiвнозначнiсть Кiмнати 1 та Кiмнати 2: {RedHotel.Rooms[0] != BlueHotel.Rooms[0]}");
+        
+      #endregion Comparison
 
 			#endregion Lab4
 
