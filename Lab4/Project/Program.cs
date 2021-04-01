@@ -136,9 +136,9 @@ namespace Hotel
 
 			BlueHotel.CreateRoom(2, 2, "Blue", 5, BlueHotel, false, "Big", 15, true);
 
-			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель " +
+			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
 				$"1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
-			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готель " +
+			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
 				$"2: {BlueHotel.NumberOfStars}, {BlueHotel.Rating}");
 
 			Console.WriteLine($"Перевiряємо рiвнозначнiсть Готелю 1 " +
