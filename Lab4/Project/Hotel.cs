@@ -228,72 +228,71 @@ namespace Hotel
 			h.NumberOfStars--;
 			return h;
 		}
-    
-    /// <summary>
-        /// Implements the operator ==.
-        /// </summary>
-        /// <param name="h1">The 1 hotel.</param>
-        /// <param name="h2">The 2 hotel.</param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
-        public static bool operator ==(Hotel h1, Hotel h2)
-        {
-            // If parameter is null, return false.
-            if (Object.ReferenceEquals(h1, null) ||
-               Object.ReferenceEquals(h2, null))
-            {
-                return false;
-            }
+	
+	/// <summary>
+		/// Implements the operator ==.
+		/// </summary>
+		/// <param name="h1">The 1 hotel.</param>
+		/// <param name="h2">The 2 hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static bool operator ==(Hotel h1, Hotel h2)
+		{
+			// If parameter is null, return false.
+			if (Object.ReferenceEquals(h1, null) ||
+			   Object.ReferenceEquals(h2, null))
+			{
+				return false;
+			}
 
-            // Optimization for a common success case.
-            if (Object.ReferenceEquals(h1, h2))
-            {
-                return true;
-            }
+			// Optimization for a common success case.
+			if (Object.ReferenceEquals(h1, h2))
+			{
+				return true;
+			}
 
-            // If run-time types are not exactly the same, return false.
-            if (h1.GetType() != h2.GetType())
-            {
-                return false;
-            }
+			// If run-time types are not exactly the same, return false.
+			if (h1.GetType() != h2.GetType())
+			{
+				return false;
+			}
 
-            // Return true if the fields match.
-            return (h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating);
-        }
+			// Return true if the fields match.
+			return (h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating);
+		}
 
-        /// <summary>
-        /// Implements the operator !=.
-        /// </summary>
-        /// <param name="h1">The 1 hotel.</param>
-        /// <param name="h2">The 2 hotel.</param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
-        public static bool operator !=(Hotel h1, Hotel h2)
-        {
-            // If parameter is null, return true.
-            if (Object.ReferenceEquals(h1, null) ||
-               Object.ReferenceEquals(h2, null))
-            {
-                return true;
-            }
+		/// <summary>
+		/// Implements the operator !=.
+		/// </summary>
+		/// <param name="h1">The 1 hotel.</param>
+		/// <param name="h2">The 2 hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
+		public static bool operator !=(Hotel h1, Hotel h2)
+		{
+			// If parameter is null, return true.
+			if (Object.ReferenceEquals(h1, null) ||
+			   Object.ReferenceEquals(h2, null))
+			{
+				return true;
+			}
 
-            // Optimization for a common success case.
-            if (Object.ReferenceEquals(h1, h2))
-            {
-                return false;
-            }
+			// Optimization for a common success case.
+			if (Object.ReferenceEquals(h1, h2))
+			{
+				return false;
+			}
 
-            // If run-time types are not exactly the same, return true.
-            if (h1.GetType() != h2.GetType())
-            {
-                return true;
-            }
+			// If run-time types are not exactly the same, return true.
+			if (h1.GetType() != h2.GetType())
+			{
+				return true;
+			}
 
-            // Return true if the fields match.
-            return !((h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating));
-        }
-    }
+			// Return true if the fields match.
+			return !((h1.NumberOfStars == h2.NumberOfStars) && (h1.Rating == h2.Rating));
+		}
 	}
 }
