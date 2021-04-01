@@ -46,34 +46,6 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab4-------");
 
-			#region Logical
-
-			Console.WriteLine("\n--Перевантаження логiчних операторiв:--\n");
-
-			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
-			RedHotel.Rating = 23;
-			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
-
-			Console.WriteLine();
-
-			if (order) Console.WriteLine("Замовлення ще активне");
-			order.DateEnd = DateTime.Parse("22.01.2002");
-			if (!order) Console.WriteLine("Замовлення вже не активне");
-
-			Console.WriteLine();
-
-			if (AdminV) Console.WriteLine("Користувач має пошту та телефон");
-			GreatValeera.UserMail = "shemsedinov@gmail.com";
-			GreaterValeera.UserMail = "shemsedinov@gmail.com";
-			GreatValeera.UserPhone = "+069069696";
-			GreaterValeera.UserPhone = "+069069696";
-			if (GreatValeera & GreaterValeera)
-			{
-				Console.WriteLine("Користувачi мають пошту та телефон");
-			}
-
-			#endregion Logical
-
 			#region Unary
 
 			Console.WriteLine("\n--Перевантаження унарних операторiв:--\n");
@@ -120,6 +92,34 @@ namespace Hotel
 				$"{newRoom.RoomSize}");
 
 			#endregion Binary
+
+			#region Logical
+
+			Console.WriteLine("\n--Перевантаження логiчних операторiв:--\n");
+
+			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
+			RedHotel.Rating = 23;
+			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
+
+			Console.WriteLine();
+
+			if (order) Console.WriteLine("Замовлення ще активне");
+			order.DateEnd = DateTime.Parse("22.01.2002");
+			if (!order) Console.WriteLine("Замовлення вже не активне");
+
+			Console.WriteLine();
+
+			if (AdminV) Console.WriteLine("Користувач має пошту та телефон");
+			GreatValeera.UserMail = "shemsedinov@gmail.com";
+			GreaterValeera.UserMail = "shemsedinov@gmail.com";
+			GreatValeera.UserPhone = "+069069696";
+			GreaterValeera.UserPhone = "+069069696";
+			if (GreatValeera & GreaterValeera)
+			{
+				Console.WriteLine("Користувачi мають пошту та телефон");
+			}
+
+			#endregion Logical
 
 			#region Comparison
 
