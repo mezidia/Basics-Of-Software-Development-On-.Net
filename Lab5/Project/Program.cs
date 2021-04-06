@@ -165,6 +165,10 @@ namespace Hotel
 
 			#region Lab5
 
+			Console.WriteLine("\nСтворюємо вiдвiдувача:");
+			Customer Customer = new Customer(3, "customer@gmail.com", "Genji", "+067069696");
+			Console.WriteLine("\nСтворюємо адмiна:");
+			Admin Admin = new Admin(5, "admin@gmail.com", "Hanzo", "+069069698");
 
 
 			#endregion Lab5
