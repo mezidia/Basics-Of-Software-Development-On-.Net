@@ -225,14 +225,6 @@ namespace Hotel
         }
 
         /// <summary>
-        /// Constructor by default
-        /// </summary>
-        public User()
-        {
-            Console.WriteLine("Користувача за замовченням створено");
-        }
-
-        /// <summary>
         /// Copy constructor
         /// </summary>
         /// <param name="tech"></param>
@@ -267,6 +259,15 @@ namespace Hotel
             Console.WriteLine($"Користувач {UserName} створений");
         }
 
+        /// <summary>
+        /// Constructor by default
+        /// </summary>
+        public User()
+        {
+            Console.WriteLine("Користувача за замовченням створено");
+        }
+
+
         public void SearchForInfo() { }
         public void Book() { }
         public void CheckBooking() { }
@@ -280,5 +281,43 @@ namespace Hotel
         public void UpdateRoom() { }
         public void ChangeAccess() { }
         public void RemoveHotel() { }
+    }
+
+    public class Customer : User
+    {
+        public short customerType = 2;
+        public string UserTypeName = "Customer";
+
+        public Customer(int userID, string userMail, string userName, string userPhone)
+        {
+            this.UserID = userID;
+            this.UserType = customerType;
+            this.UserName = userName;
+            this.UserMail = userMail;
+            this.UserPhone = userPhone;
+
+
+            Console.WriteLine($"Користувач {UserTypeName} на iм'я {userName} створений");
+        }
+
+    }
+
+    public class Admin : User
+    {
+        public short adminType = 1;
+        public string UserTypeName = "Admin";
+
+        public Admin(int userID, string userMail, string userName, string userPhone)
+        {
+            this.UserID = userID;
+            this.UserType = adminType;
+            this.UserName = userName;
+            this.UserMail = userMail;
+            this.UserPhone = userPhone;
+
+
+            Console.WriteLine($"Користувач {UserTypeName} на iм'я {userName} створений");
+        }
+
     }
 }
