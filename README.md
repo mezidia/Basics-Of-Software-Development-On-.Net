@@ -50,7 +50,7 @@ We are using [Codacy](https://www.codacy.com/) to automate Our code quality.
  
 ## Screenshots :camera:
 
->Nothing right now
+> Nothing right now
 
 ## Tech/framework used :wrench:
 
@@ -60,7 +60,37 @@ We are using [Codacy](https://www.codacy.com/) to automate Our code quality.
 
 ## Code Example :pushpin:
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+```csharp
+    /// <summary>
+		/// Initialization Constructor
+		/// </summary>
+		/// <param name="roomID"></param>
+		/// <param name="roomNumber"></param>
+		/// <param name="roomName"></param>
+		/// <param name="roomSize"></param>
+		/// <param name="hotel"></param>
+		/// <param name="tv"></param>
+		/// <param name="roomType"></param>
+		/// <param name="numberOfBeds"></param>
+		/// <param name="balcony"></param>
+		public Room(int roomID, int roomNumber, string roomName,
+			int roomSize, Hotel hotel, bool? tv, string roomType,
+			int numberOfBeds, bool? balcony)
+		{
+			RoomID = roomID;
+			RoomNumber = roomNumber;
+			RoomName = roomName;
+			RoomSize = roomSize;
+			Hotel = hotel;
+			TV = tv;
+			RoomType = roomType;
+			NumberOfBeds = numberOfBeds;
+			Balcony = balcony;
+
+			Console.WriteLine($"Додано кiмнату номер {RoomNumber} готелю " +
+				$"{Hotel.HotelName}");
+		}
+```
 
 ## Tests :microscope:
 
