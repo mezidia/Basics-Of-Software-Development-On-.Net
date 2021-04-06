@@ -1,5 +1,5 @@
 <h1 id="Basics-Of-Software-Development-On-.Net" align="center">
-  Project title <img alt="logo" width="40" height="40" src="https://raw.githubusercontent.com/mezgoodle/images/master/MezidiaLogoTransparent.png" /><br>
+  Basics-Of-Software-Development-On-.Net <img alt="logo" width="40" height="40" src="https://raw.githubusercontent.com/mezgoodle/images/master/MezidiaLogoTransparent.png" /><br>
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mezidia/Basics-Of-Software-Development-On-.Net.svg?style=flat-square&logo=github&logoColor=white">
   <img alt="language" src="https://img.shields.io/badge/language-CSharp-violet?style=flat-square" />
   <img alt="language" src="https://img.shields.io/github/issues/mezidia/Basics-Of-Software-Development-On-.Net?style=flat-square" />
