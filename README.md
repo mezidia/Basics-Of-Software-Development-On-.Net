@@ -12,63 +12,37 @@
 </h1>
 
 <p align="center">
- A little info about your project and/ or overview that explains <strong>what</strong> the project is about.
- <blockquote>🌟Hello everyone! This is the repository of my package on Python "sync-folders".🌟</blockquote>
+ 🌟Hello everyone! This is the repository of Our labs on CSharp.🌟
 </p>
 
 <h2 align="center">
   <i>Table of contents</i>
 </h2>
 
-- [Project title](#project-title)
-- [Specification](#specification)
+- [Basics-Of-Software-Development-On-.Net](#Basics-Of-Software-Development-On-.Net)
 - [Build status :hammer:](#build-status-hammer)
-- [Code style :scroll:](#code-style-scroll)
-- [Screenshots :camera:](#screenshots-camera)
 - [Tech/framework used :wrench:](#techframework-used-wrench)
 - [Code Example :pushpin:](#code-example-pushpin)
-- [Installation :computer:](#installation-computer)
-- [Fast usage :dash:](#fast-usage-dash)
-- [API Reference :fireworks:](#api-reference-fireworks)
 - [Tests :microscope:](#tests-microscope)
-- [Contribute :running:](#contribute-running)
 - [Credits :cat::handshake:](#credits-cathandshake)
 - [FAQ :speech_balloon:](#faq)
 - [License :bookmark:](#license-bookmark)
 
-## The README Checklist
-
-A helpful checklist to gauge how your README is coming along:
-
-- [ ] One-liner explaining the purpose of the module
-- [ ] Necessary background context & links
-- [ ] Potentially unfamiliar terms link to informative sources
-- [ ] Clear, *runnable* example of usage
-- [ ] Installation instructions
-- [ ] Extensive API documentation
-- [ ] Performs [cognitive funneling](https://github.com/noffle/art-of-readme#cognitive-funneling)
-- [ ] Caveats and limitations mentioned up-front
-- [ ] Doesn't rely on images to relay critical information
-- [ ] License
-
 ## Motivation :exclamation:
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+We've created this repo to easily manage Our work on Basics-Of-Software-Development-On-.Net
 
 ## Build status :hammer:
 
-Build status of continus integration i.e. travis, appveyor etc.
+> Nothing right now
 
-> Here you can see build status of [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)/[continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment):
-
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
-
-## Badges :mega:
-
-Other badges
-
-[![Build Status](https://img.shields.io/badge/Theme-Template-brightgreen?style=flat-square)](https://www.google.com.ua/)
+> >
+> >Build status of continus integration i.e. travis, appveyor etc.
+> >
+> >Here you can see build status of [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)/[continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment):
+> >
+> >[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
+> >[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
 
 ## Code style :scroll:
 
