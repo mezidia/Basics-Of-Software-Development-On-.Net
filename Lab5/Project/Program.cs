@@ -40,6 +40,8 @@ namespace Hotel
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
 
+			#region Lab4
+
 			Console.WriteLine("\n--------Lab4-------");
 
 			#region Unary
@@ -161,21 +163,30 @@ namespace Hotel
 
 			#endregion Comparison
 
-			#endregion Lab1-2-3
+			#endregion Lab4
+
+			#endregion Lab1-2-3-4
 
 			#region Lab5
 
-			Console.WriteLine("\nСтворюємо вiдвiдувача:");
-			Customer Customer = new Customer(3, "customer@gmail.com", "Genji", "+067069696");
-			Console.WriteLine("\nСтворюємо адмiна:");
-			Admin Admin = new Admin(5, "admin@gmail.com", "Hanzo", "+069069698");
+			#region Base-Classes-And-Inheritence
 
+			Console.WriteLine("\nСтворюємо вiдвiдувача:");
+			Customer Customer = new Customer(7,
+				"customer@gmail.com", "Genji", "+067069696");
+
+			Console.WriteLine("\nСтворюємо адмiна:");
+			Admin Admin = new Admin(8, "admin@gmail.com",
+				"Hanzo", "+069069698");
+
+			#endregion Base-Classes-And-Inheritence
 
 			#endregion Lab5
 
 			Console.WriteLine("\n--------Credits-------");
 
-			Console.WriteLine("\nFirst Team: Zavalniuk Maxim,\nDmytrenko Roman,\n" +
+			Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
+				"\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");
 			Console.ReadLine();
 		}

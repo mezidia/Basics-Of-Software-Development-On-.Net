@@ -169,7 +169,8 @@ namespace Hotel
 			}
 			set
 			{
-				if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
+				if (!string.IsNullOrEmpty(value) &&
+					!string.IsNullOrWhiteSpace(value))
 				{
 					roomType = value;
 				}
@@ -226,7 +227,8 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть значення про наявнiсть балкону");
+					Console.WriteLine("Введiть значення" +
+						" про наявнiсть балкону");
 				}
 			}
 		}
@@ -417,7 +419,8 @@ namespace Hotel
 			}
 
 			// Return true if the fields match.
-			return (r1.NumberOfBeds == r2.NumberOfBeds) && (r1.RoomSize == r2.RoomSize) &&
+			return (r1.NumberOfBeds == r2.NumberOfBeds)
+				&& (r1.RoomSize == r2.RoomSize) &&
 				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony);
 		}
 
@@ -442,7 +445,8 @@ namespace Hotel
 			}
 
 			// Return true if the fields match.
-			return !((r1.NumberOfBeds == r2.NumberOfBeds) && (r1.RoomSize == r2.RoomSize) &&
+			return !((r1.NumberOfBeds == r2.NumberOfBeds)
+				&& (r1.RoomSize == r2.RoomSize) &&
 				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony));
 		}
 	}
