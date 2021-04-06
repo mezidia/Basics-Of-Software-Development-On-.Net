@@ -157,7 +157,7 @@ namespace Hotel
 
 		public City City { get; set; }
 		public List<Room> Rooms = new List<Room>();
-		public List<Order> Orders = new List<Order>();
+		public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
 		public Hotel(int hotelID, string hotelName,
 			string address, string description)
@@ -196,7 +196,7 @@ namespace Hotel
 			Hotel Hotel, User User, string OrderNumber,
 			Room Room, DateTime Start, DateTime End)
 		{
-			Order order = new Order(OrderID, Sum, Hotel,
+			ConcreteOrder order = new ConcreteOrder(OrderID, Sum, Hotel,
 				User, OrderNumber, Room, Start, End);
 			User.Orders.Add(order);
 			Hotel.Orders.Add(order);

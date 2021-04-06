@@ -24,7 +24,7 @@ namespace Hotel
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));
 
-			Order order = new Order(2, 300, RedHotel, AdminV,
+			ConcreteOrder order = new ConcreteOrder(2, 300, RedHotel, AdminV,
 				"2", RedHotel.Rooms[1],
 				DateTime.Now, DateTime.Now.AddDays(7))
 			{
@@ -180,6 +180,12 @@ namespace Hotel
 				"Hanzo", "+069069698");
 
 			#endregion Base-Classes-And-Inheritence
+
+			#region Abstract-Classes-And-Virtual-Methods
+
+
+
+			#endregion Abstract-Classes-And-Virtual-Methods
 
 			#endregion Lab5
 

@@ -2,7 +2,7 @@
 
 namespace Hotel
 {
-	public class Order
+	public abstract class AbstractOrder
 	{
 		private int orderID;
 
@@ -213,7 +213,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо логічний оператор !
-		public static bool operator !(Order order)
+		public static bool operator !(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -223,7 +223,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо оператор true
-		public static bool operator true(Order order)
+		public static bool operator true(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -233,7 +233,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо оператор false
-		public static bool operator false(Order order)
+		public static bool operator false(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -242,9 +242,40 @@ namespace Hotel
 			return true;
 		}
 
-		public Order(int orderID, decimal sum,
+		public AbstractOrder(int orderID, decimal sum,
 			Hotel hotel, User user, string orderNumber,
 			Room room, DateTime start, DateTime end)
+		{
+			OrderID = orderID;
+			Sum = sum;
+			Hotel = hotel;
+			User = user;
+			OrderNumber = orderNumber;
+			Room = room;
+			DateStart = start;
+			DateEnd = end;
+
+			Console.WriteLine($"Бронювання користувача номер {OrderNumber} " +
+				$"{User.UserName} готово");
+		}
+
+		public virtual bool IsExpired()
+		{
+			if (DateEnd < DateTime.Now)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
+	public class ConcreteOrder : AbstractOrder
+	{
+		public ConcreteOrder(int orderID, decimal sum,
+	Hotel hotel, User user, string orderNumber,
+	Room room, DateTime start, DateTime end) :
+			base(orderID, sum, hotel, user, orderNumber,
+			room, start, end)
 		{
 			OrderID = orderID;
 			Sum = sum;
