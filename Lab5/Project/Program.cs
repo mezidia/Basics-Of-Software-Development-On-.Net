@@ -5,7 +5,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			#region Lab1-2-3
+			#region Lab1-2-3-4
 
 			Console.WriteLine("Четверта лабораторна робота\n");
 
@@ -39,10 +39,6 @@ namespace Hotel
 
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
-
-			#endregion Lab1-2-3
-
-			#region Lab4
 
 			Console.WriteLine("\n--------Lab4-------");
 
@@ -165,7 +161,13 @@ namespace Hotel
 
 			#endregion Comparison
 
-			#endregion Lab4
+			#endregion Lab1-2-3
+
+			#region Lab5
+
+
+
+			#endregion Lab5
 
 			Console.WriteLine("\n--------Credits-------");
 
