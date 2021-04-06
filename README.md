@@ -46,57 +46,27 @@ We've created this repo to easily manage Our work on Basics-Of-Software-Developm
 
 ## Code style :scroll:
 
-If you're using any code style like xo, standard etc. That will help others while contributing to your project.
-
-> I'm using [Codacy](https://www.codacy.com/) to automate my code quality.
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+We are using [Codacy](https://www.codacy.com/) to automate Our code quality.
  
 ## Screenshots :camera:
 
-Include logo/demo screenshot etc.
+>Nothing right now
 
 ## Tech/framework used :wrench:
 
 **Built with**
 
-- [Electron](https://electron.atom.io)
-
-## Features :muscle:
-
-What makes your project stand out?
-
-> With my package you can **sync** two folders, **manage** logs files, **delete** empty folders and old files, read and create **zip-archives**.
+- [Visual Studio](https://visualstudio.microsoft.com/)
 
 ## Code Example :pushpin:
 
 Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
-## Installation :computer:
-
-Provide step by step series of examples and explanations about how to get a development env running.
-
-## Fast usage :dash:
-
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## API Reference :fireworks:
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-> As tables
-
 ## Tests :microscope:
 
-Describe and show how to run the tests with code examples.
+> Nothing right now
 
 > As screenshot or :smile:I give you the [link](https://github.com/mezgoodle/sync-folders/actions?query=workflow%3A%22Python+package%22) to [GitHub Actions](https://github.com/features/actions), where you can see all my tests.
-
-## Contribute :running:
-
-Let people know how they can contribute into your project. A contributing guideline will be a big plus.
-
-> Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Also look at the [CONTRIBUTING.md](link).
 
 ## Credits :cat::handshake:
 
