@@ -7,7 +7,7 @@ namespace Hotel
 		{
 			#region Lab1-2-3-4
 
-			Console.WriteLine("Четверта лабораторна робота\n");
+			Console.WriteLine("\n--------Lab1-2-3--------");
 
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
@@ -24,7 +24,7 @@ namespace Hotel
 			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
 				DateTime.Now, DateTime.Now.AddDays(7));
 
-			Order order = new Order(2, 300, RedHotel, AdminV,
+			ConcreteOrder order = new ConcreteOrder(2, 300, RedHotel, AdminV,
 				"2", RedHotel.Rooms[1],
 				DateTime.Now, DateTime.Now.AddDays(7))
 			{
@@ -42,7 +42,7 @@ namespace Hotel
 
 			#region Lab4
 
-			Console.WriteLine("\n--------Lab4-------");
+			Console.WriteLine("\n--------Lab4--------");
 
 			#region Unary
 
@@ -169,7 +169,11 @@ namespace Hotel
 
 			#region Lab5
 
+			Console.WriteLine("\n--------Lab5--------");
+
 			#region Base-Classes-And-Inheritence
+
+			Console.WriteLine("\n--Базовi та похiднi класи:--");
 
 			Console.WriteLine("\nСтворюємо вiдвiдувача:");
 			Customer Customer = new Customer(7,
@@ -180,6 +184,40 @@ namespace Hotel
 				"Hanzo", "+069069698");
 
 			#endregion Base-Classes-And-Inheritence
+
+			#region Abstract-Classes-And-Virtual-Methods
+
+			Console.WriteLine("\n--Абстрактнi класи та вiртуальнi методи:--");
+
+			Console.WriteLine("\nВикористовуємо перший override конструктор:");
+
+			NotSoConcreteOrder NotSoConcreteOrder = new NotSoConcreteOrder(50,
+				666, BlueHotel, Admin, "3", BlueHotel.Rooms[0],
+				DateTime.Now, DateTime.Now.AddDays(7));
+
+			Console.WriteLine("\nВикористовуємо другий override конструктор:");
+
+			ConcreteOrder ConcreteOrder = new ConcreteOrder(51,
+				667, BlueHotel, Customer, "4", BlueHotel.Rooms[1],
+				DateTime.Now, DateTime.Now.AddDays(7));
+
+			Console.WriteLine("\nВикористовуємо перший override метод:");
+
+			NotSoConcreteOrder.IsExpired();
+
+			Console.WriteLine("\nВикористовуємо перший не override метод:");
+
+			ConcreteOrder.IsExpired();
+
+			Console.WriteLine("\nВикористовуємо другий override метод:");
+
+			NotSoConcreteOrder.BelongsTo();
+
+			Console.WriteLine("\nВикористовуємо другий не override метод:");
+
+			ConcreteOrder.BelongsTo();
+
+			#endregion Abstract-Classes-And-Virtual-Methods
 
 			#endregion Lab5
 
