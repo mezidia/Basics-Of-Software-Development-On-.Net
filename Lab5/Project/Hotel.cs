@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Hotel.Project;
+using System;
 using System.Collections.Generic;
 
 namespace Hotel
 {
-	public class Hotel
+	public class Hotel : IOrder, IRoom
 	{
 		private int numberOfStars;
 
