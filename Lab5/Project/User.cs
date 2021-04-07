@@ -189,7 +189,7 @@ namespace Hotel
 			}
 		}
 
-		public List<Order> Orders = new List<Order>();
+		public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
 		// Перевантажуємо логічний оператор &
 		public static bool operator &(User user1, User user2)

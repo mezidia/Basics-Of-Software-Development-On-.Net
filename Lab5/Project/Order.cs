@@ -2,7 +2,7 @@
 
 namespace Hotel
 {
-	public class Order
+	public abstract class AbstractOrder
 	{
 		private int orderID;
 
@@ -213,7 +213,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо логічний оператор !
-		public static bool operator !(Order order)
+		public static bool operator !(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -223,7 +223,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо оператор true
-		public static bool operator true(Order order)
+		public static bool operator true(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -233,7 +233,7 @@ namespace Hotel
 		}
 
 		// Перевантажуємо оператор false
-		public static bool operator false(Order order)
+		public static bool operator false(AbstractOrder order)
 		{
 			DateTime now = DateTime.Now;
 			System.TimeSpan difference = order.DateEnd.Subtract(now);
@@ -242,7 +242,18 @@ namespace Hotel
 			return true;
 		}
 
-		public Order(int orderID, decimal sum,
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AbstractOrder"/> class.
+		/// </summary>
+		/// <param name="orderID">The order identifier.</param>
+		/// <param name="sum">The sum.</param>
+		/// <param name="hotel">The hotel.</param>
+		/// <param name="user">The user.</param>
+		/// <param name="orderNumber">The order number.</param>
+		/// <param name="room">The room.</param>
+		/// <param name="start">The start.</param>
+		/// <param name="end">The end.</param>
+		public AbstractOrder(int orderID, decimal sum,
 			Hotel hotel, User user, string orderNumber,
 			Room room, DateTime start, DateTime end)
 		{
@@ -254,8 +265,118 @@ namespace Hotel
 			Room = room;
 			DateStart = start;
 			DateEnd = end;
+		}
 
-			Console.WriteLine($"Бронювання користувача номер {OrderNumber} " +
+		/// <summary>
+		/// Determines whether this instance is expired.
+		/// </summary>
+		/// <returns>
+		///   <c>true</c> if this instance is expired; otherwise, <c>false</c>.
+		/// </returns>
+		public virtual bool IsExpired()
+		{
+			if (DateEnd < DateTime.Now)
+			{
+				Console.WriteLine("Абстрактне бронювання вичерпано");
+				return true;
+			}
+			Console.WriteLine("Абстрактне бронювання не вичерпано");
+			return false;
+		}
+
+		/// <summary>
+		/// Return string with with an affiliation to something
+		/// From abstract class
+		/// </summary>
+		/// <returns>string</returns>
+		public virtual string BelongsTo()
+		{
+			string result = $"Це абстрактне бронювання належить" +
+				$" користувачу {User.UserName} та готелю {Hotel.HotelName}";
+			Console.WriteLine(result);
+			return result;
+		}
+	}
+
+	/// <summary>
+	/// Class, where We use overrided methods
+	/// </summary>
+	/// <seealso cref="Hotel.AbstractOrder" />
+	public class ConcreteOrder : AbstractOrder
+	{
+		public ConcreteOrder(int orderID, decimal sum,
+			Hotel hotel, User user, string orderNumber,
+			Room room, DateTime start, DateTime end) :
+			base(orderID, sum, hotel, user, orderNumber,
+			room, start, end)
+		{
+			OrderID = orderID;
+			Sum = sum;
+			Hotel = hotel;
+			User = user;
+			OrderNumber = orderNumber;
+			Room = room;
+			DateStart = start;
+			DateEnd = end;
+
+			Console.WriteLine($"Конкретне бронювання користувача " +
+				$"номер {OrderNumber} {User.UserName} готово");
+		}
+
+		/// <summary>
+		/// Determines whether this instance is expired.
+		/// </summary>
+		/// <returns>
+		///   <c>true</c> if this instance is expired; otherwise, <c>false</c>.
+		/// </returns>
+		public override bool IsExpired()
+		{
+			if (DateEnd < DateTime.Now)
+			{
+				Console.WriteLine("Конкретне бронювання вичерпано");
+				return true;
+			}
+			Console.WriteLine("Конкретне бронювання не вичерпано");
+			return false;
+		}
+
+		/// <summary>
+		/// Return string with with an affiliation to something
+		/// From concrete class
+		/// </summary>
+		/// <returns>string</returns>
+		public override string BelongsTo()
+		{
+			string result = $"Це конкретне бронювання належить" +
+				$" користувачу {User.UserName} та готелю {Hotel.HotelName}";
+			Console.WriteLine(result);
+			return result;
+		}
+	}
+
+	/// <summary>
+	/// Class, where We use methods from abstract class
+	/// </summary>
+	/// <seealso cref="Hotel.AbstractOrder" />
+	public class NotSoConcreteOrder : AbstractOrder
+	{
+		public NotSoConcreteOrder(int orderID, decimal sum,
+			Hotel hotel, User user, string orderNumber,
+			Room room, DateTime start, DateTime end) :
+			base(orderID, sum, hotel, user, orderNumber,
+			room, start, end)
+		{
+			OrderID = orderID;
+			Sum = sum;
+			Hotel = hotel;
+			User = user;
+			OrderNumber = orderNumber;
+			Room = room;
+			DateStart = start;
+			DateEnd = end;
+
+			Console.WriteLine($"Не дуже конкретне бронювання " +
+				$"користувача номер {OrderNumber} " +
 				$"{User.UserName} готово");
 		}
 	}
