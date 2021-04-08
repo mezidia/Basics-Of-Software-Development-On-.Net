@@ -243,6 +243,7 @@ namespace Hotel
 			#endregion Interface
 
 			#region Upcast, Downcast
+
 			Console.WriteLine("\n--Upcast та Downcast:--");
 			// Upcast
 			Customer customer = new Customer(7, "customer@gmail.com", "Genji", "+067069696");
@@ -254,11 +255,13 @@ namespace Hotel
 			Console.WriteLine("\n--Показуємо типи об'єктiв пiсля Upcast:--");
 			Console.WriteLine(customerUser.GetType());
 			Console.WriteLine(adminUser.GetType());
+			// Upcast
 			Customer customer1 = (Customer)customerUser;
 			Admin admin1 = (Admin)adminUser;
 			Console.WriteLine("\n--Показуємо властивостi об'єктiв пiсля Downcast:--");
 			Console.WriteLine(customer1.UserTypeName);
 			Console.WriteLine(admin1.UserTypeName);
+
 			#endregion Upcast, Downcast
 
 			#endregion Lab5
