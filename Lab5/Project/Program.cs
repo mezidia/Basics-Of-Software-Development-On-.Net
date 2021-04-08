@@ -243,6 +243,7 @@ namespace Hotel
 			#endregion Interface
 
 			#region Upcast, Downcast
+
 			Console.WriteLine("\n--Upcast та Downcast:--");
 
 			// Upcast
@@ -278,6 +279,7 @@ namespace Hotel
 			Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
 				"\nDmytrenko Roman,\n" +
 				"Sichkar Tetiana,\nDominskyi Valentyn");
+
 			Console.ReadLine();
 		}
 	}
