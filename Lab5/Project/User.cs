@@ -305,7 +305,6 @@ namespace Hotel
 			Console.WriteLine($"Користувач {UserTypeName}" +
 				$" на iм'я {userName} створений");
 		}
-
 	}
 
 	public class Admin : User
@@ -325,6 +324,5 @@ namespace Hotel
 			Console.WriteLine($"Користувач {UserTypeName}" +
 				$" на iм'я {userName} створений");
 		}
-
 	}
 }
