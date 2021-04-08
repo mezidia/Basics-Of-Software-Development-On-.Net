@@ -245,20 +245,27 @@ namespace Hotel
 			#region Upcast, Downcast
 
 			Console.WriteLine("\n--Upcast та Downcast:--");
+
 			// Upcast
-			Customer customer = new Customer(7, "customer@gmail.com", "Genji", "+067069696");
-			Admin admin = new Admin(8, "admin@gmail.com", "Hanzo", "+069069698");
+			Customer customer = new Customer(7,
+				"customer@gmail.com", "Genji", "+067069696");
+			Admin admin = new Admin(8,
+				"admin@gmail.com", "Hanzo", "+069069698");
+
 			User customerUser = customer;
 			User adminUser = admin;
-			// Console.WriteLine(customerUser.UserTypeName);
-			// Console.WriteLine(adminUser.adminType);
-			Console.WriteLine("\n--Показуємо типи об'єктiв пiсля Upcast:--");
+
+			Console.WriteLine("\n--Показуємо типи об'єктiв" +
+				" пiсля Upcast:--");
+
 			Console.WriteLine(customerUser.GetType());
 			Console.WriteLine(adminUser.GetType());
-			// Upcast
 			Customer customer1 = (Customer)customerUser;
 			Admin admin1 = (Admin)adminUser;
-			Console.WriteLine("\n--Показуємо властивостi об'єктiв пiсля Downcast:--");
+
+			Console.WriteLine("\n--Показуємо властивостi " +
+				"об'єктiв пiсля Downcast:--");
+
 			Console.WriteLine(customer1.UserTypeName);
 			Console.WriteLine(admin1.UserTypeName);
 
