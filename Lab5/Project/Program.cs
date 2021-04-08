@@ -260,7 +260,6 @@ namespace Hotel
 
 			Console.WriteLine(customerUser.GetType());
 			Console.WriteLine(adminUser.GetType());
-
 			Customer customer1 = (Customer)customerUser;
 			Admin admin1 = (Admin)adminUser;
 
