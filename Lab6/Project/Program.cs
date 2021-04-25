@@ -6,7 +6,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			#region Lab1-2-3-4
+			#region Lab1-2-3-4-5
 
 			Console.WriteLine("\n--------Lab1-2-3--------");
 
@@ -168,8 +168,6 @@ namespace Hotel
 
 			#endregion Lab4
 
-			#endregion Lab1-2-3-4
-
 			#region Lab5
 
 			Console.WriteLine("\n--------Lab5--------");
@@ -272,6 +270,14 @@ namespace Hotel
 			#endregion Upcast, Downcast
 
 			#endregion Lab5
+
+			#endregion Lab1-2-3-4-5
+
+			#region Lab6
+
+
+
+			#endregion Lab6
 
 			Console.WriteLine("\n--------Credits-------");
 
