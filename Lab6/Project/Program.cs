@@ -279,7 +279,7 @@ namespace Hotel
 
 			#region Lab6
 
-			Console.WriteLine("\n--------Lab6--------\n");
+			Console.WriteLine("\n--------Lab6--------");
 
 			#region Events
 

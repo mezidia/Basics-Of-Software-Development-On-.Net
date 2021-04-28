@@ -7,11 +7,11 @@ namespace Hotel
 	public class Hotel : IOrder, IRoom
 	{
 		delegate void Message(string text);
-		private static void showMessage(string text)
+		private static void ShowMessage(string text)
 		{
 			Console.WriteLine(text);
 		}
-		Message dlg = showMessage;
+		Message Dlg = ShowMessage;
 
 		private int numberOfStars;
 
@@ -31,7 +31,7 @@ namespace Hotel
 				{
 					numberOfStars = value;
 				}
-				else dlg("Введiть правильну кiлькiсть зiрок");
+				else Dlg("Введiть правильну кiлькiсть зiрок");
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace Hotel
 				{
 					description = value;
 				}
-				else dlg("Введiть бiльшу кiлькiсть символiв");
+				else Dlg("Введiть бiльшу кiлькiсть символiв");
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace Hotel
 			set
 			{
 				if (value.ToString() != null) rating = value;
-				else dlg("Введiть не пустий iдентифiкатор рейтингу");
+				else Dlg("Введiть не пустий iдентифiкатор рейтингу");
 			}
 		}
 
@@ -91,7 +91,7 @@ namespace Hotel
 			set
 			{
 				if (value.ToString() != null) hotelID = value;
-				else dlg("Введiть не пустий iдентифiкатор готелю");
+				else Dlg("Введiть не пустий iдентифiкатор готелю");
 			}
 		}
 
@@ -110,7 +110,7 @@ namespace Hotel
 			set
 			{
 				if (value.Length < 15) hotelName = value;
-				else dlg("Забагато символiв для iменi готелю");
+				else Dlg("Забагато символiв для iменi готелю");
 			}
 		}
 
@@ -134,7 +134,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Невiрна адреса");
+					Dlg("Невiрна адреса");
 				}
 			}
 		}
@@ -183,7 +183,7 @@ namespace Hotel
 				this, true, "Big", 5, true);
 			Rooms.Add(FirstRoom);
 
-			dlg($"Готель {hotelName} створено");
+			Dlg($"Готель {hotelName} створено");
 		}
 
 		public void CreateRoom(int roomID, int roomNumber,
