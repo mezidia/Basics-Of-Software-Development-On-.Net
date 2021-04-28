@@ -279,11 +279,30 @@ namespace Hotel
 
 			#region Lab6
 
+			Console.WriteLine("\n--------Lab6--------\n");
+
+			#region Events
+
+			Console.WriteLine("\n--Подiї:--\n");
+
+			Hotel EventHotel = new Hotel(56, "Подiя", "вул. Т. Шевченка",
+				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
+				"подобається")
+			{
+				City = City.Kyiv,
+				Rating = 35,
+				NumberOfStars = 4
+			};
+
+			EventHotel.EventForNotifying += DisplayMessage;
+
+			EventHotel.CreateRoom(2, 2, "Подiя", 1, EventHotel, true, "Big", 5, true);
+
+			#endregion Events
+
 			#region Anonymous-Methods
 
-			Console.WriteLine("\n--------Lab6--------");
-
-			Console.WriteLine("\nПриклади використання анонiмних методiв:\n");
+			Console.WriteLine("\n--Анонiмнi методи:--\n");
 
 			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate(string messageString)
 				{
@@ -306,6 +325,11 @@ namespace Hotel
 				"Sichkar Tetiana,\nDominskyi Valentyn");
 
 			Console.ReadLine();
+		}
+
+		private static void DisplayMessage(string message)
+		{
+			Console.WriteLine(message);
 		}
 	}
 }
