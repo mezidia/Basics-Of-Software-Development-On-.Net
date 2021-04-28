@@ -275,7 +275,14 @@ namespace Hotel
 
 			#region Lab6
 
+			#region anonymous-methods
+			Console.WriteLine("Приклади використання анонiмних методiв:");
+			Room.ShowMessage("1. Анонiмний метод класу Room!", delegate(string mes) 
+				{ 
+					Console.WriteLine(mes); 
+				});
 
+			#endregion anonymous-methods
 
 			#endregion Lab6
 

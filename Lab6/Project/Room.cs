@@ -449,5 +449,11 @@ namespace Hotel
 				&& (r1.RoomSize == r2.RoomSize) &&
 				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony));
 		}
+
+		public delegate void MessageHandler(string mes);
+		public static void ShowMessage(string mes, MessageHandler handler)
+		{
+			handler(mes);
+		}
 	}
 }
