@@ -8,7 +8,9 @@ namespace Hotel
         {
             #region Lab1-2-3-4-5
 
-            Console.WriteLine("\n--------Lab1-2-3--------");
+			#region Lab1-2-3
+
+			Console.WriteLine("\n--------Lab1-2-3--------");
 
             Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
                 "Дуже крутий опис дуже крутого готелю, який всім дуже " +
@@ -43,7 +45,9 @@ namespace Hotel
             // Copy Constructor
             User GreaterValeera = new User(GreatValeera);
 
-            #region Lab4
+			#endregion Lab1-2-3
+
+			#region Lab4
 
             Console.WriteLine("\n--------Lab4--------");
 
@@ -275,20 +279,66 @@ namespace Hotel
 
             #region Lab6
 
-            Console.WriteLine("Коефiцiєнт просторностi кiмнати: " + RedHotel.Rooms[0].SpaceKoeff);
+			Console.WriteLine("\n--------Lab6--------\n");
+
+			#region Events
+
+			Console.WriteLine("\n--Подiї:--\n");
+
+			Hotel EventHotel = new Hotel(56, "Подiя", "вул. Т. Шевченка",
+				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
+				"подобається")
+			{
+				City = City.Kyiv,
+				Rating = 35,
+				NumberOfStars = 4
+			};
+
+			EventHotel.EventForNotifying += DisplayMessage;
+
+			EventHotel.CreateRoom(2, 2, "Подiя", 1, EventHotel, true, "Big", 5, true);
+
+			#endregion Events
+
+			#region Anonymous-Methods
+
+			Console.WriteLine("\n--Анонiмнi методи:--\n");
+
+			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate(string messageString)
+				{
+					Console.WriteLine(messageString);
+				});
+
+			Hotel.ShowSomeString("2. Анонiмний метод класу Hotel.", delegate (string messageString)
+				{
+					Console.WriteLine(messageString);
+				});
+
+			#endregion Anonymous-Methods
+        
+      #region Lambda
+        
+        Console.WriteLine("\n--Лямбди:--\n");
+        
+        Console.WriteLine("Коефiцiєнт просторностi кiмнати: " + RedHotel.Rooms[0].SpaceKoeff);
             RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek != DayOfWeek.Sunday);
             Func<decimal> priceOne = () => { return order.Room.NumberOfBeds == 0 ? 1 : order.Sum/ (decimal)order.Room.NumberOfBeds; };
             Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
-
-            #endregion Lab6
+        
+      #endregion Lambda
 
             Console.WriteLine("\n--------Credits-------");
 
-            Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
-                "\nDmytrenko Roman,\n" +
-                "Sichkar Tetiana,\nDominskyi Valentyn");
+			Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
+				"\nDmytrenko Roman,\n" +
+				"Sichkar Tetiana,\nDominskyi Valentyn");
 
-            Console.ReadLine();
-        }
-    }
+			Console.ReadLine();
+		}
+
+		private static void DisplayMessage(string message)
+		{
+			Console.WriteLine(message);
+		}
+	}
 }

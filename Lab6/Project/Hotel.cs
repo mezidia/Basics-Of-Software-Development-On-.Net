@@ -160,6 +160,9 @@ namespace Hotel
 		public List<Room> Rooms = new List<Room>();
 		public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
+		public delegate void HotelHandler(string messageString);
+		public event HotelHandler EventForNotifying;
+
 		public Hotel(int hotelID, string hotelName,
 			string address, string description)
 		{
@@ -172,6 +175,7 @@ namespace Hotel
 			Room FirstRoom = new Room(1, 1, "First", 2,
 				this, true, "Big", 5, true);
 			Rooms.Add(FirstRoom);
+
 			Console.WriteLine($"Готель {hotelName} створено");
 		}
 
@@ -182,6 +186,9 @@ namespace Hotel
 			Room room = new Room(roomID, roomNumber, roomName,
 				roomSize, hotel, tv, roomType, numberOfBeds, balcony);
 			Rooms.Add(room);
+
+			EventForNotifying?.Invoke($"Додано кiмнату номер {room.RoomNumber} готелю " +
+				$"{room.Hotel.HotelName} вiд подiї");
 		}
 
 		/// <summary>
@@ -292,6 +299,13 @@ namespace Hotel
 					&& (h1.Rating == h2.Rating));
 			}
 			return true;
+		}
+
+		public delegate void MessageHandler(string messageString);
+
+		public static void ShowSomeString(string messageString, MessageHandler handler)
+		{
+			handler(messageString);
 		}
 	}
 }
