@@ -363,7 +363,7 @@ namespace Hotel
 
 			r1.Hotel.Rooms.Add(newRoom);
 
-			dlg($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
+			Console.WriteLine($"Кiмнати {r1.RoomName} та {r2.RoomName} готелю " +
 				$"{r1.Hotel.HotelName} були видаленi");
 
 			r1.Hotel.DeleteRoom(ref r1);
