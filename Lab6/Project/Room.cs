@@ -5,11 +5,11 @@ namespace Hotel
 	public class Room
 	{
 		delegate void Message(string text);
-		private static void showMessage(string text)
+		private static void ShowMessage(string text)
 		{
 			Console.WriteLine(text);
 		}
-		Message dlg = showMessage;
+		Message Dlg = ShowMessage;
 
 		private int roomID;
 
@@ -31,7 +31,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("ID має бути бiльшим вiд 0");
+					Dlg("ID має бути бiльшим вiд 0");
 				}
 			}
 		}
@@ -56,7 +56,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Номер кiмнати має бути бiльшим від 0");
+					Dlg("Номер кiмнати має бути бiльшим від 0");
 				}
 			}
 		}
@@ -82,7 +82,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Назва кiмнати не повинна бути пустою");
+					Dlg("Назва кiмнати не повинна бути пустою");
 				}
 			}
 		}
@@ -107,7 +107,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Розмiр кiмнати має бути бiльшим вiд 0");
+					Dlg("Розмiр кiмнати має бути бiльшим вiд 0");
 				}
 			}
 		}
@@ -132,7 +132,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Кiмната має належати до готелю");
+					Dlg("Кiмната має належати до готелю");
 				}
 			}
 		}
@@ -157,7 +157,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть значення про наявнiсть телевiзора");
+					Dlg("Введiть значення про наявнiсть телевiзора");
 				}
 			}
 		}
@@ -183,7 +183,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Задайте тип кiмнати");
+					Dlg("Задайте тип кiмнати");
 				}
 			}
 		}
@@ -208,7 +208,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Кiлькість спальних мiсць " +
+					Dlg("Кiлькість спальних мiсць " +
 						"має бути бiльша вiд 0");
 				}
 			}
@@ -234,7 +234,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть значення" +
+					Dlg("Введiть значення" +
 						" про наявнiсть балкону");
 				}
 			}
@@ -298,7 +298,7 @@ namespace Hotel
 			NumberOfBeds = numberOfBeds;
 			Balcony = balcony;
 
-			dlg($"Додано кiмнату номер {RoomNumber} готелю " +
+			Dlg($"Додано кiмнату номер {RoomNumber} готелю " +
 				$"{Hotel.HotelName}");
 		}
 
@@ -318,7 +318,7 @@ namespace Hotel
 			NumberOfBeds = room.NumberOfBeds;
 			Balcony = room.Balcony;
 
-			dlg("Додано копiю кiмнати");
+			Dlg("Додано копiю кiмнати");
 		}
 
 		/// <summary>
@@ -470,7 +470,7 @@ namespace Hotel
 		public void CheckHotelPrice(IsEqual func)
 		{
 			if (func(DateTime.Now.DayOfWeek )){
-				dlg("Сьогоднi меншi цiни!");
+				Dlg("Сьогоднi меншi цiни!");
 			}
 		}
 	}

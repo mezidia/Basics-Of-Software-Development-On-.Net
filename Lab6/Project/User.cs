@@ -7,11 +7,11 @@ namespace Hotel
 	public class User
 	{
 		delegate void Message(string text);
-		private static void showMessage(string text)
-        {
+		private static void ShowMessage(string text)
+		{
 			Console.WriteLine(text);
-        }
-		Message dlg = showMessage;
+		}
+		Message Dlg = ShowMessage;
 
 		private string userMail;
 
@@ -34,7 +34,7 @@ namespace Hotel
 				}
 				catch
 				{
-					dlg("Введiть дiйсну електронну пошту");
+					Dlg("Введiть дiйсну електронну пошту");
 				}
 			}
 		}
@@ -59,7 +59,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть коректний номер телефону");
+					Dlg("Введiть коректний номер телефону");
 				}
 			}
 		}
@@ -89,7 +89,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть коректний пароль. " +
+					Dlg("Введiть коректний пароль. " +
 						"Має бути мiнiмум одна цифра, одна велика " +
 						"буква, i довжина паролю має бути мiнiмум 8 символiв.");
 				}
@@ -116,7 +116,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть непорожнiй логiн");
+					Dlg("Введiть непорожнiй логiн");
 				}
 			}
 		}
@@ -141,7 +141,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть непорожнiй iдентифiкатор");
+					Dlg("Введiть непорожнiй iдентифiкатор");
 				}
 			}
 		}
@@ -166,7 +166,7 @@ namespace Hotel
 				}
 				else
 				{
-					dlg("Введiть непорожнiй тип");
+					Dlg("Введiть непорожнiй тип");
 				}
 			}
 		}
@@ -248,7 +248,7 @@ namespace Hotel
 			UserMail = user.UserMail;
 			UserPhone = user.UserPhone;
 
-			dlg($"Копiю користувача {UserName} створено");
+			Dlg($"Копiю користувача {UserName} створено");
 		}
 
 		/// <summary>
@@ -268,7 +268,7 @@ namespace Hotel
 			UserMail = userMail;
 			UserPhone = userPhone;
 
-			dlg($"Користувач {UserName} створений");
+			Dlg($"Користувач {UserName} створений");
 		}
 
 		/// <summary>
@@ -276,7 +276,7 @@ namespace Hotel
 		/// </summary>
 		public User()
 		{
-			dlg("Користувача за замовченням створено");
+			Dlg("Користувача за замовченням створено");
 		}
 
 
