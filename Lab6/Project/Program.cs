@@ -275,8 +275,10 @@ namespace Hotel
 
             #region Lab6
 
-            Console.WriteLine("Коефiцiєнт барачностi кiмнати: " + RedHotel.Rooms[0].BarakKoeff);
+            Console.WriteLine("Коефiцiєнт просторностi кiмнати: " + RedHotel.Rooms[0].SpaceKoeff);
             RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek != DayOfWeek.Sunday);
+            Func<decimal> priceOne = () => { return order.Room.NumberOfBeds == 0 ? 1 : order.Sum/ (decimal)order.Room.NumberOfBeds; };
+            Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
 
             #endregion Lab6
 

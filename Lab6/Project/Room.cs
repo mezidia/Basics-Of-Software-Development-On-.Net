@@ -449,7 +449,7 @@ namespace Hotel
                 && (r1.RoomSize == r2.RoomSize) &&
                 (r1.TV == r2.TV) && (r1.Balcony == r2.Balcony));
         }
-        public double BarakKoeff => numberOfBeds == 0 ? 1 : (double)roomSize / (double)numberOfBeds;
+        public double SpaceKoeff => numberOfBeds == 0 ? 1 : (double)roomSize / (double)numberOfBeds;
         public delegate bool IsEqual(DayOfWeek x);
         public void CheckHotelPrice(IsEqual func)
         {
