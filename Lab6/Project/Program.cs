@@ -8,6 +8,8 @@ namespace Hotel
 		{
 			#region Lab1-2-3-4-5
 
+			#region Lab1-2-3
+
 			Console.WriteLine("\n--------Lab1-2-3--------");
 
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
@@ -42,6 +44,8 @@ namespace Hotel
 
 			// Copy Constructor
 			User GreaterValeera = new User(GreatValeera);
+
+			#endregion Lab1-2-3
 
 			#region Lab4
 
@@ -275,19 +279,23 @@ namespace Hotel
 
 			#region Lab6
 
-			#region anonymous-methods
-			Console.WriteLine();
-			Console.WriteLine("Приклади використання анонiмних методiв:");
-			Room.ShowMessage("1. Анонiмний метод класу Room.", delegate(string mes) 
-				{ 
-					Console.WriteLine(mes); 
-				});
-			Hotel.ShowMessage("2. Анонімний метод класу Hotel.", delegate (string mes)
+			#region Anonymous-Methods
+
+			Console.WriteLine("\n--------Lab6--------");
+
+			Console.WriteLine("\nПриклади використання анонiмних методiв:\n");
+
+			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate(string messageString)
 				{
-					Console.WriteLine(mes);
+					Console.WriteLine(messageString);
 				});
 
-			#endregion anonymous-methods
+			Hotel.ShowSomeString("2. Анонiмний метод класу Hotel.", delegate (string messageString)
+				{
+					Console.WriteLine(messageString);
+				});
+
+			#endregion Anonymous-Methods
 
 			#endregion Lab6
 

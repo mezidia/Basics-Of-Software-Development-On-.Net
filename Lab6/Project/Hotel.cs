@@ -294,10 +294,11 @@ namespace Hotel
 			return true;
 		}
 
-		public delegate void MessageHandler(string mes);
-		public static void ShowMessage(string mes, MessageHandler handler)
+		public delegate void MessageHandler(string messageString);
+
+		public static void ShowSomeString(string messageString, MessageHandler handler)
 		{
-			handler(mes);
+			handler(messageString);
 		}
 	}
 }

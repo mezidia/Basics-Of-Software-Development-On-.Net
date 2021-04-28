@@ -450,10 +450,11 @@ namespace Hotel
 				(r1.TV == r2.TV) && (r1.Balcony == r2.Balcony));
 		}
 
-		public delegate void MessageHandler(string mes);
-		public static void ShowMessage(string mes, MessageHandler handler)
+		public delegate void MessageHandler(string messageString);
+
+		public static void ShowSomeString(string messageString, MessageHandler handler)
 		{
-			handler(mes);
+			handler(messageString);
 		}
 	}
 }
