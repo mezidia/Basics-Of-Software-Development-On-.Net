@@ -293,5 +293,12 @@ namespace Hotel
 			}
 			return true;
 		}
+
+		public delegate void MessageHandler(string messageString);
+
+		public static void ShowSomeString(string messageString, MessageHandler handler)
+		{
+			handler(messageString);
+		}
 	}
 }
