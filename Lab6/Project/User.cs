@@ -6,6 +6,13 @@ namespace Hotel
 {
 	public class User
 	{
+		delegate void Message(string text);
+		private static void showMessage(string text)
+        {
+			Console.WriteLine(text);
+        }
+		Message dlg = showMessage;
+
 		private string userMail;
 
 		/// <summary>
@@ -27,7 +34,7 @@ namespace Hotel
 				}
 				catch
 				{
-					Console.WriteLine("Введiть дiйсну електронну пошту");
+					dlg("Введiть дiйсну електронну пошту");
 				}
 			}
 		}
@@ -52,7 +59,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть коректний номер телефону");
+					dlg("Введiть коректний номер телефону");
 				}
 			}
 		}
@@ -82,7 +89,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть коректний пароль. " +
+					dlg("Введiть коректний пароль. " +
 						"Має бути мiнiмум одна цифра, одна велика " +
 						"буква, i довжина паролю має бути мiнiмум 8 символiв.");
 				}
@@ -109,7 +116,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть непорожнiй логiн");
+					dlg("Введiть непорожнiй логiн");
 				}
 			}
 		}
@@ -134,7 +141,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть непорожнiй iдентифiкатор");
+					dlg("Введiть непорожнiй iдентифiкатор");
 				}
 			}
 		}
@@ -159,7 +166,7 @@ namespace Hotel
 				}
 				else
 				{
-					Console.WriteLine("Введiть непорожнiй тип");
+					dlg("Введiть непорожнiй тип");
 				}
 			}
 		}
@@ -241,7 +248,7 @@ namespace Hotel
 			UserMail = user.UserMail;
 			UserPhone = user.UserPhone;
 
-			Console.WriteLine($"Копiю користувача {UserName} створено");
+			dlg($"Копiю користувача {UserName} створено");
 		}
 
 		/// <summary>
@@ -261,7 +268,7 @@ namespace Hotel
 			UserMail = userMail;
 			UserPhone = userPhone;
 
-			Console.WriteLine($"Користувач {UserName} створений");
+			dlg($"Користувач {UserName} створений");
 		}
 
 		/// <summary>
@@ -269,7 +276,7 @@ namespace Hotel
 		/// </summary>
 		public User()
 		{
-			Console.WriteLine("Користувача за замовченням створено");
+			dlg("Користувача за замовченням створено");
 		}
 
 
