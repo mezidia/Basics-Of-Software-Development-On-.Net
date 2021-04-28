@@ -456,5 +456,15 @@ namespace Hotel
 		{
 			handler(messageString);
 		}
+
+		public double SpaceKoeff => numberOfBeds == 0 ? 1 : (double)roomSize / numberOfBeds;
+		public delegate bool IsEqual(DayOfWeek x);
+
+		public void CheckHotelPrice(IsEqual func)
+		{
+			if (func(DateTime.Now.DayOfWeek )){
+				Console.WriteLine("Сьогоднi меншi цiни!");
+			}
+		}
 	}
 }
