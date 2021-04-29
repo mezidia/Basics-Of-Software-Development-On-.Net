@@ -380,9 +380,8 @@ namespace Hotel
                 $"{User.UserName} готово");
         }
         public void CheckPackPrice(Room room, decimal Sum)
-        {          
-                Console.WriteLine("Сьогоднi меншi цiни!");
-
+        {
+             Console.WriteLine("Сьогоднi меншi цiни!");
         }
     }
 

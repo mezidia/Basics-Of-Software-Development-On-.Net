@@ -322,11 +322,13 @@ namespace Hotel
 
 			Console.WriteLine("Коефiцiєнт просторностi кiмнати: "
 				+ RedHotel.Rooms[0].SpaceKoeff);
+
 			RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek
 			!= DayOfWeek.Sunday);
 
 			decimal priceOne() { return order.Room.NumberOfBeds == 0 ? 1
 					: order.Sum / order.Room.NumberOfBeds; }
+
 			Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
 
 			#endregion Lambda
