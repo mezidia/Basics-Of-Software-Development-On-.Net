@@ -366,7 +366,18 @@ namespace Hotel
 
 			#region SystemExceptions
 
+			object value = 12;
 
+			try
+            {
+				string Hanamura = (string)value;
+				Console.WriteLine("Cast is success");
+			}
+            catch (InvalidCastException)
+            {
+				Console.WriteLine("Catched casting exception");
+                // throw;
+            }
 
 			#endregion SystemExceptions
 
