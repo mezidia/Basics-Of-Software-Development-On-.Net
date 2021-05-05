@@ -342,6 +342,36 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab7--------");
 
+			#region Authorization
+
+
+
+			#endregion Authorization
+
+			#region Filters
+
+
+
+			#endregion Filters
+
+			#region Arrays
+
+
+
+			#endregion Arrays
+
+			#region SystemExceptions
+
+
+
+			#endregion SystemExceptions
+
+			#region CustomExceptions
+
+
+
+			#endregion CustomExceptions
+
 			#endregion Lab7
 
 			Console.WriteLine("\n--------Credits-------");
