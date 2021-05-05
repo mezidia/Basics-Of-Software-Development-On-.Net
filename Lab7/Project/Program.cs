@@ -1,7 +1,11 @@
 ﻿using Hotel.Project;
 using System;
+
 namespace Hotel
 {
+	/// <summary>
+	/// Main class of Our project, where all magic happens
+	/// </summary>
 	class MainClass
 	{
 		static void Main()
@@ -383,6 +387,10 @@ namespace Hotel
 			Console.ReadLine();
 		}
 
+		/// <summary>
+		/// Methos for delegate to print some message
+		/// </summary>
+		/// <param name="message"></param>
 		private static void DisplayMessage(string message)
 		{
 			Console.WriteLine(message);
