@@ -1,5 +1,6 @@
 ﻿using Hotel.Project;
 using System;
+using System.Collections.Generic;
 
 namespace Hotel
 {
@@ -367,6 +368,8 @@ namespace Hotel
 			#region SystemExceptions
 
 			object stacks = "twelve";
+			List<User> users = null;
+			var users2 = new List<String>();
 
 			try
             {
@@ -390,6 +393,27 @@ namespace Hotel
             {
 				Console.WriteLine("Catched argument exception");
 				// throw;
+            }
+
+            /*try
+            {
+                users.Add(GreaterValeera);
+				Console.WriteLine("Users aren't null");
+			}
+            catch (NullReferenceException)
+            {
+				Console.WriteLine("Catched null reference exception");
+				throw;
+            }*/
+
+            try
+            {
+				Console.WriteLine("The first item: '{0}'", users2[0]);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+				Console.WriteLine("Hello from Borat");
+                // throw;
             }
 
 			#endregion SystemExceptions
