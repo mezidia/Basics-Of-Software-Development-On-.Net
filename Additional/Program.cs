@@ -10,7 +10,7 @@ namespace Additional
 			int[] secondArray = { 4, 5, 6 };
 
 			Console.WriteLine("Намагаємося отримати доступ до 5-ого" +
-				" елементу першого масиву");
+				" елементу першого масиву\n");
 
 			try
 			{
@@ -23,12 +23,12 @@ namespace Additional
 				Console.WriteLine(e.GetType());
 			}
 
-			Console.WriteLine("Намагаємося отримати доступ до 4-ого" +
-				" елементу другого масиву");
+			Console.WriteLine("\nНамагаємося отримати доступ до 4-ого" +
+				" елементу другого масиву\n");
 
 			try
 			{
-				Console.WriteLine($"4-ий елемент масиву = " + firstArray[3]);
+				Console.WriteLine($"4-ий елемент масиву = " + secondArray[3]);
 			}
 			catch (Exception e)
 			{
@@ -36,6 +36,8 @@ namespace Additional
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.GetType());
 			}
+
+			Console.ReadKey();
 		}
 	}
 }
