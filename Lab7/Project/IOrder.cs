@@ -2,6 +2,9 @@
 
 namespace Hotel.Project
 {
+	/// <summary>
+	/// Order Interface
+	/// </summary>
 	public interface IOrder
 	{
 		void CreateOrder(int OrderID, decimal Sum,
