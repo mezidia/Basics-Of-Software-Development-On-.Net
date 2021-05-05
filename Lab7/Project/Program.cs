@@ -6,7 +6,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			#region Lab1-2-3-4-5
+			#region Lab1-2-3-4-5-6
 
 			#region Lab1-2-3
 
@@ -275,8 +275,6 @@ namespace Hotel
 
 			#endregion Lab5
 
-			#endregion Lab1-2-3-4-5
-
 			#region Lab6
 
 			Console.WriteLine("\n--------Lab6--------");
@@ -304,15 +302,15 @@ namespace Hotel
 
 			Console.WriteLine("\n--Анонiмнi методи:--\n");
 
-			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate(string messageString)
-				{
-					Console.WriteLine(messageString);
-				});
+			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate (string messageString)
+			{
+				Console.WriteLine(messageString);
+			});
 
 			Hotel.ShowSomeString("2. Анонiмний метод класу Hotel.", delegate (string messageString)
-				{
-					Console.WriteLine(messageString);
-				});
+			{
+				Console.WriteLine(messageString);
+			});
 
 			#endregion Anonymous-Methods
 
@@ -326,14 +324,25 @@ namespace Hotel
 			RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek
 			!= DayOfWeek.Sunday);
 
-			decimal priceOne() { return order.Room.NumberOfBeds == 0 ? 1
-					: order.Sum / order.Room.NumberOfBeds; }
+			decimal priceOne()
+			{
+				return order.Room.NumberOfBeds == 0 ? 1
+   : order.Sum / order.Room.NumberOfBeds;
+			}
 
 			Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
 
 			#endregion Lambda
 
 			#endregion Lab6
+
+			#endregion Lab1-2-3-4-5-6
+
+			#region Lab7
+
+			Console.WriteLine("\n--------Lab7--------");
+
+			#endregion Lab7
 
 			Console.WriteLine("\n--------Credits-------");
 
