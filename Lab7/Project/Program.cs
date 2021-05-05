@@ -366,17 +366,30 @@ namespace Hotel
 
 			#region SystemExceptions
 
-			object value = 12;
+			object stacks = "twelve";
 
 			try
             {
-				string Hanamura = (string)value;
+				int KelThuzad = (int)stacks;
 				Console.WriteLine("Cast is success");
 			}
             catch (InvalidCastException)
             {
 				Console.WriteLine("Catched casting exception");
                 // throw;
+            }
+            try
+            {
+                if (stacks != "+069069698")
+                {
+					throw new ArgumentException();
+                }
+				Console.WriteLine("Argument is good");
+			}
+            catch (ArgumentException)
+            {
+				Console.WriteLine("Catched argument exception");
+				// throw;
             }
 
 			#endregion SystemExceptions
