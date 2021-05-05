@@ -52,24 +52,24 @@ namespace Additional
 
 		public static void DivideArrays(int[] divided, int[] divider)
 		{
-			Console.WriteLine($"загальна к-сть можливих множень для цих " +
-				$"двох масивів = {divided.Length * divider.Length}");
+			Console.WriteLine($"\nЗагальна к-сть можливих множень для цих " +
+				$"двох масивiв = {divided.Length * divider.Length}");
 			for (int i = 0; i < divided.Length; i++)
 			{
 				for (int j = 0; j < divider.Length; j++)
 				{
+					Console.Write($"\n{divided[i]} / {divider[j]} = ");
 					try
 					{
-						Console.WriteLine($"{divided[i]} / {divider[j]} = " +
-						$"{divided[i] / divider[j]}");
+						 Console.Write($"{divided[i] / divider[j]}");
 					}
 					catch (Exception e)
 					{
-						Console.WriteLine("\nЄ виняток:");
-						Console.WriteLine(e.Message);
-						Console.WriteLine(e.GetType());
+						Console.Write("Виняток:");
+						Console.Write(e.Message);
 					}
 				}
+				Console.WriteLine();
 			}
 		}
 
