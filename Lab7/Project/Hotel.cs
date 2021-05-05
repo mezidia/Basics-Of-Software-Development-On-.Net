@@ -393,8 +393,17 @@ namespace Hotel
 			return true;
 		}
 
+		/// <summary>
+		/// Delegate for showing some string
+		/// </summary>
+		/// <param name="messageString">The message string.</param>
 		public delegate void MessageHandler(string messageString);
 
+		/// <summary>
+		/// Shows some string.
+		/// </summary>
+		/// <param name="messageString">The message string.</param>
+		/// <param name="handler">The handler.</param>
 		public static void ShowSomeString(string messageString, MessageHandler handler)
 		{
 			handler(messageString);
