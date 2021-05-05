@@ -13,6 +13,8 @@ namespace Hotel
 		}
 		Message Dlg = ShowMessage;
 
+		private bool isAuthorized = false;
+
 		private string userMail;
 
 		/// <summary>
@@ -196,7 +198,9 @@ namespace Hotel
 			}
 		}
 
-		public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
+        public bool IsAuthorized { get => isAuthorized; }
+
+        public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
 		// Перевантажуємо логічний оператор &
 		public static bool operator &(User user1, User user2)
@@ -280,6 +284,27 @@ namespace Hotel
 		}
 
 
+		public void LogIn(string login, string password) 
+		{
+            if (string.IsNullOrEmpty(login))
+            {
+				throw new ArgumentException("Задано пустий логiн");
+			}
+			if (string.IsNullOrEmpty(password))
+			{
+				throw new ArgumentException("Задано пустий пароль");
+			}
+			
+            if (login.Equals(this.login) && password.Equals(this.password))
+            {
+				this.isAuthorized = true;
+				Console.WriteLine("Користувача авторизовано!");
+            }
+            else
+            {
+				throw new Project.LogInException("Користупача не авторизовано, перевiрте данi!");
+			}
+		}
 		public void SearchForInfo() { }
 		public void Book() { }
 		public void CheckBooking() { }

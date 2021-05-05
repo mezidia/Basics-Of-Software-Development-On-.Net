@@ -346,9 +346,66 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab7--------");
 
-			#region Authorization
+            #region Authorization
+			//обробка неправильного логіну
+            AdminV.Login = "Valera96";
+			AdminV.Password = "Valerchikperchik69";
+            try
+            {
+                AdminV.LogIn("Valera9", "Valerchikperchik6");
+            }
+            catch (LogInException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (ArgumentException e)
+            {
 
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
 
+                Console.WriteLine(e.Message);
+            }
+			//обробка пустого паролю
+			try
+			{
+				AdminV.LogIn("Valera96", "");
+			}
+			catch (LogInException e)
+			{
+				Console.WriteLine(e.Message);
+			}
+			catch (ArgumentException e)
+			{
+
+				Console.WriteLine(e.Message);
+			}
+			catch (Exception e)
+			{
+
+				Console.WriteLine(e.Message);
+			}
+			//коректний логін
+			try
+			{
+				AdminV.LogIn("Valera96", "Valerchikperchik69");
+			}
+			catch (LogInException e)
+			{
+				Console.WriteLine(e.Message);
+			}
+			catch (ArgumentException e)
+			{
+
+				Console.WriteLine(e.Message);
+			}
+			catch (Exception e)
+			{
+
+				Console.WriteLine(e.Message);
+			}
 
 			#endregion Authorization
 
