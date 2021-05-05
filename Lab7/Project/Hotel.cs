@@ -4,14 +4,30 @@ using System.Collections.Generic;
 
 namespace Hotel
 {
+	/// <summary>
+	/// Hotel class, where We have all methods and
+	/// fields for hotels
+	/// </summary>
+	/// <seealso cref="Hotel.Project.IOrder" />
+	/// <seealso cref="Hotel.Project.IRoom" />
 	public class Hotel : IOrder, IRoom
 	{
+		/// <summary>
+		/// Delegate for replacing Console.WriteLine
+		/// </summary>
+		/// <param name="text">The text.</param>
 		delegate void Message(string text);
+
+		/// <summary>
+		/// Our interpretation of Console.WriteLine
+		/// </summary>
+		/// <param name="text">The text.</param>
 		private static void ShowMessage(string text)
 		{
 			Console.WriteLine(text);
 		}
-		Message Dlg = ShowMessage;
+
+		readonly Message Dlg = ShowMessage;
 
 		private int numberOfStars;
 
