@@ -27,8 +27,14 @@ namespace Hotel
 			Console.WriteLine(text);
 		}
 
+		/// <summary>
+		/// The dialog for Console.Write'ing
+		/// </summary>
 		readonly Message Dlg = ShowMessage;
 
+		/// <summary>
+		/// The number of stars
+		/// </summary>
 		private int numberOfStars;
 
 		/// <summary>
@@ -51,6 +57,9 @@ namespace Hotel
 			}
 		}
 
+		/// <summary>
+		/// The description
+		/// </summary>
 		private string description;
 
 		/// <summary>
@@ -73,6 +82,9 @@ namespace Hotel
 			}
 		}
 
+		/// <summary>
+		/// The rating
+		/// </summary>
 		private int rating;
 
 		/// <summary>
@@ -92,6 +104,9 @@ namespace Hotel
 			}
 		}
 
+		/// <summary>
+		/// The hotel identifier
+		/// </summary>
 		private int hotelID;
 
 		/// <summary>
