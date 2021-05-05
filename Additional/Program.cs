@@ -54,6 +54,9 @@ namespace Additional
 			Console.ReadKey();
 		}
 
-
+		public void ThrowInner()
+		{
+			throw new Exception("Внутрішнє виключення");
+		}
 	}
 }
