@@ -126,6 +126,9 @@ namespace Hotel
 			}
 		}
 
+		/// <summary>
+		/// The hotel name
+		/// </summary>
 		private string hotelName;
 
 		/// <summary>
@@ -145,6 +148,9 @@ namespace Hotel
 			}
 		}
 
+		/// <summary>
+		/// The address
+		/// </summary>
 		private string address;
 
 		/// <summary>
@@ -170,7 +176,13 @@ namespace Hotel
 			}
 		}
 
-		// Перевантажуємо логічний оператор !
+		/// <summary>
+		/// Implements the operator !.
+		/// </summary>
+		/// <param name="hotel">The hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
 		public static bool operator !(Hotel hotel)
 		{
 			if (hotel.Rating > 0)
@@ -178,7 +190,13 @@ namespace Hotel
 			return true;
 		}
 
-		// Перевантажуємо оператор true
+		/// <summary>
+		/// Implements the operator true.
+		/// </summary>
+		/// <param name="hotel">The hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
 		public static bool operator true(Hotel hotel)
 		{
 			if (hotel.Rating > 0)
@@ -186,7 +204,13 @@ namespace Hotel
 			return false;
 		}
 
-		// Перевантажуємо оператор false
+		/// <summary>
+		/// Implements the operator false.
+		/// </summary>
+		/// <param name="hotel">The hotel.</param>
+		/// <returns>
+		/// The result of the operator.
+		/// </returns>
 		public static bool operator false(Hotel hotel)
 		{
 			if (hotel.Rating > 0)
@@ -201,6 +225,13 @@ namespace Hotel
 		public delegate void HotelHandler(string messageString);
 		public event HotelHandler EventForNotifying;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Hotel"/> class.
+		/// </summary>
+		/// <param name="hotelID">The hotel identifier.</param>
+		/// <param name="hotelName">Name of the hotel.</param>
+		/// <param name="address">The address.</param>
+		/// <param name="description">The description.</param>
 		public Hotel(int hotelID, string hotelName,
 			string address, string description)
 		{
@@ -217,6 +248,18 @@ namespace Hotel
 			Dlg($"Готель {hotelName} створено");
 		}
 
+		/// <summary>
+		/// Creates the room.
+		/// </summary>
+		/// <param name="roomID">The room identifier.</param>
+		/// <param name="roomNumber">The room number.</param>
+		/// <param name="roomName">Name of the room.</param>
+		/// <param name="roomSize">Size of the room.</param>
+		/// <param name="hotel">The hotel.</param>
+		/// <param name="tv">The tv.</param>
+		/// <param name="roomType">Type of the room.</param>
+		/// <param name="numberOfBeds">The number of beds.</param>
+		/// <param name="balcony">The balcony.</param>
 		public void CreateRoom(int roomID, int roomNumber,
 			string roomName, int roomSize, Hotel hotel, bool? tv,
 			string roomType, int numberOfBeds, bool? balcony)
@@ -238,6 +281,17 @@ namespace Hotel
 			room = null;
 		}
 
+		/// <summary>
+		/// Creates the order.
+		/// </summary>
+		/// <param name="OrderID">The order identifier.</param>
+		/// <param name="Sum">The sum.</param>
+		/// <param name="Hotel">The hotel.</param>
+		/// <param name="User">The user.</param>
+		/// <param name="OrderNumber">The order number.</param>
+		/// <param name="Room">The room.</param>
+		/// <param name="Start">The start.</param>
+		/// <param name="End">The end.</param>
 		public void CreateOrder(int OrderID, decimal Sum,
 			Hotel Hotel, User User, string OrderNumber,
 			Room Room, DateTime Start, DateTime End)
