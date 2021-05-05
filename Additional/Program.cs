@@ -4,24 +4,13 @@ namespace Additional
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			int[] firstArray = { 0, 1, 2, 3 };
 			int[] secondArray = { 4, 5, 6 };
 
-			Console.WriteLine("Перший масив:");
-
-			foreach (int num in firstArray)
-			{
-				Console.Write(num + " ");
-			}
-
-			Console.WriteLine("\n\nДругий масив:");
-
-			foreach (int num in secondArray)
-			{
-				Console.Write(num + " ");
-			}
+			WriteArray("Перший масив:", firstArray);
+			WriteArray("\n\nДругий масив:", secondArray);
 
 			Console.WriteLine("\n\nНамагаємося отримати доступ до 5-ого" +
 				" елементу першого масиву\n");
@@ -52,6 +41,16 @@ namespace Additional
 			}
 
 			Console.ReadKey();
+		}
+
+		public static void WriteArray(string text, int[] array)
+		{
+			Console.WriteLine(text);
+
+			foreach (int num in array)
+			{
+				Console.Write(num + " ");
+			}
 		}
 
 		public void ThrowInner()
