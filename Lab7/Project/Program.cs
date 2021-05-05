@@ -16,7 +16,6 @@ namespace Hotel
 			#region Lab1-2-3
 
 			Console.WriteLine("\n--------Lab1-2-3--------");
-
 			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
 				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
 				"подобається")
@@ -366,13 +365,15 @@ namespace Hotel
 			#endregion Arrays
 
 			#region SystemExceptions
-
+			
+			
 			object stacks = "twelve";
 			List<User> users = null;
 			var users2 = new List<String>();
 
+			// InvalidCastException
 			try
-            {
+			{
 				int KelThuzad = (int)stacks;
 				Console.WriteLine("Cast is success");
 			}
@@ -381,8 +382,9 @@ namespace Hotel
 				Console.WriteLine("Catched casting exception");
                 // throw;
             }
-            try
-            {
+			// ArgumentException
+			try
+			{
                 if (stacks != "+069069698")
                 {
 					throw new ArgumentException();
@@ -394,25 +396,23 @@ namespace Hotel
 				Console.WriteLine("Catched argument exception");
 				// throw;
             }
-
-            /*try
-            {
-                users.Add(GreaterValeera);
-				Console.WriteLine("Users aren't null");
+			// NullReferenceException
+			try
+			{
+				users.Add(GreatValeera);
 			}
             catch (NullReferenceException)
             {
-				Console.WriteLine("Catched null reference exception");
-				throw;
-            }*/
-
-            try
-            {
+                Console.WriteLine("Catched null reference exception");
+            }
+			// ArgumentOutOfRangeException
+			try
+			{
 				Console.WriteLine("The first item: '{0}'", users2[0]);
             }
             catch (ArgumentOutOfRangeException)
             {
-				Console.WriteLine("Hello from Borat");
+				Console.WriteLine("Catched argument out of range exception");
                 // throw;
             }
 
