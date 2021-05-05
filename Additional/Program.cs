@@ -40,7 +40,6 @@ namespace Additional
 			try
 			{
 				Console.WriteLine($"{element} елемент масиву = " + array[element-1]);
-				ThrowInner();
 			}
 			catch (Exception e)
 			{
@@ -52,16 +51,23 @@ namespace Additional
 
 		public static void DivideArrays(int[] divided, int[] divider)
 		{
-			Console.WriteLine($"\nЗагальна к-сть можливих множень для цих " +
+			Console.WriteLine($"\nЗагальна к-сть можливих дiлень для цих " +
 				$"двох масивiв = {divided.Length * divider.Length}");
+
 			for (int i = 0; i < divided.Length; i++)
 			{
 				for (int j = 0; j < divider.Length; j++)
 				{
 					Console.Write($"\n{divided[i]} / {divider[j]} = ");
+
 					try
 					{
 						 Console.Write($"{divided[i] / divider[j]}");
+					}
+					catch (DivideByZeroException e) when (divider[j] == 0)
+					{
+						ThrowInner();
+						Console.Write(e.Message);
 					}
 					catch (Exception e)
 					{
@@ -75,7 +81,7 @@ namespace Additional
 
 		public static void ThrowInner()
 		{
-			throw new Exception("\nВнутрішнє виключення");
+			throw new DivideByZeroException("Внутрiшнiй виняток при дiленнi на нуль:");
 		}
 	}
 }
