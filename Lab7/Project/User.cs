@@ -198,9 +198,9 @@ namespace Hotel
 			}
 		}
 
-        public bool IsAuthorized { get => isAuthorized; }
+		public bool IsAuthorized { get => isAuthorized; }
 
-        public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
+		public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
 		// Перевантажуємо логічний оператор &
 		public static bool operator &(User user1, User user2)
@@ -283,28 +283,29 @@ namespace Hotel
 			Dlg("Користувача за замовченням створено");
 		}
 
-
-		public void LogIn(string login, string password) 
+		public void LogIn(string login, string password)
 		{
-            if (string.IsNullOrEmpty(login))
-            {
+			if (string.IsNullOrEmpty(login))
+			{
 				throw new ArgumentException("Задано пустий логiн");
 			}
+
 			if (string.IsNullOrEmpty(password))
 			{
 				throw new ArgumentException("Задано пустий пароль");
 			}
-			
-            if (login.Equals(this.login) && password.Equals(this.password))
-            {
-				this.isAuthorized = true;
+
+			if (login.Equals(this.login) && password.Equals(this.password))
+			{
+				isAuthorized = true;
 				Console.WriteLine("Користувача авторизовано!");
-            }
-            else
-            {
+			}
+			else
+			{
 				throw new Project.LogInException("Користупача не авторизовано, перевiрте данi!");
 			}
 		}
+
 		public void SearchForInfo() { }
 		public void Book() { }
 		public void CheckBooking() { }
