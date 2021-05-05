@@ -38,6 +38,7 @@ namespace Additional
 			try
 			{
 				Console.WriteLine($"{element} елемент масиву = " + array[element-1]);
+				ThrowInner();
 			}
 			catch (Exception e)
 			{
@@ -47,9 +48,9 @@ namespace Additional
 			}
 		}
 
-		public void ThrowInner()
+		public static void ThrowInner()
 		{
-			throw new Exception("Внутрішнє виключення");
+			throw new Exception("\nВнутрішнє виключення");
 		}
 	}
 }
