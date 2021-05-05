@@ -365,8 +365,7 @@ namespace Hotel
 			#endregion Arrays
 
 			#region SystemExceptions
-			
-			
+
 			object stacks = "twelve";
 			List<User> users = null;
 			var users2 = new List<String>();
@@ -377,44 +376,44 @@ namespace Hotel
 				int KelThuzad = (int)stacks;
 				Console.WriteLine("Cast is success");
 			}
-            catch (InvalidCastException)
-            {
+			catch (InvalidCastException)
+			{
 				Console.WriteLine("Catched casting exception");
-                // throw;
-            }
+			}
+
 			// ArgumentException
 			try
 			{
-                if (stacks != "+069069698")
-                {
+				if (stacks != "+069069698")
+				{
 					throw new ArgumentException();
-                }
+				}
 				Console.WriteLine("Argument is good");
 			}
-            catch (ArgumentException)
-            {
+			catch (ArgumentException)
+			{
 				Console.WriteLine("Catched argument exception");
-				// throw;
-            }
+			}
+
 			// NullReferenceException
 			try
 			{
 				users.Add(GreatValeera);
 			}
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Catched null reference exception");
-            }
+			catch (NullReferenceException)
+			{
+				Console.WriteLine("Catched null reference exception");
+			}
+
 			// ArgumentOutOfRangeException
 			try
 			{
 				Console.WriteLine("The first item: '{0}'", users2[0]);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
+			}
+			catch (ArgumentOutOfRangeException)
+			{
 				Console.WriteLine("Catched argument out of range exception");
-                // throw;
-            }
+			}
 
 			#endregion SystemExceptions
 
