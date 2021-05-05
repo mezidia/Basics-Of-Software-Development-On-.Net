@@ -15,6 +15,8 @@ namespace Additional
 			GetAccess(firstArray, 5, "firstArray");
 			GetAccess(secondArray, 4, "secondArray");
 
+			DivideArrays(secondArray, firstArray);
+
 			Console.ReadKey();
 		}
 
@@ -45,6 +47,29 @@ namespace Additional
 				Console.WriteLine("\nЄ виняток:");
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.GetType());
+			}
+		}
+
+		public static void DivideArrays(int[] divided, int[] divider)
+		{
+			Console.WriteLine($"загальна к-сть можливих множень для цих " +
+				$"двох масивів = {divided.Length * divider.Length}");
+			for (int i = 0; i < divided.Length; i++)
+			{
+				for (int j = 0; j < divider.Length; j++)
+				{
+					try
+					{
+						Console.WriteLine($"{divided[i]} / {divider[j]} = " +
+						$"{divided[i] / divider[j]}");
+					}
+					catch (Exception e)
+					{
+						Console.WriteLine("\nЄ виняток:");
+						Console.WriteLine(e.Message);
+						Console.WriteLine(e.GetType());
+					}
+				}
 			}
 		}
 
