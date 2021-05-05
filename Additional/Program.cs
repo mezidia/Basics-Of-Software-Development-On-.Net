@@ -12,33 +12,8 @@ namespace Additional
 			WriteArray("Перший масив:", firstArray);
 			WriteArray("\n\nДругий масив:", secondArray);
 
-			Console.WriteLine("\n\nНамагаємося отримати доступ до 5-ого" +
-				" елементу першого масиву\n");
-
-			try
-			{
-				Console.WriteLine($"5-ий елемент масиву = " + firstArray[4]);
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("Є виняток:");
-				Console.WriteLine(e.Message);
-				Console.WriteLine(e.GetType());
-			}
-
-			Console.WriteLine("\nНамагаємося отримати доступ до 4-ого" +
-				" елементу другого масиву\n");
-
-			try
-			{
-				Console.WriteLine($"4-ий елемент масиву = " + secondArray[3]);
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("Є виняток:");
-				Console.WriteLine(e.Message);
-				Console.WriteLine(e.GetType());
-			}
+			GetAccess(firstArray, 5);
+			GetAccess(secondArray, 4);
 
 			Console.ReadKey();
 		}
@@ -50,6 +25,20 @@ namespace Additional
 			foreach (int num in array)
 			{
 				Console.Write(num + " ");
+			}
+		}
+
+		public static void GetAccess(int[] array, int element)
+		{
+			try
+			{
+				Console.WriteLine($"{element} елемент масиву = " + array[element-1]);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Є виняток:");
+				Console.WriteLine(e.Message);
+				Console.WriteLine(e.GetType());
 			}
 		}
 
