@@ -368,10 +368,29 @@ namespace Hotel
 
                 Console.WriteLine(e.Message);
             }
-			//обробка пустого паролю
+            //обробка пустого паролю
+            try
+            {
+                AdminV.LogIn("Valera96", "");
+            }
+            catch (LogInException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (ArgumentException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+			//обробка пустого логіну
 			try
 			{
-				AdminV.LogIn("Valera96", "");
+				AdminV.LogIn("", "Valerchikperchik69");
 			}
 			catch (LogInException e)
 			{
