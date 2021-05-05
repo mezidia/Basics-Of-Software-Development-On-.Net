@@ -13,14 +13,14 @@ namespace Additional
 
 			foreach (int num in firstArray)
 			{
-				Console.Write(num);
+				Console.Write(num + " ");
 			}
 
 			Console.WriteLine("\n\nДругий масив:");
 
 			foreach (int num in secondArray)
 			{
-				Console.Write(num);
+				Console.Write(num + " ");
 			}
 
 			Console.WriteLine("\n\nНамагаємося отримати доступ до 5-ого" +
@@ -32,7 +32,7 @@ namespace Additional
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Catch some exception");
+				Console.WriteLine("Є виняток:");
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.GetType());
 			}
@@ -46,12 +46,14 @@ namespace Additional
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Catch some exception");
+				Console.WriteLine("Є виняток:");
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.GetType());
 			}
 
 			Console.ReadKey();
 		}
+
+
 	}
 }
