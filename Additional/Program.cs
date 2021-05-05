@@ -10,10 +10,10 @@ namespace Additional
 			int[] secondArray = { 4, 5, 6 };
 
 			WriteArray("Перший масив:", firstArray);
-			WriteArray("\n\nДругий масив:", secondArray);
+			WriteArray("Другий масив:", secondArray);
 
-			GetAccess(firstArray, 5);
-			GetAccess(secondArray, 4);
+			GetAccess(firstArray, 5, "firstArray");
+			GetAccess(secondArray, 4, "secondArray");
 
 			Console.ReadKey();
 		}
@@ -26,17 +26,22 @@ namespace Additional
 			{
 				Console.Write(num + " ");
 			}
+
+			Console.WriteLine("\n");
 		}
 
-		public static void GetAccess(int[] array, int element)
+		public static void GetAccess(int[] array, int element, string name)
 		{
+			Console.WriteLine($"\nНамагаємося отримати доступ до {element}" +
+				$" елементу масиву {name}");
+
 			try
 			{
 				Console.WriteLine($"{element} елемент масиву = " + array[element-1]);
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Є виняток:");
+				Console.WriteLine("\nЄ виняток:");
 				Console.WriteLine(e.Message);
 				Console.WriteLine(e.GetType());
 			}
