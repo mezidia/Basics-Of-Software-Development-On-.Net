@@ -9,7 +9,21 @@ namespace Additional
 			int[] firstArray = { 0, 1, 2, 3 };
 			int[] secondArray = { 4, 5, 6 };
 
-			Console.WriteLine("Намагаємося отримати доступ до 5-ого" +
+			Console.WriteLine("Перший масив:");
+
+			foreach (int num in firstArray)
+			{
+				Console.Write(num);
+			}
+
+			Console.WriteLine("\n\nДругий масив:");
+
+			foreach (int num in secondArray)
+			{
+				Console.Write(num);
+			}
+
+			Console.WriteLine("\n\nНамагаємося отримати доступ до 5-ого" +
 				" елементу першого масиву\n");
 
 			try
