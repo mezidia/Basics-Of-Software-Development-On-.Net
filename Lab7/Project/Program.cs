@@ -381,7 +381,7 @@ namespace Hotel
 
 			object stacks = "twelve";
 			List<User> users = null;
-			var users2 = new List<String>();
+			var users2 = new List<string>();
 
 			// InvalidCastException
 			try
