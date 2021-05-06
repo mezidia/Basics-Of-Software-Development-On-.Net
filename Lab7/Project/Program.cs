@@ -432,7 +432,18 @@ namespace Hotel
 
 			#region CustomExceptions
 
+			Console.WriteLine();
+			Console.WriteLine("Власнi виключення:");
 
+			try
+            {
+				throw new Metaclass();
+            }
+			catch (Metaclass e)
+            {
+				Console.WriteLine("Обработка исключения:");
+				e.MetaMethod();
+            }
 
 			#endregion CustomExceptions
 
