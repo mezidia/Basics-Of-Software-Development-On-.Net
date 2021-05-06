@@ -15,7 +15,8 @@ namespace Additional
 			GetAccess(firstArray, 5, "firstArray");
 			GetAccess(secondArray, 4, "secondArray");
 
-			DivideArrays(secondArray, firstArray);
+			DivideArrays(secondArray, firstArray, false);
+			DivideArrays(secondArray, firstArray, true);
 
 			Console.ReadKey();
 		}
@@ -49,7 +50,7 @@ namespace Additional
 			}
 		}
 
-		public static void DivideArrays(int[] divided, int[] divider)
+		public static void DivideArrays(int[] divided, int[] divider, bool toCatch)
 		{
 			Console.WriteLine($"\nЗагальна к-сть можливих дiлень для цих " +
 				$"двох масивiв = {divided.Length * divider.Length}");
@@ -62,16 +63,19 @@ namespace Additional
 
 					try
 					{
-						 Console.Write($"{divided[i] / divider[j]}");
+						Console.Write($"{divided[i] / divider[j]}");
+						if (toCatch)
+						{
+							CatchInner();
+						}
 					}
 					catch (DivideByZeroException e) when (divider[j] == 0)
 					{
-						ThrowInner();
 						Console.Write(e.Message);
 					}
 					catch (Exception e)
 					{
-						Console.Write("Виняток:");
+						Console.Write(" Виняток:");
 						Console.Write(e.Message);
 					}
 				}
@@ -82,6 +86,18 @@ namespace Additional
 		public static void ThrowInner()
 		{
 			throw new DivideByZeroException("Внутрiшнiй виняток при дiленнi на нуль:");
+		}
+
+		public static void CatchInner()
+		{
+			try
+			{
+				ThrowInner();
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Зовнiшнiй виняток при дiленнi на нуль", e);
+			}
 		}
 	}
 }
