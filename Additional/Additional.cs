@@ -2,9 +2,14 @@
 
 namespace Additional
 {
-	class Program
+	public class Additional
 	{
 		static void Main()
+		{
+			RunAdditional();
+		}
+
+		public static void RunAdditional()
 		{
 			int[] firstArray = { 0, 1, 2, 3 };
 			int[] secondArray = { 4, 5, 6 };
@@ -17,8 +22,6 @@ namespace Additional
 
 			DivideArrays(secondArray, firstArray, false);
 			DivideArrays(secondArray, firstArray, true);
-
-			Console.ReadKey();
 		}
 
 		/// <summary>

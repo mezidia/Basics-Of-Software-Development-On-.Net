@@ -1,6 +1,7 @@
 ﻿using Hotel.Project;
 using System;
 using System.Collections.Generic;
+using Additional;
 
 namespace Hotel
 {
@@ -348,6 +349,8 @@ namespace Hotel
 
 			#region Authorization
 
+			Console.WriteLine("\n--Винятки авторизацiї:--\n");
+
 			AdminV.Login = "Valera96";
 			AdminV.Password = "Valerchikperchik69";
 
@@ -365,19 +368,17 @@ namespace Hotel
 
 			#endregion Authorization
 
-			#region Filters
+			#region Filters-And-Arrays
 
+			Console.WriteLine("\n--Робота з фiльтрами та масивами:--\n");
 
+			Additional.Additional.RunAdditional();
 
-			#endregion Filters
-
-			#region Arrays
-
-
-
-			#endregion Arrays
+			#endregion Filters-And-Arrays
 
 			#region SystemExceptions
+
+			Console.WriteLine("\n--Системнi винятки:--\n");
 
 			object stacks = "twelve";
 			List<User> users = null;
@@ -432,8 +433,7 @@ namespace Hotel
 
 			#region CustomExceptions
 
-			Console.WriteLine();
-			Console.WriteLine("Власнi виключення:");
+			Console.WriteLine("\n--Власнi винятки:--\n");
 
 			try
 			{
