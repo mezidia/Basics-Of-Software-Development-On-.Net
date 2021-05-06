@@ -21,6 +21,11 @@ namespace Additional
 			Console.ReadKey();
 		}
 
+		/// <summary>
+		/// Write array
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="array"></param>
 		public static void WriteArray(string text, int[] array)
 		{
 			Console.WriteLine(text);
@@ -33,6 +38,12 @@ namespace Additional
 			Console.WriteLine("\n");
 		}
 
+		/// <summary>
+		/// Get access to specific element of an array
+		/// </summary>
+		/// <param name="array"></param>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
 		public static void GetAccess(int[] array, int element, string name)
 		{
 			Console.WriteLine($"\nНамагаємося отримати доступ до {element}" +
@@ -50,6 +61,12 @@ namespace Additional
 			}
 		}
 
+		/// <summary>
+		/// Divide every element of a divided array by divider array
+		/// </summary>
+		/// <param name="divided"></param>
+		/// <param name="divider"></param>
+		/// <param name="toCatch"></param>
 		public static void DivideArrays(int[] divided, int[] divider, bool toCatch)
 		{
 			Console.WriteLine($"\nЗагальна к-сть можливих дiлень для цих " +
@@ -83,11 +100,17 @@ namespace Additional
 			}
 		}
 
+		/// <summary>
+		/// Inner exception
+		/// </summary>
 		public static void ThrowInner()
 		{
 			throw new DivideByZeroException("Внутрiшнiй виняток при дiленнi на нуль:");
 		}
 
+		/// <summary>
+		/// Catch inner exception
+		/// </summary>
 		public static void CatchInner()
 		{
 			try
