@@ -11,7 +11,7 @@ namespace Hotel
 	{
 		static void Main()
 		{
-			#region Lab1-2-3-4-5-6
+			#region Lab1-2-3-4-5-6-7
 
 			#region Lab1-2-3
 
@@ -340,8 +340,6 @@ namespace Hotel
 
 			#endregion Lab6
 
-			#endregion Lab1-2-3-4-5-6
-
 			#region Lab7
 
 			Console.WriteLine("\n--------Lab7--------");
@@ -447,6 +445,14 @@ namespace Hotel
 			#endregion CustomExceptions
 
 			#endregion Lab7
+
+			#endregion Lab1-2-3-4-5-6-7
+
+			#region Lab8
+
+
+
+			#endregion Lab8
 
 			Console.WriteLine("\n--------Credits-------");
 

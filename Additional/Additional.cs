@@ -9,6 +9,8 @@ namespace Additional
 			RunAdditional();
 		}
 
+		#region Lab7
+
 		public static void RunAdditional()
 		{
 			int[] firstArray = { 0, 1, 2, 3 };
@@ -125,5 +127,13 @@ namespace Additional
 				throw new Exception("Зовнiшнiй виняток при дiленнi на нуль", e);
 			}
 		}
+
+		#endregion Lab7
+
+		#region Lab8
+
+
+
+		#endregion Lab8
 	}
 }
