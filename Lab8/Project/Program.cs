@@ -451,8 +451,8 @@ namespace Hotel
 
 			#region Lab8
 
-			Zone file = new Zone('test.txt');
-			Thread myThread = new Thread(new ThreadStart(file.writeToFile));
+			Zone file = new Zone("test.txt");
+			Thread myThread = new Thread(new ParameterizedThreadStart(file.writeToFile));
 
 			#endregion Lab8
 

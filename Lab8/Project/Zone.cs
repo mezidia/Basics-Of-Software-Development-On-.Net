@@ -5,20 +5,20 @@ using System.IO;
 
 namespace Hotel.Project
 {
-    class Zone
-    {
+	public class Zone
+	{
 		private string FilePath;
 		public Zone(string filePath)
 		{
 			FilePath = filePath;
 		}
 		public void readFromFile()
-        {
-			string text = File.ReadAllText(this.FilePath);
-		}
-		public void writeToFile(string text)
 		{
-			File.WriteAllText(this.FilePath, text);
+			string text = File.ReadAllText(FilePath);
+		}
+		public void writeToFile(object text)
+		{
+			File.WriteAllText(FilePath, (string)text);
 		}
 	}
 }
