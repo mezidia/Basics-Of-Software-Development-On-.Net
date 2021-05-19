@@ -135,20 +135,20 @@ namespace Additional
 
 		public static void Count1()
 		{
-			int res1 = 0;
-			for (int i = 1; i <= 100000000; i++)
+			double res1 = 0;
+			for (double i = 1; i <= 10000000; i++)
 			{
 				res1 = i * (1 + i) / 2;
 			}
 
-			int res2 = 0;
-			for (int i = 1; i <= 100000000; i++)
+			double res2 = 0;
+			for (double i = 1; i <= 100000000; i++)
 			{
 				res2 = i * (1 + i) / 2;
 			}
 
-			int res3 = 0;
-			for (int i = 1; i <= 100000000; i++)
+			double res3 = 0;
+			for (double i = 1; i <= 100000000; i++)
 			{
 				res3 = i * (1 + i) / 2;
 			}
@@ -156,8 +156,8 @@ namespace Additional
 
 		public static void Count2()
 		{
-			int res1 = 0;
-			for (int i = 1; i <= 100000000; i++)
+			double res1 = 0;
+			for (double i = 1; i <= 100000000; i++)
 			{
 				res1 = i * (1 + i) / 2;
 			}
@@ -172,7 +172,6 @@ namespace Additional
 		{
 			return new Thread(new ThreadStart(Count2));
 		}
-
 
 		#endregion Lab8
 	}
