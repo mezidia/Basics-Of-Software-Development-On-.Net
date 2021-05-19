@@ -135,17 +135,18 @@ namespace Additional
 
 		public static void Count1()
 		{
-			for (int i = 1; i <= 10000000; i++)
+			int res1 = 0;
+			for (int i = 1; i <= 100000000; i++)
 			{
-				int res1 = i * (1 + i) / 2;
+				res1 = i * (1 + i) / 2;
 			}
 
-			for (int i = 1; i <= 10000000; i++)
+			for (int i = 1; i <= 100000000; i++)
 			{
 				int res2 = i * (1 + i) / 2;
 			}
 
-			for (int i = 1; i <= 10000000; i++)
+			for (int i = 1; i <= 100000000; i++)
 			{
 				int res3 = i * (1 + i) / 2;
 			}
@@ -153,7 +154,7 @@ namespace Additional
 
 		public static void Count2()
 		{
-			for (int i = 1; i <= 10000000; i++)
+			for (int i = 1; i <= 100000000; i++)
 			{
 				int res1 = i * (1 + i) / 2;
 			}
