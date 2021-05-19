@@ -17,7 +17,10 @@ namespace Additional
         public Zone43(FileInfo f)
         {
             file = f;
-            File.Delete(file.FullName);
+            if (File.Exists(file.FullName))
+            {
+                File.Delete(file.FullName);
+            }
         }
         public string ReadFromFile(int line)
         {

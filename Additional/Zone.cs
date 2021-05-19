@@ -17,7 +17,11 @@ namespace Hotel.Project
         public Zone(FileInfo f)
         {
             file = f;
-            File.Delete(file.FullName);
+            if (File.Exists(file.FullName))
+            {
+                File.Delete(file.FullName);
+            }
+
         }
         public string ReadFromFile(int line)
         {
@@ -26,7 +30,7 @@ namespace Hotel.Project
                 using (var sr = new StreamReader(file.FullName))
                 {
                     for (int i = 1; i < line; i++)
-                        sr.ReadLine();                    
+                        sr.ReadLine();
                     return sr.ReadLine();
                 }
             }
@@ -39,10 +43,10 @@ namespace Hotel.Project
                 using (StreamWriter w = File.AppendText(file.FullName))
                 {
                     w.WriteLine(text);
-                    Console.WriteLine("Записано строку \"" + text + "\""); 
+                    Console.WriteLine("Записано строку \"" + text + "\"");
                 }
                 return File.ReadLines(file.FullName).Count();
-            }       
+            }
         }
 
         #endregion Lab8-2
