@@ -1,6 +1,7 @@
 ﻿using Hotel.Project;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Hotel
 {
@@ -452,7 +453,18 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab8--------");
 
+			#region count
+
+			DateTime startTime = DateTime.Now;
 			Additional.Additional.Count();
+			//Additional.Additional.First().Start();
+			//Additional.Additional.Second().Start();
+			DateTime endTime = DateTime.Now;
+			TimeSpan diff = endTime - startTime;
+			Console.WriteLine("Час виконання:");
+			Console.WriteLine(diff.TotalMilliseconds);
+
+			#endregion count
 
 			#endregion Lab8
 

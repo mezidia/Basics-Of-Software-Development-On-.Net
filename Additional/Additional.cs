@@ -7,8 +7,7 @@ namespace Additional
 	{
 		static void Main()
 		{
-			// RunAdditional();
-			Count();
+			RunAdditional();
 		}
 
 		#region Lab7
@@ -151,9 +150,18 @@ namespace Additional
 			{
 				res3 = i * (1 + i) / 2;
 			}
-			Console.WriteLine("Сума чисел вiд 1 до 10000000:");
-			Console.WriteLine(res1 + " | " + res2 + " | " + res3);
         }
+
+		public static Thread First()
+        {
+			return new Thread(new ThreadStart(Count));
+		}
+
+		public static Thread Second()
+		{
+			return new Thread(new ThreadStart(Count));
+		}
+
 
 		#endregion Lab8
 	}
