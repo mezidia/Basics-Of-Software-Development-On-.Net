@@ -455,14 +455,25 @@ namespace Hotel
 
 			#region count
 
-			DateTime startTime = DateTime.Now;
-			Additional.Additional.Count();
-			//Additional.Additional.First().Start();
-			//Additional.Additional.Second().Start();
-			DateTime endTime = DateTime.Now;
-			TimeSpan diff = endTime - startTime;
-			Console.WriteLine("Час виконання:");
-			Console.WriteLine(diff.TotalMilliseconds);
+			Console.WriteLine();
+			Console.WriteLine("\n--------Завдання 4.1--------");
+			Console.WriteLine();
+
+			DateTime startTime1 = DateTime.Now;
+			Additional.Additional.Count1();
+			DateTime endTime1 = DateTime.Now;
+			TimeSpan diff1 = endTime1 - startTime1;
+			Console.WriteLine("Час виконання (один потiк):");
+			Console.WriteLine(diff1.TotalMilliseconds);
+
+			DateTime startTime2 = DateTime.Now;
+			Additional.Additional.Count2();
+			Additional.Additional.First().Start();
+			Additional.Additional.Second().Start();
+			DateTime endTime2 = DateTime.Now;
+			TimeSpan diff2 = endTime2 - startTime2;
+			Console.WriteLine("Час виконання (окремi потоки):");
+			Console.WriteLine(diff2.TotalMilliseconds);
 
 			#endregion count
 

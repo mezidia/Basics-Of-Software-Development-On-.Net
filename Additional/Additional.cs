@@ -133,7 +133,7 @@ namespace Additional
 
 		#region Lab8
 
-		public static void Count()
+		public static void Count1()
         {
 			int res1 = 0;
 			for (int i = 1; i <= 10000000; i++)
@@ -152,14 +152,23 @@ namespace Additional
 			}
         }
 
+		public static void Count2()
+		{
+			int res1 = 0;
+			for (int i = 1; i <= 10000000; i++)
+			{
+				res1 = i * (1 + i) / 2;
+			}
+		}
+
 		public static Thread First()
         {
-			return new Thread(new ThreadStart(Count));
+			return new Thread(new ThreadStart(Count2));
 		}
 
 		public static Thread Second()
 		{
-			return new Thread(new ThreadStart(Count));
+			return new Thread(new ThreadStart(Count2));
 		}
 
 
