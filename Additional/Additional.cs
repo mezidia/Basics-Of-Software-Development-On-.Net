@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Additional
 {
@@ -6,7 +7,8 @@ namespace Additional
 	{
 		static void Main()
 		{
-			RunAdditional();
+			// RunAdditional();
+			Count();
 		}
 
 		#region Lab7
@@ -132,7 +134,26 @@ namespace Additional
 
 		#region Lab8
 
-
+		public static void Count()
+        {
+			int res1 = 0;
+			for (int i = 1; i <= 10000000; i++)
+            {
+				res1 = i * (1 + i) / 2;
+            }
+			int res2 = 0;
+			for (int i = 1; i <= 10000000; i++)
+			{
+				res2 = i * (1 + i) / 2;
+			}
+			int res3 = 0;
+			for (int i = 1; i <= 10000000; i++)
+			{
+				res3 = i * (1 + i) / 2;
+			}
+			Console.WriteLine("Сума чисел вiд 1 до 10000000:");
+			Console.WriteLine(res1 + " | " + res2 + " | " + res3);
+        }
 
 		#endregion Lab8
 	}

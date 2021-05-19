@@ -450,7 +450,9 @@ namespace Hotel
 
 			#region Lab8
 
+			Console.WriteLine("\n--------Lab8--------");
 
+			Additional.Additional.Count();
 
 			#endregion Lab8
 
