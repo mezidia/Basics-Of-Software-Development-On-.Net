@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Additional
 {
@@ -132,7 +133,45 @@ namespace Additional
 
 		#region Lab8
 
+		public static void Count1()
+		{
+			double res1 = 0;
+			for (double i = 1; i <= 10000000; i++)
+			{
+				res1 = i * (1 + i) / 2;
+			}
 
+			//double res2 = 0;
+			//for (double i = 1; i <= 100000000; i++)
+			//{
+			//	res2 = i * (1 + i) / 2;
+			//}
+
+			//double res3 = 0;
+			//for (double i = 1; i <= 100000000; i++)
+			//{
+			//	res3 = i * (1 + i) / 2;
+			//}
+		}
+
+		public static void Count2()
+		{
+			double res1 = 0;
+			for (double i = 1; i <= 100000000; i++)
+			{
+				res1 = i * (1 + i) / 2;
+			}
+		}
+
+		public static Thread First()
+		{
+			return new Thread(new ThreadStart(Count2));
+		}
+
+		public static Thread Second()
+		{
+			return new Thread(new ThreadStart(Count2));
+		}
 
 		#endregion Lab8
 	}
