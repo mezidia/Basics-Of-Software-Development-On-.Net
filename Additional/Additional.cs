@@ -141,22 +141,25 @@ namespace Additional
 				res1 = i * (1 + i) / 2;
 			}
 
+			int res2 = 0;
 			for (int i = 1; i <= 100000000; i++)
 			{
-				int res2 = i * (1 + i) / 2;
+				res2 = i * (1 + i) / 2;
 			}
 
+			int res3 = 0;
 			for (int i = 1; i <= 100000000; i++)
 			{
-				int res3 = i * (1 + i) / 2;
+				res3 = i * (1 + i) / 2;
 			}
 		}
 
 		public static void Count2()
 		{
+			int res1 = 0;
 			for (int i = 1; i <= 100000000; i++)
 			{
-				int res1 = i * (1 + i) / 2;
+				res1 = i * (1 + i) / 2;
 			}
 		}
 
