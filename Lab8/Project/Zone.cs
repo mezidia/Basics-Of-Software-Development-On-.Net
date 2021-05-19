@@ -12,11 +12,11 @@ namespace Hotel.Project
 		{
 			FilePath = filePath;
 		}
-		public void readFromFile()
+		public void ReadFromFile()
 		{
 			string text = File.ReadAllText(FilePath);
 		}
-		public void writeToFile(object text)
+		public void WriteToFile(object text)
 		{
 			File.WriteAllText(FilePath, (string)text);
 		}
