@@ -453,29 +453,37 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab8--------");
 
-			#region count
+			#region Count
 
-			Console.WriteLine();
-			Console.WriteLine("\n--------Завдання 4.1--------");
-			Console.WriteLine();
+			Console.WriteLine("\n--Завдання 4.1:--\n");
 
 			DateTime startTime1 = DateTime.Now;
 			Additional.Additional.Count1();
 			DateTime endTime1 = DateTime.Now;
 			TimeSpan diff1 = endTime1 - startTime1;
+
 			Console.WriteLine("Час виконання (один потiк):");
 			Console.WriteLine(diff1.TotalMilliseconds);
 
 			DateTime startTime2 = DateTime.Now;
 			Additional.Additional.Count2();
-			Additional.Additional.First().Start();
-			Additional.Additional.Second().Start();
 			DateTime endTime2 = DateTime.Now;
-			TimeSpan diff2 = endTime2 - startTime2;
-			Console.WriteLine("Час виконання (окремi потоки):");
-			Console.WriteLine(diff2.TotalMilliseconds);
+			Additional.Additional.First().Start();
+			DateTime endTime3 = DateTime.Now;
+			Additional.Additional.Second().Start();
+			DateTime endTime4 = DateTime.Now;
 
-			#endregion count
+			TimeSpan diff2 = endTime2 - startTime2;
+			TimeSpan diff3 = endTime3 - endTime2;
+			TimeSpan diff4 = endTime4 - endTime3;
+			TimeSpan totalDiff = endTime4 - startTime2;
+
+			Console.WriteLine($"Час виконання (окремi потоки): " +
+				$"\n{diff2.TotalMilliseconds}\n{diff3.TotalMilliseconds}" +
+				$"\n{diff4.TotalMilliseconds} \nЗагальний " +
+				$"час - {totalDiff.TotalMilliseconds}");
+
+			#endregion Count
 
 			#endregion Lab8
 

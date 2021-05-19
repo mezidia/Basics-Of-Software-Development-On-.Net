@@ -141,17 +141,17 @@ namespace Additional
 				res1 = i * (1 + i) / 2;
 			}
 
-			double res2 = 0;
-			for (double i = 1; i <= 100000000; i++)
-			{
-				res2 = i * (1 + i) / 2;
-			}
+			//double res2 = 0;
+			//for (double i = 1; i <= 100000000; i++)
+			//{
+			//	res2 = i * (1 + i) / 2;
+			//}
 
-			double res3 = 0;
-			for (double i = 1; i <= 100000000; i++)
-			{
-				res3 = i * (1 + i) / 2;
-			}
+			//double res3 = 0;
+			//for (double i = 1; i <= 100000000; i++)
+			//{
+			//	res3 = i * (1 + i) / 2;
+			//}
 		}
 
 		public static void Count2()
