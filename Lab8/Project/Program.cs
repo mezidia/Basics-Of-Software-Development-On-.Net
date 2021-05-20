@@ -454,6 +454,38 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab8--------");
 
+      #region Lab8-1
+
+			Console.WriteLine("\n--Завдання 4.1:--\n");
+
+			DateTime startTime1 = DateTime.Now;
+			Additional.Additional.Count1();
+			DateTime endTime1 = DateTime.Now;
+			TimeSpan diff1 = endTime1 - startTime1;
+
+			Console.WriteLine("Час виконання (один потiк):");
+			Console.WriteLine(diff1.TotalMilliseconds);
+
+			DateTime startTime2 = DateTime.Now;
+			Additional.Additional.Count2();
+			DateTime endTime2 = DateTime.Now;
+			Additional.Additional.First().Start();
+			DateTime endTime3 = DateTime.Now;
+			Additional.Additional.Second().Start();
+			DateTime endTime4 = DateTime.Now;
+
+			TimeSpan diff2 = endTime2 - startTime2;
+			TimeSpan diff3 = endTime3 - endTime2;
+			TimeSpan diff4 = endTime4 - endTime3;
+			TimeSpan totalDiff = endTime4 - startTime2;
+
+			Console.WriteLine($"Час виконання (окремi потоки): " +
+				$"\n{diff2.TotalMilliseconds}\n{diff3.TotalMilliseconds}" +
+				$"\n{diff4.TotalMilliseconds} \nЗагальний " +
+				$"час - {totalDiff.TotalMilliseconds}");
+
+			#endregion Lab8-1
+
 			#region 8-2
 
 			Console.WriteLine("\n--4.2:--\n");
@@ -507,7 +539,7 @@ namespace Hotel
 		}
 
 		/// <summary>
-		/// Methos for delegate to print some message
+		/// Method for delegate to print some message
 		/// </summary>
 		/// <param name="message"></param>
 		private static void DisplayMessage(string message)
