@@ -11,8 +11,6 @@ namespace Hotel
 	/// </summary>
 	class MainClass
 	{
-		private static readonly object fileLock = new object();
-
 		static void Main()
 		{
 			#region Lab1-2-3-4-5-6-7
@@ -460,41 +458,7 @@ namespace Hotel
 
 			Console.WriteLine("\n--4.2:--\n");
 
-			Zone file = new Zone(new FileInfo("lab8.txt"));
-			int counterStrings = 5;
-			int countLines = 0;
-
-			Thread thread1 = new Thread(() =>
-			{
-				for (int i = 0; i < counterStrings; i++)
-			{
-					lock (fileLock)
-					{
-						countLines = file.WriteToFile("1 у" +
-							" потоцi 1 рядок " + i);
-						Console.WriteLine("1 Прочитано строку" +
-							" \"" + file.ReadFromFile(countLines) + "\"");
-					}
-				}
-			});
-
-			thread1.Start();
-
-			Thread thread2 = new Thread(() =>
-			{
-				for (int i = 0; i < counterStrings; i++)
-				{
-					lock (fileLock)
-					{
-						countLines = file.WriteToFile("2 у потоцi" +
-							" 2 рядок " + i);
-						Console.WriteLine("2 Прочитано строку" +
-							" \"" + file.ReadFromFile(countLines) + "\"");
-					}
-				}
-			});
-
-			thread2.Start();
+			Zone.Lab8_2();
 
 			Thread.Sleep(1000);
 
@@ -509,8 +473,6 @@ namespace Hotel
 			Thread.Sleep(1000);
 
 			#endregion 8-3
-
-
 
 			#endregion Lab8
 

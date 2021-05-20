@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace Hotel.Project
 {
@@ -11,7 +12,46 @@ namespace Hotel.Project
 		#region Lab8-2
 
 		private readonly FileInfo file;
-		private readonly object fileLock = new object();
+		private static readonly object fileLock = new object();
+
+		public static void Lab8_2()
+		{
+			Zone file = new Zone(new FileInfo("lab8.txt"));
+			int counterStrings = 5;
+			int countLines = 0;
+
+			Thread thread1 = new Thread(() =>
+			{
+				for (int i = 0; i < counterStrings; i++)
+				{
+					lock (fileLock)
+					{
+						countLines = file.WriteToFile("1 у" +
+							" потоцi 1 рядок " + i);
+						Console.WriteLine("1 Прочитано строку" +
+							" \"" + file.ReadFromFile(countLines) + "\"");
+					}
+				}
+			});
+
+			thread1.Start();
+
+			Thread thread2 = new Thread(() =>
+			{
+				for (int i = 0; i < counterStrings; i++)
+				{
+					lock (fileLock)
+					{
+						countLines = file.WriteToFile("2 у потоцi" +
+							" 2 рядок " + i);
+						Console.WriteLine("2 Прочитано строку" +
+							" \"" + file.ReadFromFile(countLines) + "\"");
+					}
+				}
+			});
+
+			thread2.Start();
+		}
 
 		public Zone(FileInfo f)
 		{
