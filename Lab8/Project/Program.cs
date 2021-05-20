@@ -454,9 +454,9 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab8--------");
 
-      #region Lab8-1
+			#region Lab8-1
 
-			Console.WriteLine("\n--Завдання 4.1:--\n");
+			Console.WriteLine("\n--4.1:--\n");
 
 			DateTime startTime1 = DateTime.Now;
 			Additional.Additional.Count1();
@@ -486,7 +486,7 @@ namespace Hotel
 
 			#endregion Lab8-1
 
-			#region 8-2
+			#region Lab8-2
 
 			Console.WriteLine("\n--4.2:--\n");
 
@@ -494,9 +494,9 @@ namespace Hotel
 
 			Thread.Sleep(1000);
 
-			#endregion 8-2
+			#endregion Lab8-2
 
-			#region 8-3
+			#region Lab8-3
 
 			Console.WriteLine("\n--4.3:--\n");
 
@@ -504,7 +504,7 @@ namespace Hotel
 
 			Thread.Sleep(1000);
 
-			#endregion 8-3
+			#endregion Lab8-3
 
 			#endregion Lab8
 

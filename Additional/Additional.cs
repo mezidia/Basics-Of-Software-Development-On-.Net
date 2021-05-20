@@ -60,7 +60,7 @@ namespace Additional
 
 			try
 			{
-				Console.WriteLine($"{element} елемент масиву = " + array[element-1]);
+				Console.WriteLine($"{element} елемент масиву = " + array[element - 1]);
 			}
 			catch (Exception e)
 			{
@@ -133,10 +133,10 @@ namespace Additional
 		}
 
 		#endregion Lab7
-      
-    #region Lab8-1
-      
-    		public static void Count1()
+
+		#region Lab8-1
+
+		public static void Count1()
 		{
 			double res1 = 0;
 			for (double i = 1; i <= 10000000; i++)
@@ -175,8 +175,8 @@ namespace Additional
 		{
 			return new Thread(new ThreadStart(Count2));
 		}
-      
-    #endregion Lab8-1
+
+		#endregion Lab8-1
 
 		#region Lab8-3
 
@@ -213,6 +213,7 @@ namespace Additional
 			});
 
 			thread2_43.Start();
+		}
 
 		#endregion Lab8-3
 	}
