@@ -506,6 +506,12 @@ namespace Hotel
 
 			#endregion Lab8-3
 
+			#region Lab8-4
+
+
+
+			#endregion Lab8-4
+
 			#endregion Lab8
 
 			Console.WriteLine("\n--------Credits-------");
