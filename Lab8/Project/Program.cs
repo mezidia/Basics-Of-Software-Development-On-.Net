@@ -454,7 +454,11 @@ namespace Hotel
 
 			#region Lab8
 
+			Console.WriteLine("\n--------Lab8--------");
+
 			#region 8-2
+
+			Console.WriteLine("\n--4.2:--\n");
 
 			Zone file = new Zone(new FileInfo("lab8.txt"));
 			int counterStrings = 5;
@@ -492,11 +496,17 @@ namespace Hotel
 
 			thread2.Start();
 
+			Thread.Sleep(1000);
+
 			#endregion 8-2
 
 			#region 8-3
 
+			Console.WriteLine("\n--4.3:--\n");
+
 			Additional.Additional.Lab8_3();
+
+			Thread.Sleep(1000);
 
 			#endregion 8-3
 
