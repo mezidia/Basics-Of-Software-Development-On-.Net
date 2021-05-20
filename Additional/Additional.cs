@@ -7,6 +7,8 @@ namespace Additional
 	public class Additional
 	{
 		private static readonly Mutex fileLockM = new Mutex();
+		private static readonly Semaphore fileLockS = new Semaphore(2, 5);
+
 		static void Main()
 		{
 			Lab7();
@@ -139,7 +141,7 @@ namespace Additional
 		public static void Count1()
 		{
 			double res1 = 0;
-			for (double i = 1; i <= 10000000; i++)
+			for (double i = 1; i <= 100000000; i++)
 			{
 				res1 = i * (1 + i) / 2;
 			}
@@ -223,17 +225,19 @@ namespace Additional
 		{
 			int counterStrings = 5;
 			int countLines = 0;
-			Zone43 file43 = new Zone43(new FileInfo("lab8_2.txt"));
+			Zone44 file44 = new Zone44(new FileInfo("lab8_2.txt"));
 
 			Thread thread1_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
 				{
-					fileLockM.WaitOne();
-					countLines = file43.WriteToFile("1 у потоцi 1 рядок " + i);
+					fileLockS.WaitOne();
+
+					countLines = file44.WriteToFile("1 у потоцi 1 рядок " + i);
 					Console.WriteLine("1 Прочитано строку \""
-						+ file43.ReadFromFile(countLines) + "\"");
-					fileLockM.ReleaseMutex();
+						+ file44.ReadFromFile(countLines) + "\"");
+
+					fileLockS.Release();
 				}
 			});
 
@@ -243,56 +247,61 @@ namespace Additional
 			{
 				for (int i = 0; i < counterStrings; i++)
 				{
-					fileLockM.WaitOne();
-					countLines = file43.WriteToFile("2 у потоцi 2 рядок " + i);
+					fileLockS.WaitOne();
+
+					countLines = file44.WriteToFile("2 у потоцi 2 рядок " + i);
 					Console.WriteLine("2 Прочитано строку \""
-						+ file43.ReadFromFile(countLines) + "\"");
-					fileLockM.ReleaseMutex();
+						+ file44.ReadFromFile(countLines) + "\"");
+
+					fileLockS.Release();
 				}
 			});
 
 			thread2_44.Start();
 
-
 			Thread thread3_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
 				{
-					fileLockM.WaitOne();
-					countLines = file43.WriteToFile("3 у потоцi 3 рядок " + i);
+					fileLockS.WaitOne();
+
+					countLines = file44.WriteToFile("3 у потоцi 3 рядок " + i);
 					Console.WriteLine("3 Прочитано строку \""
-						+ file43.ReadFromFile(countLines) + "\"");
-					fileLockM.ReleaseMutex();
+						+ file44.ReadFromFile(countLines) + "\"");
+
+					fileLockS.Release();
 				}
 			});
 
 			thread3_44.Start();
 
-
 			Thread thread4_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
 				{
-					fileLockM.WaitOne();
-					countLines = file43.WriteToFile("4 у потоцi 4 рядок " + i);
+					fileLockS.WaitOne();
+
+					countLines = file44.WriteToFile("4 у потоцi 4 рядок " + i);
 					Console.WriteLine("4 Прочитано строку \""
-						+ file43.ReadFromFile(countLines) + "\"");
-					fileLockM.ReleaseMutex();
+						+ file44.ReadFromFile(countLines) + "\"");
+
+					fileLockS.Release();
 				}
 			});
 
 			thread4_44.Start();
 
-
 			Thread thread5_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
 				{
-					fileLockM.WaitOne();
-					countLines = file43.WriteToFile("5 у потоцi 5 рядок " + i);
+					fileLockS.WaitOne();
+
+					countLines = file44.WriteToFile("5 у потоцi 5 рядок " + i);
 					Console.WriteLine("5 Прочитано строку \""
-						+ file43.ReadFromFile(countLines) + "\"");
-					fileLockM.ReleaseMutex();
+						+ file44.ReadFromFile(countLines) + "\"");
+
+					fileLockS.Release();
 				}
 			});
 
