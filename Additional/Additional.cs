@@ -1,18 +1,21 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 
 namespace Additional
 {
 	public class Additional
 	{
+		private static readonly Mutex fileLockM = new Mutex();
 		static void Main()
 		{
-			RunAdditional();
+			Lab7();
+			Lab8_3();
 		}
 
 		#region Lab7
 
-		public static void RunAdditional()
+		public static void Lab7()
 		{
 			int[] firstArray = { 0, 1, 2, 3 };
 			int[] secondArray = { 4, 5, 6 };
@@ -130,10 +133,10 @@ namespace Additional
 		}
 
 		#endregion Lab7
-
-		#region Lab8
-
-		public static void Count1()
+      
+    #region Lab8-1
+      
+    		public static void Count1()
 		{
 			double res1 = 0;
 			for (double i = 1; i <= 10000000; i++)
@@ -172,7 +175,45 @@ namespace Additional
 		{
 			return new Thread(new ThreadStart(Count2));
 		}
+      
+    #endregion Lab8-1
 
-		#endregion Lab8
+		#region Lab8-3
+
+		public static void Lab8_3()
+		{
+			int counterStrings = 5;
+			int countLines = 0;
+			Zone43 file43 = new Zone43(new FileInfo("lab8_2.txt"));
+
+			Thread thread1_43 = new Thread(() =>
+			{
+				for (int i = 0; i < counterStrings; i++)
+				{
+					fileLockM.WaitOne();
+					countLines = file43.WriteToFile("1 у потоцi 1 рядок " + i);
+					Console.WriteLine("1 Прочитано строку \""
+						+ file43.ReadFromFile(countLines) + "\"");
+					fileLockM.ReleaseMutex();
+				}
+			});
+
+			thread1_43.Start();
+
+			Thread thread2_43 = new Thread(() =>
+			{
+				for (int i = 0; i < counterStrings; i++)
+				{
+					fileLockM.WaitOne();
+					countLines = file43.WriteToFile("2 у потоцi 2 рядок " + i);
+					Console.WriteLine("2 Прочитано строку \""
+						+ file43.ReadFromFile(countLines) + "\"");
+					fileLockM.ReleaseMutex();
+				}
+			});
+
+			thread2_43.Start();
+
+		#endregion Lab8-3
 	}
 }

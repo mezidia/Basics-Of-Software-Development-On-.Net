@@ -1,6 +1,7 @@
 ﻿using Hotel.Project;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 
 namespace Hotel
@@ -370,7 +371,7 @@ namespace Hotel
 
 			Console.WriteLine("\n--Робота з фiльтрами та масивами:--\n");
 
-			Additional.Additional.RunAdditional();
+			Additional.Additional.Lab7();
 
 			#endregion Filters-And-Arrays
 
@@ -453,7 +454,7 @@ namespace Hotel
 
 			Console.WriteLine("\n--------Lab8--------");
 
-			#region Count
+      #region Lab8-1
 
 			Console.WriteLine("\n--Завдання 4.1:--\n");
 
@@ -483,7 +484,27 @@ namespace Hotel
 				$"\n{diff4.TotalMilliseconds} \nЗагальний " +
 				$"час - {totalDiff.TotalMilliseconds}");
 
-			#endregion Count
+			#endregion Lab8-1
+
+			#region 8-2
+
+			Console.WriteLine("\n--4.2:--\n");
+
+			Zone.Lab8_2();
+
+			Thread.Sleep(1000);
+
+			#endregion 8-2
+
+			#region 8-3
+
+			Console.WriteLine("\n--4.3:--\n");
+
+			Additional.Additional.Lab8_3();
+
+			Thread.Sleep(1000);
+
+			#endregion 8-3
 
 			#endregion Lab8
 
@@ -518,7 +539,7 @@ namespace Hotel
 		}
 
 		/// <summary>
-		/// Methos for delegate to print some message
+		/// Method for delegate to print some message
 		/// </summary>
 		/// <param name="message"></param>
 		private static void DisplayMessage(string message)
