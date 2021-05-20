@@ -14,7 +14,7 @@ namespace Hotel
 		static void Main()
 		{
 			#region Lab1-2-3-4-5-6-7
-
+			/*
 			#region Lab1-2-3
 
 			Console.WriteLine("\n--------Lab1-2-3--------");
@@ -246,7 +246,7 @@ namespace Hotel
 			};
 
 			greenHotel.CreateRoom(2, 2, "aZUL", 1, (Hotel)greenHotel
-				/*Downcasting*/, true, "Big", 5, true);
+				, true, "Big", 5, true); // Downcasting
 
 			#endregion Interface
 
@@ -447,7 +447,7 @@ namespace Hotel
 			#endregion CustomExceptions
 
 			#endregion Lab7
-
+			*/
 			#endregion Lab1-2-3-4-5-6-7
 
 			#region Lab8
@@ -467,20 +467,17 @@ namespace Hotel
 			Console.WriteLine(diff1.TotalMilliseconds);
 
 			DateTime startTime2 = DateTime.Now;
-			Additional.Additional.Count2();
-			DateTime endTime2 = DateTime.Now;
 			Additional.Additional.First().Start();
 			DateTime endTime3 = DateTime.Now;
 			Additional.Additional.Second().Start();
 			DateTime endTime4 = DateTime.Now;
 
-			TimeSpan diff2 = endTime2 - startTime2;
-			TimeSpan diff3 = endTime3 - endTime2;
+			TimeSpan diff2 = endTime3 - startTime2;
 			TimeSpan diff4 = endTime4 - endTime3;
 			TimeSpan totalDiff = endTime4 - startTime2;
 
 			Console.WriteLine($"Час виконання (окремi потоки): " +
-				$"\n{diff2.TotalMilliseconds}\n{diff3.TotalMilliseconds}" +
+				$"\n{diff2.TotalMilliseconds}" +
 				$"\n{diff4.TotalMilliseconds} \nЗагальний " +
 				$"час - {totalDiff.TotalMilliseconds}");
 
@@ -508,7 +505,11 @@ namespace Hotel
 
 			#region Lab8-4
 
+			Console.WriteLine("\n--4.4:--\n");
 
+			Additional.Additional.Lab8_4();
+
+			Thread.Sleep(1000);
 
 			#endregion Lab8-4
 
