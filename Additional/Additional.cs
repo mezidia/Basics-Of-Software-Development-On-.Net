@@ -223,9 +223,9 @@ namespace Additional
 
 		public static void Lab8_4()
 		{
-			int counterStrings = 5;
+			int counterStrings = 11;
 			int countLines = 0;
-			Zone44 file44 = new Zone44(new FileInfo("lab8_2.txt"));
+			Zone44 file44 = new Zone44(new FileInfo("lab8_4.txt"));
 
 			Thread thread1_44 = new Thread(() =>
 			{
@@ -243,6 +243,8 @@ namespace Additional
 
 			thread1_44.Start();
 
+			Thread.Sleep(100);
+
 			Thread thread2_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
@@ -258,6 +260,8 @@ namespace Additional
 			});
 
 			thread2_44.Start();
+
+			Thread.Sleep(100);
 
 			Thread thread3_44 = new Thread(() =>
 			{
@@ -275,6 +279,8 @@ namespace Additional
 
 			thread3_44.Start();
 
+			Thread.Sleep(100);
+
 			Thread thread4_44 = new Thread(() =>
 			{
 				for (int i = 0; i < counterStrings; i++)
@@ -290,6 +296,8 @@ namespace Additional
 			});
 
 			thread4_44.Start();
+
+			Thread.Sleep(100);
 
 			Thread thread5_44 = new Thread(() =>
 			{
