@@ -7,7 +7,7 @@ namespace Additional
 	public class Additional
 	{
 		private static readonly Mutex fileLockM = new Mutex();
-		private static readonly Semaphore fileLockS = new Semaphore(2, 5);
+		private static readonly Semaphore fileLockS = new Semaphore(1, 1);
 
 		static void Main()
 		{
