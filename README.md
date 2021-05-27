@@ -20,29 +20,14 @@
 </h2>
 
 - [Basics-Of-Software-Development-On-.Net](#Basics-Of-Software-Development-On-.Net)
-- [Build status :hammer:](#build-status-hammer)
 - [Tech/framework used :wrench:](#techframework-used-wrench)
 - [Code Example :pushpin:](#code-example-pushpin)
-- [Tests :microscope:](#tests-microscope)
 - [Credits :cat::handshake:](#credits-cathandshake)
-- [FAQ :speech_balloon:](#faq)
 - [License :bookmark:](#license-bookmark)
 
 ## Motivation :exclamation:
 
 We've created this repo to easily manage Our work on Basics-Of-Software-Development-On-.Net
-
-## Build status :hammer:
-
-> Nothing right now
-
-> >
-> >Build status of continus integration i.e. travis, appveyor etc.
-> >
-> >Here you can see build status of [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)/[continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment):
-> >
-> >[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-> >[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
 
 ## Code style :scroll:
 
@@ -91,12 +76,6 @@ We are using [Codacy](https://www.codacy.com/) to automate Our code quality.
 				$"{Hotel.HotelName}");
 		}
 ```
-
-## Tests :microscope:
-
-> Nothing right now
-
-> As screenshot or :smile:I give you the [link](https://github.com/mezgoodle/sync-folders/actions?query=workflow%3A%22Python+package%22) to [GitHub Actions](https://github.com/features/actions), where you can see all my tests.
 
 ## Credits :cat::handshake:
 
