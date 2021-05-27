@@ -10,7 +10,7 @@ namespace Additional
         #region Lab8-4
 
         private readonly FileInfo file;
-        private readonly Semaphore fileLock = new Semaphore(2, 5);
+        private readonly Semaphore fileLock = new Semaphore(1, 1);
 
         public Zone44(FileInfo f)
         {
