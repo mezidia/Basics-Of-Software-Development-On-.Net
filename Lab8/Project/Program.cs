@@ -1,20 +1,21 @@
-﻿using Hotel.Project;
+﻿// Licensed to the Mezidia Foundation under one or more agreements.
+// The Mezidia Foundation licenses this file to you under the MIT license.
+
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading;
+using Hotel.Project;
 
 namespace Hotel
 {
-	/// <summary>
-	/// Main class of Our project, where all magic happens
-	/// </summary>
-	class MainClass
-	{
-		static void Main()
-		{
-			#region Lab1-2-3-4-5-6-7
-			/*
+    /// <summary>
+    /// Main class of Our project, where all magic happens
+    /// </summary>
+    class MainClass
+    {
+        static void Main()
+        {
+            #region Lab1-2-3-4-5-6-7
+            /*
 			#region Lab1-2-3
 
 			Console.WriteLine("\n--------Lab1-2-3--------");
@@ -448,110 +449,110 @@ namespace Hotel
 
 			#endregion Lab7
 			*/
-			#endregion Lab1-2-3-4-5-6-7
+            #endregion Lab1-2-3-4-5-6-7
 
-			#region Lab8
+            #region Lab8
 
-			Console.WriteLine("\n--------Lab8--------");
+            Console.WriteLine("\n--------Lab8--------");
 
-			#region Lab8-1
+            #region Lab8-1
 
-			Console.WriteLine("\n--4.1:--\n");
+            Console.WriteLine("\n--4.1:--\n");
 
-			DateTime startTime1 = DateTime.Now;
-			Additional.Additional.Count1();
-			DateTime endTime1 = DateTime.Now;
-			TimeSpan diff1 = endTime1 - startTime1;
+            DateTime startTime1 = DateTime.Now;
+            Additional.Additional.Count1();
+            DateTime endTime1 = DateTime.Now;
+            TimeSpan diff1 = endTime1 - startTime1;
 
-			Console.WriteLine("Час виконання (один потiк):");
-			Console.WriteLine(diff1.TotalMilliseconds);
+            Console.WriteLine("Час виконання (один потiк):");
+            Console.WriteLine(diff1.TotalMilliseconds);
 
-			DateTime startTime2 = DateTime.Now;
-			Additional.Additional.First().Start();
-			DateTime endTime3 = DateTime.Now;
-			Additional.Additional.Second().Start();
-			DateTime endTime4 = DateTime.Now;
+            DateTime startTime2 = DateTime.Now;
+            Additional.Additional.First().Start();
+            DateTime endTime3 = DateTime.Now;
+            Additional.Additional.Second().Start();
+            DateTime endTime4 = DateTime.Now;
 
-			TimeSpan diff2 = endTime3 - startTime2;
-			TimeSpan diff4 = endTime4 - endTime3;
-			TimeSpan totalDiff = endTime4 - startTime2;
+            TimeSpan diff2 = endTime3 - startTime2;
+            TimeSpan diff4 = endTime4 - endTime3;
+            TimeSpan totalDiff = endTime4 - startTime2;
 
-			Console.WriteLine($"Час виконання (окремi потоки): " +
-				$"\n{diff2.TotalMilliseconds}" +
-				$"\n{diff4.TotalMilliseconds} \nЗагальний " +
-				$"час - {totalDiff.TotalMilliseconds}");
+            Console.WriteLine($"Час виконання (окремi потоки): " +
+                $"\n{diff2.TotalMilliseconds}" +
+                $"\n{diff4.TotalMilliseconds} \nЗагальний " +
+                $"час - {totalDiff.TotalMilliseconds}");
 
-			#endregion Lab8-1
+            #endregion Lab8-1
 
-			#region Lab8-2
+            #region Lab8-2
 
-			Console.WriteLine("\n--4.2:--\n");
+            Console.WriteLine("\n--4.2:--\n");
 
-			Zone.Lab8_2();
+            Zone.Lab8_2();
 
-			Thread.Sleep(1000);
+            Thread.Sleep(1000);
 
-			#endregion Lab8-2
+            #endregion Lab8-2
 
-			#region Lab8-3
+            #region Lab8-3
 
-			Console.WriteLine("\n--4.3:--\n");
+            Console.WriteLine("\n--4.3:--\n");
 
-			Additional.Additional.Lab8_3();
+            Additional.Additional.Lab8_3();
 
-			Thread.Sleep(1000);
+            Thread.Sleep(1000);
 
-			#endregion Lab8-3
+            #endregion Lab8-3
 
-			#region Lab8-4
+            #region Lab8-4
 
-			Console.WriteLine("\n--4.4:--\n");
+            Console.WriteLine("\n--4.4:--\n");
 
-			Additional.Additional.Lab8_4();
+            Additional.Additional.Lab8_4();
 
-			Thread.Sleep(1000);
+            Thread.Sleep(1000);
 
-			#endregion Lab8-4
+            #endregion Lab8-4
 
-			#endregion Lab8
+            #endregion Lab8
 
-			Console.WriteLine("\n--------Credits-------");
+            Console.WriteLine("\n--------Credits-------");
 
-			Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
-				"\nDmytrenko Roman,\n" +
-				"Sichkar Tetiana,\nDominskyi Valentyn");
+            Console.WriteLine("\nFirst Team: Zavalniuk Maxim," +
+                "\nDmytrenko Roman,\n" +
+                "Sichkar Tetiana,\nDominskyi Valentyn");
 
-			Console.ReadLine();
-		}
+            Console.ReadLine();
+        }
 
-		private static void ShowAuthException(User AdminV, string login, string password)
-		{
-			try
-			{
-				AdminV.LogIn(login, password);
-			}
-			catch (ArgumentException e)
-			{
-				Console.WriteLine(e.Message);
-			}
-			catch (LogInException e)
-			{
-				Console.WriteLine(e.Message);
-			}
+        private static void ShowAuthException(User AdminV, string login, string password)
+        {
+            try
+            {
+                AdminV.LogIn(login, password);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (LogInException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
-			}
-		}
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
-		/// <summary>
-		/// Method for delegate to print some message
-		/// </summary>
-		/// <param name="message"></param>
-		private static void DisplayMessage(string message)
-		{
-			Console.WriteLine(message);
-		}
-	}
+        /// <summary>
+        /// Method for delegate to print some message
+        /// </summary>
+        /// <param name="message"></param>
+        private static void DisplayMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
 }

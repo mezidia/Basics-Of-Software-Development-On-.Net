@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Licensed to the Mezidia Foundation under one or more agreements.
+// The Mezidia Foundation licenses this file to you under the MIT license.
+
+using System;
 
 namespace Hotel
 {
@@ -381,7 +384,7 @@ namespace Hotel
         }
         public void CheckPackPrice(Room room, decimal Sum)
         {
-             Console.WriteLine("Сьогоднi меншi цiни!");
+            Console.WriteLine("Сьогоднi меншi цiни!");
         }
     }
 

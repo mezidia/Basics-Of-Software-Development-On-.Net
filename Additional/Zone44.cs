@@ -1,59 +1,59 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
 using System.Linq;
+using System.Threading;
 
 namespace Additional
 {
-    public class Zone44
-    {
-        #region Lab8-4
+	public class Zone44
+	{
+		#region Lab8-4
 
-        private readonly FileInfo file;
-        private readonly Semaphore fileLock = new Semaphore(1, 1);
+		private readonly FileInfo file;
+		private readonly Semaphore fileLock = new Semaphore(1, 1);
 
-        public Zone44(FileInfo f)
-        {
-            file = f;
+		public Zone44(FileInfo f)
+		{
+			file = f;
 
-            if (File.Exists(file.FullName))
-            {
-                File.Delete(file.FullName);
-            }
-        }
+			if (File.Exists(file.FullName))
+			{
+				File.Delete(file.FullName);
+			}
+		}
 
-        public string ReadFromFile(int line)
-        {
-            fileLock.WaitOne();
-            string lastLine;
+		public string ReadFromFile(int line)
+		{
+			fileLock.WaitOne();
+			string lastLine;
 
-            using (var sr = new StreamReader(file.FullName))
-            {
-                for (int i = 1; i < line; i++)
-                {
-                    sr.ReadLine();
-                }
-                lastLine = sr.ReadLine();
-            }
-            fileLock.Release();
+			using (var sr = new StreamReader(file.FullName))
+			{
+				for (int i = 1; i < line; i++)
+				{
+					sr.ReadLine();
+				}
+				lastLine = sr.ReadLine();
+			}
+			fileLock.Release();
 
-            return lastLine;
-        }
+			return lastLine;
+		}
 
-        public int WriteToFile(string text)
-        {
-            fileLock.WaitOne();
+		public int WriteToFile(string text)
+		{
+			fileLock.WaitOne();
 
-            using (StreamWriter w = File.AppendText(file.FullName))
-                {
-                    w.WriteLine(text);
-                    Console.WriteLine("Записано строку \"" + text + "\"");
-                }
-            fileLock.Release();
+			using (StreamWriter w = File.AppendText(file.FullName))
+			{
+				w.WriteLine(text);
+				Console.WriteLine("Записано строку \"" + text + "\"");
+			}
+			fileLock.Release();
 
-            return File.ReadLines(file.FullName).Count();
-        }
+			return File.ReadLines(file.FullName).Count();
+		}
 
-        #endregion Lab8-4
-    }
+		#endregion Lab8-4
+	}
 }
