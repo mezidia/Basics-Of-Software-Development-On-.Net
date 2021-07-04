@@ -1,4 +1,4 @@
-﻿// Licensed to the Mezidia Foundation under one or more agreements.
+﻿// Licensed to the net Foundation under one or more agreements.
 // The Mezidia Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -33,12 +33,12 @@ namespace Hotel
         /// <summary>
         /// The dialog for Console.Write'ing
         /// </summary>
-        readonly Message Dlg = ShowMessage;
+        readonly Message _dlg = ShowMessage;
 
         /// <summary>
         /// The number of stars
         /// </summary>
-        private int numberOfStars;
+        private int _numberOfStars;
 
         /// <summary>
         /// We need this to get and set numberOfStars.
@@ -48,22 +48,22 @@ namespace Hotel
         {
             get
             {
-                return numberOfStars;
+                return _numberOfStars;
             }
             set
             {
                 if (value.ToString() != null && value >= 1 && value <= 5)
                 {
-                    numberOfStars = value;
+                    _numberOfStars = value;
                 }
-                else Dlg("Введiть правильну кiлькiсть зiрок");
+                else _dlg("Введiть правильну кiлькiсть зiрок");
             }
         }
 
         /// <summary>
         /// The description
         /// </summary>
-        private string description;
+        private string _description;
 
         /// <summary>
         /// We need this to get and set description.
@@ -73,22 +73,22 @@ namespace Hotel
         {
             get
             {
-                return description;
+                return _description;
             }
             set
             {
                 if (value.Length > 20)
                 {
-                    description = value;
+                    _description = value;
                 }
-                else Dlg("Введiть бiльшу кiлькiсть символiв");
+                else _dlg("Введiть бiльшу кiлькiсть символiв");
             }
         }
 
         /// <summary>
         /// The rating
         /// </summary>
-        private int rating;
+        private int _rating;
 
         /// <summary>
         /// We need this to get and set rating.
@@ -98,19 +98,19 @@ namespace Hotel
         {
             get
             {
-                return rating;
+                return _rating;
             }
             set
             {
-                if (value.ToString() != null) rating = value;
-                else Dlg("Введiть не пустий iдентифiкатор рейтингу");
+                if (value.ToString() != null) _rating = value;
+                else _dlg("Введiть не пустий iдентифiкатор рейтингу");
             }
         }
 
         /// <summary>
         /// The hotel identifier
         /// </summary>
-        private int hotelID;
+        private int _hotelID;
 
         /// <summary>
         /// We need this to get and set hotelID.
@@ -120,19 +120,19 @@ namespace Hotel
         {
             get
             {
-                return hotelID;
+                return _hotelID;
             }
             set
             {
-                if (value.ToString() != null) hotelID = value;
-                else Dlg("Введiть не пустий iдентифiкатор готелю");
+                if (value.ToString() != null) _hotelID = value;
+                else _dlg("Введiть не пустий iдентифiкатор готелю");
             }
         }
 
         /// <summary>
         /// The hotel name
         /// </summary>
-        private string hotelName;
+        private string _hotelName;
 
         /// <summary>
         /// We need this to get and set hotelName.
@@ -142,19 +142,19 @@ namespace Hotel
         {
             get
             {
-                return hotelName;
+                return _hotelName;
             }
             set
             {
-                if (value.Length < 15) hotelName = value;
-                else Dlg("Забагато символiв для iменi готелю");
+                if (value.Length < 15) _hotelName = value;
+                else _dlg("Забагато символiв для iменi готелю");
             }
         }
 
         /// <summary>
         /// The address
         /// </summary>
-        private string address;
+        private string _address;
 
         /// <summary>
         /// We need this to get and set hotelName.
@@ -164,17 +164,17 @@ namespace Hotel
         {
             get
             {
-                return address;
+                return _address;
             }
             set
             {
                 if (value.Length > 1)
                 {
-                    address = value;
+                    _address = value;
                 }
                 else
                 {
-                    Dlg("Невiрна адреса");
+                    _dlg("Невiрна адреса");
                 }
             }
         }
@@ -248,7 +248,7 @@ namespace Hotel
                 this, true, "Big", 5, true);
             Rooms.Add(FirstRoom);
 
-            Dlg($"Готель {hotelName} створено");
+            _dlg($"Готель {hotelName} створено");
         }
 
         /// <summary>
