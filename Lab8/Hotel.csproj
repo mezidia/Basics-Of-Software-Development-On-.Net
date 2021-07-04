@@ -14,4 +14,12 @@
     <ProjectReference Include="..\Additional\Additional.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="F:\ForWork\Repos\Basics-Of-Software-Development-On-.Net\Lab8\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="F:\ForWork\Repos\Basics-Of-Software-Development-On-.Net\Lab8\.editorconfig" />
+  </ItemGroup>
+
 </Project>

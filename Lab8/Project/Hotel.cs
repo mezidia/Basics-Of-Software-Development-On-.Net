@@ -19,7 +19,7 @@ namespace Hotel
         /// Delegate for replacing Console.WriteLine
         /// </summary>
         /// <param name="text">The text.</param>
-        delegate void Message(string text);
+        private delegate void Message(string text);
 
         /// <summary>
         /// Our interpretation of Console.WriteLine

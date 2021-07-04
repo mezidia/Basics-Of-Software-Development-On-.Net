@@ -64,7 +64,7 @@ namespace Hotel
             }
         }
 
-        private string roomName;
+        private string _roomName;
 
         /// <summary>
         /// get and set roomName
@@ -74,14 +74,14 @@ namespace Hotel
         {
             get
             {
-                return roomName;
+                return _roomName;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value) &&
                     !string.IsNullOrWhiteSpace(value))
                 {
-                    roomName = value;
+                    _roomName = value;
                 }
                 else
                 {
