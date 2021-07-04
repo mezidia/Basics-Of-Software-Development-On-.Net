@@ -1,4 +1,4 @@
-﻿// Licensed to the net Foundation under one or more agreements.
+﻿// Licensed to the Mezidia Foundation under one or more agreements.
 // The Mezidia Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -33,7 +33,7 @@ namespace Hotel
         /// <summary>
         /// The dialog for Console.Write'ing
         /// </summary>
-        readonly Message _dlg = ShowMessage;
+        private readonly Message _dlg = ShowMessage;
 
         /// <summary>
         /// The number of stars
@@ -56,7 +56,10 @@ namespace Hotel
                 {
                     _numberOfStars = value;
                 }
-                else _dlg("Введiть правильну кiлькiсть зiрок");
+                else
+                {
+                    _dlg("Введiть правильну кiлькiсть зiрок");
+                }
             }
         }
 
@@ -81,7 +84,10 @@ namespace Hotel
                 {
                     _description = value;
                 }
-                else _dlg("Введiть бiльшу кiлькiсть символiв");
+                else
+                {
+                    _dlg("Введiть бiльшу кiлькiсть символiв");
+                }
             }
         }
 
@@ -102,8 +108,14 @@ namespace Hotel
             }
             set
             {
-                if (value.ToString() != null) _rating = value;
-                else _dlg("Введiть не пустий iдентифiкатор рейтингу");
+                if (value.ToString() != null)
+                {
+                    _rating = value;
+                }
+                else
+                {
+                    _dlg("Введiть не пустий iдентифiкатор рейтингу");
+                }
             }
         }
 
@@ -124,8 +136,14 @@ namespace Hotel
             }
             set
             {
-                if (value.ToString() != null) _hotelID = value;
-                else _dlg("Введiть не пустий iдентифiкатор готелю");
+                if (value.ToString() != null)
+                {
+                    _hotelID = value;
+                }
+                else
+                {
+                    _dlg("Введiть не пустий iдентифiкатор готелю");
+                }
             }
         }
 
@@ -146,8 +164,14 @@ namespace Hotel
             }
             set
             {
-                if (value.Length < 15) _hotelName = value;
-                else _dlg("Забагато символiв для iменi готелю");
+                if (value.Length < 15)
+                {
+                    _hotelName = value;
+                }
+                else
+                {
+                    _dlg("Забагато символiв для iменi готелю");
+                }
             }
         }
 
@@ -188,9 +212,7 @@ namespace Hotel
         /// </returns>
         public static bool operator !(Hotel hotel)
         {
-            if (hotel.Rating > 0)
-                return false;
-            return true;
+            return hotel.Rating <= 0;
         }
 
         /// <summary>
@@ -202,9 +224,7 @@ namespace Hotel
         /// </returns>
         public static bool operator true(Hotel hotel)
         {
-            if (hotel.Rating > 0)
-                return true;
-            return false;
+            return hotel.Rating > 0;
         }
 
         /// <summary>
@@ -216,9 +236,7 @@ namespace Hotel
         /// </returns>
         public static bool operator false(Hotel hotel)
         {
-            if (hotel.Rating > 0)
-                return false;
-            return true;
+            return hotel.Rating <= 0;
         }
 
         public City City { get; set; }
