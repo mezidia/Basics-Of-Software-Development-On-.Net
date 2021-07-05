@@ -7,14 +7,15 @@ namespace Hotel
 {
     public class Room
     {
-        delegate void Message(string text);
+        private delegate void Message(string text);
         private static void ShowMessage(string text)
         {
             Console.WriteLine(text);
         }
-        Message Dlg = ShowMessage;
 
-        private int roomID;
+        private readonly Message _dlg = ShowMessage;
+
+        private int _roomID;
 
         /// <summary>
         /// get and set roomID
@@ -24,22 +25,22 @@ namespace Hotel
         {
             get
             {
-                return roomID;
+                return _roomID;
             }
             set
             {
                 if (value > 0)
                 {
-                    roomID = value;
+                    _roomID = value;
                 }
                 else
                 {
-                    Dlg("ID має бути бiльшим вiд 0");
+                    _dlg("ID має бути бiльшим вiд 0");
                 }
             }
         }
 
-        private int roomNumber;
+        private int _roomNumber;
 
         /// <summary>
         /// get and set roomNumber
@@ -49,17 +50,17 @@ namespace Hotel
         {
             get
             {
-                return roomNumber;
+                return _roomNumber;
             }
             set
             {
                 if (value > 0)
                 {
-                    roomNumber = value;
+                    _roomNumber = value;
                 }
                 else
                 {
-                    Dlg("Номер кiмнати має бути бiльшим від 0");
+                    _dlg("Номер кiмнати має бути бiльшим від 0");
                 }
             }
         }
@@ -85,12 +86,12 @@ namespace Hotel
                 }
                 else
                 {
-                    Dlg("Назва кiмнати не повинна бути пустою");
+                    _dlg("Назва кiмнати не повинна бути пустою");
                 }
             }
         }
 
-        private int roomSize;
+        private int _roomSize;
 
         /// <summary>
         /// get and set roomSize
@@ -100,22 +101,22 @@ namespace Hotel
         {
             get
             {
-                return roomSize;
+                return _roomSize;
             }
             set
             {
                 if (value > 0)
                 {
-                    roomSize = value;
+                    _roomSize = value;
                 }
                 else
                 {
-                    Dlg("Розмiр кiмнати має бути бiльшим вiд 0");
+                    _dlg("Розмiр кiмнати має бути бiльшим вiд 0");
                 }
             }
         }
 
-        private Hotel hotel;
+        private Hotel _hotel;
 
         /// <summary>
         /// get and set Hotel
@@ -125,22 +126,22 @@ namespace Hotel
         {
             get
             {
-                return hotel;
+                return _hotel;
             }
             set
             {
                 if (value != null)
                 {
-                    hotel = value;
+                    _hotel = value;
                 }
                 else
                 {
-                    Dlg("Кiмната має належати до готелю");
+                    _dlg("Кiмната має належати до готелю");
                 }
             }
         }
 
-        private bool? tv;
+        private bool? _tv;
 
         /// <summary>
         /// get and set TV
@@ -150,22 +151,22 @@ namespace Hotel
         {
             get
             {
-                return tv;
+                return _tv;
             }
             set
             {
                 if (value.HasValue)
                 {
-                    tv = value;
+                    _tv = value;
                 }
                 else
                 {
-                    Dlg("Введiть значення про наявнiсть телевiзора");
+                    _dlg("Введiть значення про наявнiсть телевiзора");
                 }
             }
         }
 
-        private string roomType;
+        private string _roomType;
 
         /// <summary>
         /// get and set roomType
@@ -175,23 +176,23 @@ namespace Hotel
         {
             get
             {
-                return roomType;
+                return _roomType;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value) &&
                     !string.IsNullOrWhiteSpace(value))
                 {
-                    roomType = value;
+                    _roomType = value;
                 }
                 else
                 {
-                    Dlg("Задайте тип кiмнати");
+                    _dlg("Задайте тип кiмнати");
                 }
             }
         }
 
-        private int numberOfBeds;
+        private int _numberOfBeds;
 
         /// <summary>
         /// get and set numberOfBeds
@@ -201,23 +202,23 @@ namespace Hotel
         {
             get
             {
-                return numberOfBeds;
+                return _numberOfBeds;
             }
             set
             {
                 if (value > 0)
                 {
-                    numberOfBeds = value;
+                    _numberOfBeds = value;
                 }
                 else
                 {
-                    Dlg("Кiлькість спальних мiсць " +
+                    _dlg("Кiлькість спальних мiсць " +
                         "має бути бiльша вiд 0");
                 }
             }
         }
 
-        private bool? balcony;
+        private bool? _balcony;
 
         /// <summary>
         /// get and set balcony
@@ -227,17 +228,17 @@ namespace Hotel
         {
             get
             {
-                return balcony;
+                return _balcony;
             }
             set
             {
                 if (value.HasValue)
                 {
-                    balcony = value;
+                    _balcony = value;
                 }
                 else
                 {
-                    Dlg("Введiть значення" +
+                    _dlg("Введiть значення" +
                         " про наявнiсть балкону");
                 }
             }
@@ -246,33 +247,25 @@ namespace Hotel
         // Перевантажуємо логічний оператор &
         public static bool operator &(Room room1, Room room2)
         {
-            if (room1.TV == true && room2.TV == true)
-                return true;
-            return false;
+            return room1.TV == true && room2.TV == true;
         }
 
         // Перевантажуємо логічний оператор !
         public static bool operator !(Room room)
         {
-            if (room.balcony == true)
-                return true;
-            return false;
+            return room._balcony == true;
         }
 
         // Перевантажуємо оператор true
         public static bool operator true(Room room)
         {
-            if (room.TV == true)
-                return true;
-            return false;
+            return room.TV == true;
         }
 
         // Перевантажуємо оператор false
         public static bool operator false(Room room)
         {
-            if (room.TV == false)
-                return true;
-            return false;
+            return room.TV == false;
         }
 
         /// <summary>
@@ -301,7 +294,7 @@ namespace Hotel
             NumberOfBeds = numberOfBeds;
             Balcony = balcony;
 
-            Dlg($"Додано кiмнату номер {RoomNumber} готелю " +
+            _dlg($"Додано кiмнату номер {RoomNumber} готелю " +
                 $"{Hotel.HotelName}");
         }
 
@@ -321,7 +314,7 @@ namespace Hotel
             NumberOfBeds = room.NumberOfBeds;
             Balcony = room.Balcony;
 
-            Dlg("Додано копiю кiмнати");
+            _dlg("Додано копiю кiмнати");
         }
 
         /// <summary>
@@ -467,14 +460,14 @@ namespace Hotel
             handler(messageString);
         }
 
-        public double SpaceKoeff => numberOfBeds == 0 ? 1 : (double)roomSize / numberOfBeds;
+        public double SpaceKoeff => _numberOfBeds == 0 ? 1 : (double)_roomSize / _numberOfBeds;
         public delegate bool IsEqual(DayOfWeek x);
 
         public void CheckHotelPrice(IsEqual func)
         {
             if (func(DateTime.Now.DayOfWeek))
             {
-                Dlg("Сьогоднi меншi цiни!");
+                _dlg("Сьогоднi меншi цiни!");
             }
         }
     }
