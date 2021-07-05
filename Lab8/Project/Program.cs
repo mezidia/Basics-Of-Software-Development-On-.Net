@@ -2,6 +2,7 @@
 // The Mezidia Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Hotel.Project;
 
@@ -10,445 +11,464 @@ namespace Hotel
     /// <summary>
     /// Main class of Our project, where all magic happens
     /// </summary>
-    class MainClass
+    internal class MainClass
     {
-        static void Main()
+        private static void Main()
         {
             #region Lab1-2-3-4-5-6-7
-            /*
-			#region Lab1-2-3
 
-			Console.WriteLine("\n--------Lab1-2-3--------");
-			Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
-				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
-				"подобається")
-			{
-				City = City.Kyiv,
-				Rating = 32,
-				NumberOfStars = 3
-			};
+            #region Lab1-2-3
 
-			User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
-				"+069069696");
+            Console.WriteLine("\n--------Lab1-2-3--------");
+            Hotel RedHotel = new Hotel(1, "Адам", "вул. Т. Шевченка",
+                "Дуже крутий опис дуже крутого готелю, який всім дуже " +
+                "подобається")
+            {
+                City = City.Kyiv,
+                Rating = 32,
+                NumberOfStars = 3
+            };
 
-			RedHotel.CreateRoom(2, 2, "Red", 1, RedHotel, true, "Big", 5, true);
+            User AdminV = new User(1, 2, "AdminValera", "valera69@gmail.com",
+                "+069069696");
 
-			RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
-				DateTime.Now, DateTime.Now.AddDays(7));
+            RedHotel.CreateRoom(2, 2, "Red", 1, RedHotel, true, "Big", 5, true);
 
-			ConcreteOrder order = new ConcreteOrder(2, 300, RedHotel, AdminV,
-				"2", RedHotel.Rooms[1],
-				DateTime.Now, DateTime.Now.AddDays(7))
-			{
-				DateStart = DateTime.Parse("22.01.2002")
-			};
+            RedHotel.CreateOrder(1, 300, RedHotel, AdminV, "1", RedHotel.Rooms[0],
+                DateTime.Now, DateTime.Now.AddDays(7));
 
-			// Constructor by default
-			User GreatValeera = new User
-			{
-				UserName = "GreatValeera"
-			};
+            ConcreteOrder order = new ConcreteOrder(2, 300, RedHotel, AdminV,
+                "2", RedHotel.Rooms[1],
+                DateTime.Now, DateTime.Now.AddDays(7))
+            {
+                DateStart = DateTime.Parse("22.01.2002")
+            };
 
-			// Copy Constructor
-			User GreaterValeera = new User(GreatValeera);
+            // Constructor by default
+            User GreatValeera = new User
+            {
+                UserName = "GreatValeera"
+            };
 
-			#endregion Lab1-2-3
+            // Copy Constructor
+            User GreaterValeera = new User(GreatValeera);
 
-			#region Lab4
+            #endregion Lab1-2-3
 
-			Console.WriteLine("\n--------Lab4--------");
+            #region Lab4
 
-			#region Unary
+            Console.WriteLine("\n--------Lab4--------");
 
-			Console.WriteLine("\n--Перевантаження унарних операторiв:--\n");
+            #region Unary
 
-			Console.WriteLine($"Кiлькiсть зiрок: {RedHotel.NumberOfStars}");
-			++RedHotel;
-			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення:" +
-				$" {RedHotel.NumberOfStars}");
-			--RedHotel;
-			Console.WriteLine($"Кiлькiсть зiрок пiсля зменшення:" +
-				$" {RedHotel.NumberOfStars}");
+            Console.WriteLine("\n--Перевантаження унарних операторiв:--\n");
 
-			Console.WriteLine();
+            Console.WriteLine($"Кiлькiсть зiрок: {RedHotel.NumberOfStars}");
+            ++RedHotel;
+            Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення:" +
+                $" {RedHotel.NumberOfStars}");
+            --RedHotel;
+            Console.WriteLine($"Кiлькiсть зiрок пiсля зменшення:" +
+                $" {RedHotel.NumberOfStars}");
 
-			Console.WriteLine($"Кiлькiсть лiжок: {RedHotel.Rooms[0].NumberOfBeds}");
-			++RedHotel.Rooms[0];
-			Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення:" +
-				$" {RedHotel.Rooms[0].NumberOfBeds}");
-			--RedHotel.Rooms[0];
-			Console.WriteLine($"Кiлькiсть зiрок пiсля зменшення:" +
-				$" {RedHotel.Rooms[0].NumberOfBeds}");
+            Console.WriteLine();
 
-			#endregion Unary
+            Console.WriteLine($"Кiлькiсть лiжок: {RedHotel.Rooms[0].NumberOfBeds}");
+            ++RedHotel.Rooms[0];
+            Console.WriteLine($"Кiлькiсть зiрок пiсля збiльшення:" +
+                $" {RedHotel.Rooms[0].NumberOfBeds}");
+            --RedHotel.Rooms[0];
+            Console.WriteLine($"Кiлькiсть зiрок пiсля зменшення:" +
+                $" {RedHotel.Rooms[0].NumberOfBeds}");
 
-			#region Binary
+            #endregion Unary
 
-			Console.WriteLine("\n--Перевантаження бiнарних операторiв:--\n");
+            #region Binary
 
-			Console.WriteLine("Iм'я першої кiмнати = "
-				+ RedHotel.Rooms[0].RoomName);
-			Console.WriteLine("Iм'я другої кiмнати = "
-				+ RedHotel.Rooms[1].RoomName);
+            Console.WriteLine("\n--Перевантаження бiнарних операторiв:--\n");
 
-			Console.WriteLine($"Розмiр першої кiмнати = " +
-				$"{RedHotel.Rooms[0].RoomSize}\nРозмiр другої " +
-				$"кiмнати = {RedHotel.Rooms[1].RoomSize}\n");
+            Console.WriteLine("Iм'я першої кiмнати = "
+                + RedHotel.Rooms[0].RoomName);
+            Console.WriteLine("Iм'я другої кiмнати = "
+                + RedHotel.Rooms[1].RoomName);
 
-			Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
+            Console.WriteLine($"Розмiр першої кiмнати = " +
+                $"{RedHotel.Rooms[0].RoomSize}\nРозмiр другої " +
+                $"кiмнати = {RedHotel.Rooms[1].RoomSize}\n");
 
-			Console.WriteLine("Iм'я нової першої кiмнати = "
-				+ RedHotel.Rooms[0].RoomName);
+            Room newRoom = RedHotel.Rooms[0] + RedHotel.Rooms[1];
 
-			Console.WriteLine($"Розмiр нової, об'єднаної кiмнати = " +
-				$"{newRoom.RoomSize}");
+            Console.WriteLine("Iм'я нової першої кiмнати = "
+                + RedHotel.Rooms[0].RoomName);
 
-			#endregion Binary
+            Console.WriteLine($"Розмiр нової, об'єднаної кiмнати = " +
+                $"{newRoom.RoomSize}");
 
-			#region Logical
+            #endregion Binary
 
-			Console.WriteLine("\n--Перевантаження логiчних операторiв:--\n");
+            #region Logical
 
-			if (RedHotel) Console.WriteLine("Рейтинг додатнiй");
-			RedHotel.Rating = 23;
-			if (!RedHotel) Console.WriteLine("Рейтинг вiд'ємний");
+            Console.WriteLine("\n--Перевантаження логiчних операторiв:--\n");
 
-			Console.WriteLine();
+            if (RedHotel)
+            {
+                Console.WriteLine("Рейтинг додатнiй");
+            }
 
-			if (order) Console.WriteLine("Замовлення ще активне");
-			order.DateEnd = DateTime.Parse("22.01.2002");
-			if (!order) Console.WriteLine("Замовлення вже не активне");
+            RedHotel.Rating = 23;
+            if (!RedHotel)
+            {
+                Console.WriteLine("Рейтинг вiд'ємний");
+            }
 
-			Console.WriteLine();
+            Console.WriteLine();
 
-			if (AdminV) Console.WriteLine("Користувач має пошту та телефон");
-			GreatValeera.UserMail = "shemsedinov@gmail.com";
-			GreaterValeera.UserMail = "shemsedinov@gmail.com";
-			GreatValeera.UserPhone = "+069069696";
-			GreaterValeera.UserPhone = "+069069696";
-			if (GreatValeera & GreaterValeera)
-			{
-				Console.WriteLine("Користувачi мають пошту та телефон");
-			}
+            if (order)
+            {
+                Console.WriteLine("Замовлення ще активне");
+            }
 
-			#endregion Logical
+            order.DateEnd = DateTime.Parse("22.01.2002");
+            if (!order)
+            {
+                Console.WriteLine("Замовлення вже не активне");
+            }
 
-			#region Comparison
+            Console.WriteLine();
 
-			Console.WriteLine("\n--Перевантаження операторiв порiвняння:--\n");
+            if (AdminV)
+            {
+                Console.WriteLine("Користувач має пошту та телефон");
+            }
 
-			Hotel BlueHotel = new Hotel(2, "Єва", "вул. Т. Шевченка",
-				"Не дуже крутий опис не дуже крутого готелю, який не всiм не дуже " +
-				"не подобається")
-			{
-				City = City.Kyiv,
-				Rating = 32,
-				NumberOfStars = 3
-			};
+            GreatValeera.UserMail = "shemsedinov@gmail.com";
+            GreaterValeera.UserMail = "shemsedinov@gmail.com";
+            GreatValeera.UserPhone = "+069069696";
+            GreaterValeera.UserPhone = "+069069696";
 
-			BlueHotel.CreateRoom(2, 2, "Blue", 5, BlueHotel, false, "Big", 15, true);
+            if (GreatValeera & GreaterValeera)
+            {
+                Console.WriteLine("Користувачi мають пошту та телефон");
+            }
 
-			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
-				$"1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
-			Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
-				$"2: {BlueHotel.NumberOfStars}, {BlueHotel.Rating}");
+            #endregion Logical
 
-			Console.WriteLine($"Перевiряємо рiвнозначнiсть Готелю 1 " +
-				$"та Готелю 2: {RedHotel == BlueHotel}");
-			Console.WriteLine($"Перевiряємо нерiвнозначнiсть Готелю 1 " +
-				$"та Готелю 2: {RedHotel != BlueHotel}");
-			Console.WriteLine();
+            #region Comparison
 
-			Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть" +
-				$" телевiзора та балкону в Кiмнатi 1: " +
-				$"{RedHotel.Rooms[0].NumberOfBeds}, " +
-				$"{RedHotel.Rooms[0].RoomSize}, {RedHotel.Rooms[0].TV}," +
-				$" {RedHotel.Rooms[0].Balcony}");
-			Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть" +
-				$" телевiзора та балкону в Кiмнатi 2: " +
-				$"{BlueHotel.Rooms[0].NumberOfBeds}, " +
-				$"{BlueHotel.Rooms[0].RoomSize}, {BlueHotel.Rooms[0].TV}, " +
-				$"{BlueHotel.Rooms[0].Balcony}");
+            Console.WriteLine("\n--Перевантаження операторiв порiвняння:--\n");
 
-			Console.WriteLine($"Перевiряємо рiвнозначнiсть Кiмнати 1 та " +
-				$"Кiмнати 2: {RedHotel.Rooms[0] == BlueHotel.Rooms[0]}");
-			Console.WriteLine($"Перевiряємо нерiвнозначнiсть Кiмнати 1 та " +
-				$"Кiмнати 2: {RedHotel.Rooms[0] != BlueHotel.Rooms[0]}");
+            Hotel BlueHotel = new Hotel(2, "Єва", "вул. Т. Шевченка",
+                "Не дуже крутий опис не дуже крутого готелю, який не всiм не дуже " +
+                "не подобається")
+            {
+                City = City.Kyiv,
+                Rating = 32,
+                NumberOfStars = 3
+            };
 
-			#endregion Comparison
+            BlueHotel.CreateRoom(2, 2, "Blue", 5, BlueHotel, false, "Big", 15, true);
 
-			#endregion Lab4
+            Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
+                $"1: {RedHotel.NumberOfStars}, {RedHotel.Rating}");
+            Console.WriteLine($"Кiлькiсть зiрок, рейтинг Готелю " +
+                $"2: {BlueHotel.NumberOfStars}, {BlueHotel.Rating}");
 
-			#region Lab5
+            Console.WriteLine($"Перевiряємо рiвнозначнiсть Готелю 1 " +
+                $"та Готелю 2: {RedHotel == BlueHotel}");
+            Console.WriteLine($"Перевiряємо нерiвнозначнiсть Готелю 1 " +
+                $"та Готелю 2: {RedHotel != BlueHotel}");
+            Console.WriteLine();
 
-			Console.WriteLine("\n--------Lab5--------");
+            Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть" +
+                $" телевiзора та балкону в Кiмнатi 1: " +
+                $"{RedHotel.Rooms[0].NumberOfBeds}, " +
+                $"{RedHotel.Rooms[0].RoomSize}, {RedHotel.Rooms[0].TV}," +
+                $" {RedHotel.Rooms[0].Balcony}");
+            Console.WriteLine($"Кiлькiсть лiжок, розмiр, наявнiсть" +
+                $" телевiзора та балкону в Кiмнатi 2: " +
+                $"{BlueHotel.Rooms[0].NumberOfBeds}, " +
+                $"{BlueHotel.Rooms[0].RoomSize}, {BlueHotel.Rooms[0].TV}, " +
+                $"{BlueHotel.Rooms[0].Balcony}");
 
-			#region Base-Classes-And-Inheritence
+            Console.WriteLine($"Перевiряємо рiвнозначнiсть Кiмнати 1 та " +
+                $"Кiмнати 2: {RedHotel.Rooms[0] == BlueHotel.Rooms[0]}");
+            Console.WriteLine($"Перевiряємо нерiвнозначнiсть Кiмнати 1 та " +
+                $"Кiмнати 2: {RedHotel.Rooms[0] != BlueHotel.Rooms[0]}");
 
-			Console.WriteLine("\n--Базовi та похiднi класи:--");
+            #endregion Comparison
 
-			Console.WriteLine("\nСтворюємо вiдвiдувача:");
-			Customer Customer = new Customer(7,
-				"customer@gmail.com", "Genji", "+067069696");
+            #endregion Lab4
 
-			Console.WriteLine("\nСтворюємо адмiна:");
-			Admin Admin = new Admin(8, "admin@gmail.com",
-				"Hanzo", "+069069698");
+            #region Lab5
 
-			#endregion Base-Classes-And-Inheritence
+            Console.WriteLine("\n--------Lab5--------");
 
-			#region Abstract-Classes-And-Virtual-Methods
+            #region Base-Classes-And-Inheritence
 
-			Console.WriteLine("\n--Абстрактнi класи та вiртуальнi методи:--");
+            Console.WriteLine("\n--Базовi та похiднi класи:--");
 
-			Console.WriteLine("\nВикористовуємо перший override конструктор:");
+            Console.WriteLine("\nСтворюємо вiдвiдувача:");
+            Customer Customer = new Customer(7,
+                "customer@gmail.com", "Genji", "+067069696");
 
-			NotSoConcreteOrder NotSoConcreteOrder = new NotSoConcreteOrder(50,
-				666, BlueHotel, Admin, "3", BlueHotel.Rooms[0],
-				DateTime.Now, DateTime.Now.AddDays(7));
+            Console.WriteLine("\nСтворюємо адмiна:");
+            Admin Admin = new Admin(8, "admin@gmail.com",
+                "Hanzo", "+069069698");
 
-			Console.WriteLine("\nВикористовуємо другий override конструктор:");
+            #endregion Base-Classes-And-Inheritence
 
-			ConcreteOrder ConcreteOrder = new ConcreteOrder(51,
-				667, BlueHotel, Customer, "4", BlueHotel.Rooms[1],
-				DateTime.Now, DateTime.Now.AddDays(7));
+            #region Abstract-Classes-And-Virtual-Methods
 
-			Console.WriteLine("\nВикористовуємо перший override метод:");
+            Console.WriteLine("\n--Абстрактнi класи та вiртуальнi методи:--");
 
-			NotSoConcreteOrder.IsExpired();
+            Console.WriteLine("\nВикористовуємо перший override конструктор:");
 
-			Console.WriteLine("\nВикористовуємо перший не override метод:");
+            NotSoConcreteOrder NotSoConcreteOrder = new NotSoConcreteOrder(50,
+                666, BlueHotel, Admin, "3", BlueHotel.Rooms[0],
+                DateTime.Now, DateTime.Now.AddDays(7));
 
-			ConcreteOrder.IsExpired();
+            Console.WriteLine("\nВикористовуємо другий override конструктор:");
 
-			Console.WriteLine("\nВикористовуємо другий override метод:");
+            ConcreteOrder ConcreteOrder = new ConcreteOrder(51,
+                667, BlueHotel, Customer, "4", BlueHotel.Rooms[1],
+                DateTime.Now, DateTime.Now.AddDays(7));
 
-			NotSoConcreteOrder.BelongsTo();
+            Console.WriteLine("\nВикористовуємо перший override метод:");
 
-			Console.WriteLine("\nВикористовуємо другий не override метод:");
+            NotSoConcreteOrder.IsExpired();
 
-			ConcreteOrder.BelongsTo();
+            Console.WriteLine("\nВикористовуємо перший не override метод:");
 
-			#endregion Abstract-Classes-And-Virtual-Methods
+            ConcreteOrder.IsExpired();
 
-			#region Interface
+            Console.WriteLine("\nВикористовуємо другий override метод:");
 
-			Console.WriteLine("\n--Iнтерфейси:--");
+            NotSoConcreteOrder.BelongsTo();
 
-			Console.WriteLine("\nСтворюємо готель через iнтерфейс:");
+            Console.WriteLine("\nВикористовуємо другий не override метод:");
 
-			IRoom greenHotel = new Hotel(4, "GreenDeer", "вул. Т. Шевченка",
-				"Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy " +
-				"Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy")
-			{
-				City = City.Kyiv,
-				Rating = 12,
-				NumberOfStars = 5
-			};
+            ConcreteOrder.BelongsTo();
 
-			greenHotel.CreateRoom(2, 2, "aZUL", 1, (Hotel)greenHotel
-				, true, "Big", 5, true); // Downcasting
+            #endregion Abstract-Classes-And-Virtual-Methods
 
-			#endregion Interface
+            #region Interface
 
-			#region Upcast, Downcast
+            Console.WriteLine("\n--Iнтерфейси:--");
 
-			Console.WriteLine("\n--Upcast та Downcast:--");
+            Console.WriteLine("\nСтворюємо готель через iнтерфейс:");
 
-			// Upcast
-			Customer customer = new Customer(7,
-				"customer@gmail.com", "Genji", "+067069696");
-			Admin admin = new Admin(8,
-				"admin@gmail.com", "Hanzo", "+069069698");
+            IRoom greenHotel = new Hotel(4, "GreenDeer", "вул. Т. Шевченка",
+                "Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy " +
+                "Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy Myyyyyyyyyyyyyyyyy")
+            {
+                City = City.Kyiv,
+                Rating = 12,
+                NumberOfStars = 5
+            };
 
-			User customerUser = customer;
-			User adminUser = admin;
+            greenHotel.CreateRoom(2, 2, "aZUL", 1, (Hotel)greenHotel
+                , true, "Big", 5, true); // Downcasting
 
-			Console.WriteLine("\n--Показуємо типи об'єктiв" +
-				" пiсля Upcast:--");
+            #endregion Interface
 
-			Console.WriteLine(customerUser.GetType());
-			Console.WriteLine(adminUser.GetType());
-			Customer customer1 = (Customer)customerUser;
-			Admin admin1 = (Admin)adminUser;
+            #region Upcast, Downcast
 
-			Console.WriteLine("\n--Показуємо властивостi " +
-				"об'єктiв пiсля Downcast:--");
+            Console.WriteLine("\n--Upcast та Downcast:--");
 
-			Console.WriteLine(customer1.UserTypeName);
-			Console.WriteLine(admin1.UserTypeName);
+            // Upcast
+            Customer customer = new Customer(7,
+                "customer@gmail.com", "Genji", "+067069696");
+            Admin admin = new Admin(8,
+                "admin@gmail.com", "Hanzo", "+069069698");
 
-			#endregion Upcast, Downcast
+            User customerUser = customer;
+            User adminUser = admin;
 
-			#endregion Lab5
+            Console.WriteLine("\n--Показуємо типи об'єктiв" +
+                " пiсля Upcast:--");
 
-			#region Lab6
+            Console.WriteLine(customerUser.GetType());
+            Console.WriteLine(adminUser.GetType());
+            Customer customer1 = (Customer)customerUser;
+            Admin admin1 = (Admin)adminUser;
 
-			Console.WriteLine("\n--------Lab6--------");
+            Console.WriteLine("\n--Показуємо властивостi " +
+                "об'єктiв пiсля Downcast:--");
 
-			#region Events
+            Console.WriteLine(customer1.UserTypeName);
+            Console.WriteLine(admin1.UserTypeName);
 
-			Console.WriteLine("\n--Подiї:--\n");
+            #endregion Upcast, Downcast
 
-			Hotel EventHotel = new Hotel(56, "Подiя", "вул. Т. Шевченка",
-				"Дуже крутий опис дуже крутого готелю, який всім дуже " +
-				"подобається")
-			{
-				City = City.Kyiv,
-				Rating = 35,
-				NumberOfStars = 4
-			};
+            #endregion Lab5
 
-			EventHotel.EventForNotifying += DisplayMessage;
+            #region Lab6
 
-			EventHotel.CreateRoom(2, 2, "Подiя", 1, EventHotel, true, "Big", 5, true);
+            Console.WriteLine("\n--------Lab6--------");
 
-			#endregion Events
+            #region Events
 
-			#region Anonymous-Methods
+            Console.WriteLine("\n--Подiї:--\n");
 
-			Console.WriteLine("\n--Анонiмнi методи:--\n");
+            Hotel EventHotel = new Hotel(56, "Подiя", "вул. Т. Шевченка",
+                "Дуже крутий опис дуже крутого готелю, який всім дуже " +
+                "подобається")
+            {
+                City = City.Kyiv,
+                Rating = 35,
+                NumberOfStars = 4
+            };
 
-			Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate (string messageString)
-			{
-				Console.WriteLine(messageString);
-			});
+            EventHotel.EventForNotifying += DisplayMessage;
 
-			Hotel.ShowSomeString("2. Анонiмний метод класу Hotel.", delegate (string messageString)
-			{
-				Console.WriteLine(messageString);
-			});
+            EventHotel.CreateRoom(2, 2, "Подiя", 1, EventHotel, true, "Big", 5, true);
 
-			#endregion Anonymous-Methods
+            #endregion Events
 
-			#region Lambda
+            #region Anonymous-Methods
 
-			Console.WriteLine("\n--Лямбди:--\n");
+            Console.WriteLine("\n--Анонiмнi методи:--\n");
 
-			Console.WriteLine("Коефiцiєнт просторностi кiмнати: "
-				+ RedHotel.Rooms[0].SpaceKoeff);
+            Room.ShowSomeString("1. Анонiмний метод класу Room.", delegate (string messageString)
+            {
+                Console.WriteLine(messageString);
+            });
 
-			RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek
-			!= DayOfWeek.Sunday);
+            Hotel.ShowSomeString("2. Анонiмний метод класу Hotel.", delegate (string messageString)
+            {
+                Console.WriteLine(messageString);
+            });
 
-			decimal priceOne()
-			{
-				return order.Room.NumberOfBeds == 0 ? 1
-					: order.Sum / order.Room.NumberOfBeds;
-			}
+            #endregion Anonymous-Methods
 
-			Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
+            #region Lambda
 
-			#endregion Lambda
+            Console.WriteLine("\n--Лямбди:--\n");
 
-			#endregion Lab6
+            Console.WriteLine("Коефiцiєнт просторностi кiмнати: "
+                + RedHotel.Rooms[0].SpaceKoeff);
 
-			#region Lab7
+            RedHotel.Rooms[0].CheckHotelPrice(x => DateTime.Now.DayOfWeek
+            != DayOfWeek.Sunday);
 
-			Console.WriteLine("\n--------Lab7--------");
+            decimal priceOne()
+            {
+                return order.Room.NumberOfBeds == 0 ? 1
+                    : order.Sum / order.Room.NumberOfBeds;
+            }
 
-			#region Authorization
+            Console.WriteLine("Цiна за одну людину в кiмнатi: " + priceOne());
 
-			Console.WriteLine("\n--Винятки авторизацiї:--\n");
+            #endregion Lambda
 
-			AdminV.Login = "Valera96";
-			AdminV.Password = "Valerchikperchik69";
+            #endregion Lab6
 
-			//обробка неправильного логіну
-			ShowAuthException(AdminV, "Valera9", "Valerchikperchik6");
+            #region Lab7
 
-			//обробка пустого паролю
-			ShowAuthException(AdminV, "Valera96", "");
+            Console.WriteLine("\n--------Lab7--------");
 
-			//обробка пустого логіну
-			ShowAuthException(AdminV, "", "Valerchikperchik69");
+            #region Authorization
 
-			//коректний логін
-			ShowAuthException(AdminV, "Valera96", "Valerchikperchik69");
+            Console.WriteLine("\n--Винятки авторизацiї:--\n");
 
-			#endregion Authorization
+            AdminV.Login = "Valera96";
+            AdminV.Password = "Valerchikperchik69";
 
-			#region Filters-And-Arrays
+            //обробка неправильного логіну
+            ShowAuthException(AdminV, "Valera9", "Valerchikperchik6");
 
-			Console.WriteLine("\n--Робота з фiльтрами та масивами:--\n");
+            //обробка пустого паролю
+            ShowAuthException(AdminV, "Valera96", "");
 
-			Additional.Additional.Lab7();
+            //обробка пустого логіну
+            ShowAuthException(AdminV, "", "Valerchikperchik69");
 
-			#endregion Filters-And-Arrays
+            //коректний логін
+            ShowAuthException(AdminV, "Valera96", "Valerchikperchik69");
 
-			#region SystemExceptions
+            #endregion Authorization
 
-			Console.WriteLine("\n--Системнi винятки:--\n");
+            #region Filters-And-Arrays
 
-			object stacks = "twelve";
-			List<User> users = null;
-			var users2 = new List<string>();
+            Console.WriteLine("\n--Робота з фiльтрами та масивами:--\n");
 
-			// InvalidCastException
-			try
-			{
-				int KelThuzad = (int)stacks;
-				Console.WriteLine("Cast is success");
-			}
-			catch (InvalidCastException)
-			{
-				Console.WriteLine("Catched casting exception");
-			}
+            Additional.Additional.Lab7();
 
-			// ArgumentException
-			try
-			{
-				if (stacks != "+069069698")
-				{
-					throw new ArgumentException();
-				}
-				Console.WriteLine("Argument is good");
-			}
-			catch (ArgumentException)
-			{
-				Console.WriteLine("Catched argument exception");
-			}
+            #endregion Filters-And-Arrays
 
-			// NullReferenceException
-			try
-			{
-				users.Add(GreatValeera);
-			}
-			catch (NullReferenceException)
-			{
-				Console.WriteLine("Catched null reference exception");
-			}
+            #region SystemExceptions
 
-			// ArgumentOutOfRangeException
-			try
-			{
-				Console.WriteLine("The first item: '{0}'", users2[0]);
-			}
-			catch (ArgumentOutOfRangeException)
-			{
-				Console.WriteLine("Catched argument out of range exception");
-			}
+            Console.WriteLine("\n--Системнi винятки:--\n");
 
-			#endregion SystemExceptions
+            object stacks = "twelve";
+            List<User> users = null;
+            var users2 = new List<string>();
 
-			#region CustomExceptions
+            // InvalidCastException
+            try
+            {
+                int KelThuzad = (int)stacks;
+                Console.WriteLine("Cast is success");
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("Catched casting exception");
+            }
 
-			Console.WriteLine("\n--Власнi винятки:--\n");
+            // ArgumentException
+            try
+            {
+                if (stacks != "+069069698")
+                {
+                    throw new ArgumentException();
+                }
+                Console.WriteLine("Argument is good");
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Catched argument exception");
+            }
 
-			try
-			{
-				throw new Metaclass();
-			}
-			catch (Metaclass e)
-			{
-				Console.WriteLine("Обработка исключения:");
-				e.MetaMethod();
-			}
+            // NullReferenceException
+            try
+            {
+                users.Add(GreatValeera);
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Catched null reference exception");
+            }
 
-			#endregion CustomExceptions
+            // ArgumentOutOfRangeException
+            try
+            {
+                Console.WriteLine("The first item: '{0}'", users2[0]);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Catched argument out of range exception");
+            }
 
-			#endregion Lab7
-			*/
+            #endregion SystemExceptions
+
+            #region CustomExceptions
+
+            Console.WriteLine("\n--Власнi винятки:--\n");
+
+            try
+            {
+                throw new Metaclass();
+            }
+            catch (Metaclass e)
+            {
+                Console.WriteLine("Обработка исключения:");
+                e.MetaMethod();
+            }
+
+            #endregion CustomExceptions
+
+            #endregion Lab7
+
             #endregion Lab1-2-3-4-5-6-7
 
             #region Lab8
