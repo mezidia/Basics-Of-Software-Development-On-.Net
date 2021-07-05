@@ -9,16 +9,14 @@ namespace Hotel
 {
     public class User
     {
-        delegate void Message(string text);
+        private delegate void Message(string text);
         private static void ShowMessage(string text)
         {
             Console.WriteLine(text);
         }
-        Message Dlg = ShowMessage;
 
-        private bool isAuthorized = false;
-
-        private string userMail;
+        private readonly Message _dlg = ShowMessage;
+        private string _userMail;
 
         /// <summary>
         /// We need this to get and set UserMail.
@@ -28,23 +26,23 @@ namespace Hotel
         {
             get
             {
-                return userMail;
+                return _userMail;
             }
             set
             {
                 try
                 {
                     var address = new System.Net.Mail.MailAddress(value);
-                    userMail = address.Address;
+                    _userMail = address.Address;
                 }
                 catch
                 {
-                    Dlg("Введiть дiйсну електронну пошту");
+                    _dlg("Введiть дiйсну електронну пошту");
                 }
             }
         }
 
-        private string userPhone;
+        private string _userPhone;
 
         /// <summary>
         /// We need this to get and set UserPhone.
@@ -54,22 +52,22 @@ namespace Hotel
         {
             get
             {
-                return userPhone;
+                return _userPhone;
             }
             set
             {
                 if (value != null && Regex.IsMatch(value, @"^(\+[0-9]{9})$"))
                 {
-                    userPhone = value;
+                    _userPhone = value;
                 }
                 else
                 {
-                    Dlg("Введiть коректний номер телефону");
+                    _dlg("Введiть коректний номер телефону");
                 }
             }
         }
 
-        private string password;
+        private string _password;
 
         /// <summary>
         /// We need this to get and set Password.
@@ -79,7 +77,7 @@ namespace Hotel
         {
             get
             {
-                return password;
+                return _password;
             }
             set
             {
@@ -90,18 +88,18 @@ namespace Hotel
                 if (hasNumber.IsMatch(value) && hasUpperChar.IsMatch(value)
                     && hasMinimum8Chars.IsMatch(value))
                 {
-                    password = value;
+                    _password = value;
                 }
                 else
                 {
-                    Dlg("Введiть коректний пароль. " +
+                    _dlg("Введiть коректний пароль. " +
                         "Має бути мiнiмум одна цифра, одна велика " +
                         "буква, i довжина паролю має бути мiнiмум 8 символiв.");
                 }
             }
         }
 
-        private string login;
+        private string _login;
 
         /// <summary>
         /// We need this to get and set Login.
@@ -111,22 +109,22 @@ namespace Hotel
         {
             get
             {
-                return login;
+                return _login;
             }
             set
             {
                 if (value != null)
                 {
-                    login = value;
+                    _login = value;
                 }
                 else
                 {
-                    Dlg("Введiть непорожнiй логiн");
+                    _dlg("Введiть непорожнiй логiн");
                 }
             }
         }
 
-        private int userID;
+        private int _userID;
 
         /// <summary>
         /// We need this to get and set UserId.
@@ -136,22 +134,22 @@ namespace Hotel
         {
             get
             {
-                return userID;
+                return _userID;
             }
             set
             {
                 if (value.ToString() != null && value > 0)
                 {
-                    userID = value;
+                    _userID = value;
                 }
                 else
                 {
-                    Dlg("Введiть непорожнiй iдентифiкатор");
+                    _dlg("Введiть непорожнiй iдентифiкатор");
                 }
             }
         }
 
-        private short userType;
+        private short _userType;
 
         /// <summary>
         /// We need this to get and set UserType.
@@ -161,22 +159,22 @@ namespace Hotel
         {
             get
             {
-                return userType;
+                return _userType;
             }
             set
             {
                 if (value.ToString() != null)
                 {
-                    userType = value;
+                    _userType = value;
                 }
                 else
                 {
-                    Dlg("Введiть непорожнiй тип");
+                    _dlg("Введiть непорожнiй тип");
                 }
             }
         }
 
-        private string userName;
+        private string _userName;
 
         /// <summary>
         /// We need this to get and set UserName.
@@ -186,13 +184,13 @@ namespace Hotel
         {
             get
             {
-                return userName;
+                return _userName;
             }
             set
             {
                 if (value != null)
                 {
-                    userName = value;
+                    _userName = value;
                 }
                 else
                 {
@@ -201,46 +199,38 @@ namespace Hotel
             }
         }
 
-        public bool IsAuthorized { get => isAuthorized; }
+        public bool IsAuthorized { get; private set; } = false;
 
         public List<ConcreteOrder> Orders = new List<ConcreteOrder>();
 
         // Перевантажуємо логічний оператор &
         public static bool operator &(User user1, User user2)
         {
-            if (string.IsNullOrEmpty(user1.UserMail) == true &&
-                string.IsNullOrEmpty(user1.UserPhone) == true &&
-                string.IsNullOrEmpty(user2.UserMail) == true &&
-                string.IsNullOrEmpty(user2.UserPhone) == true)
-                return false;
-            return true;
+            return string.IsNullOrEmpty(user1.UserMail) != true ||
+                string.IsNullOrEmpty(user1.UserPhone) != true ||
+                string.IsNullOrEmpty(user2.UserMail) != true ||
+                string.IsNullOrEmpty(user2.UserPhone) != true;
         }
 
         // Перевантажуємо логічний оператор !
         public static bool operator !(User user)
         {
-            if (string.IsNullOrEmpty(user.UserMail) == true &&
-                string.IsNullOrEmpty(user.UserPhone) == true)
-                return true;
-            return false;
+            return string.IsNullOrEmpty(user.UserMail) == true &&
+                string.IsNullOrEmpty(user.UserPhone) == true;
         }
 
         // Перевантажуємо оператор true
         public static bool operator true(User user)
         {
-            if (string.IsNullOrEmpty(user.UserMail) == true &&
-                string.IsNullOrEmpty(user.UserPhone) == true)
-                return false;
-            return true;
+            return string.IsNullOrEmpty(user.UserMail) != true ||
+                string.IsNullOrEmpty(user.UserPhone) != true;
         }
 
         // Перевантажуємо оператор false
         public static bool operator false(User user)
         {
-            if (string.IsNullOrEmpty(user.UserMail) == true
-                && string.IsNullOrEmpty(user.UserPhone) == true)
-                return true;
-            return false;
+            return string.IsNullOrEmpty(user.UserMail) == true
+                && string.IsNullOrEmpty(user.UserPhone) == true;
         }
 
         /// <summary>
@@ -249,13 +239,13 @@ namespace Hotel
         /// <param name="tech"></param>
         public User(User user)
         {
-            userID = user.UserID;
-            userType = user.UserType;
+            _userID = user.UserID;
+            _userType = user.UserType;
             UserName = user.UserName;
             UserMail = user.UserMail;
             UserPhone = user.UserPhone;
 
-            Dlg($"Копiю користувача {UserName} створено");
+            _dlg($"Копiю користувача {UserName} створено");
         }
 
         /// <summary>
@@ -275,7 +265,7 @@ namespace Hotel
             UserMail = userMail;
             UserPhone = userPhone;
 
-            Dlg($"Користувач {UserName} створений");
+            _dlg($"Користувач {UserName} створений");
         }
 
         /// <summary>
@@ -283,7 +273,7 @@ namespace Hotel
         /// </summary>
         public User()
         {
-            Dlg("Користувача за замовченням створено");
+            _dlg("Користувача за замовченням створено");
         }
 
         public void LogIn(string login, string password)
@@ -298,9 +288,9 @@ namespace Hotel
                 throw new ArgumentException("Задано пустий пароль");
             }
 
-            if (login.Equals(this.login) && password.Equals(this.password))
+            if (login.Equals(_login) && password.Equals(_password))
             {
-                isAuthorized = true;
+                IsAuthorized = true;
                 Console.WriteLine("Користувача авторизовано!");
             }
             else
