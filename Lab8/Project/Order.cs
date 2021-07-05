@@ -7,7 +7,7 @@ namespace Hotel
 {
     public abstract class AbstractOrder
     {
-        private int orderID;
+        private int _orderID;
 
         /// <summary>
         /// We need this to get and set orderID.
@@ -17,14 +17,14 @@ namespace Hotel
         {
             get
             {
-                return orderID;
+                return _orderID;
             }
 
             set
             {
                 if (value.ToString() != null && value > 0)
                 {
-                    orderID = value;
+                    _orderID = value;
                 }
                 else
                 {
@@ -33,7 +33,7 @@ namespace Hotel
             }
         }
 
-        private decimal sum;
+        private decimal _sum;
 
         /// <summary>
         /// We need this to get and set Sum.
@@ -43,14 +43,14 @@ namespace Hotel
         {
             get
             {
-                return sum;
+                return _sum;
             }
 
             set
             {
                 if (value.ToString() != null && value > 0)
                 {
-                    sum = value;
+                    _sum = value;
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace Hotel
             }
         }
 
-        private Hotel hotel;
+        private Hotel _hotel;
 
         /// <summary>
         /// We need this to get and set Hotel.
@@ -69,14 +69,14 @@ namespace Hotel
         {
             get
             {
-                return hotel;
+                return _hotel;
             }
 
             set
             {
                 if (value != null)
                 {
-                    hotel = value;
+                    _hotel = value;
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace Hotel
             }
         }
 
-        private User user;
+        private User _user;
 
         /// <summary>
         /// We need this to get and set User.
@@ -95,14 +95,14 @@ namespace Hotel
         {
             get
             {
-                return user;
+                return _user;
             }
 
             set
             {
                 if (value != null)
                 {
-                    user = value;
+                    _user = value;
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace Hotel
             }
         }
 
-        private string orderNumber;
+        private string _orderNumber;
 
         /// <summary>
         /// We need this to get and set OrderNumber.
@@ -121,14 +121,14 @@ namespace Hotel
         {
             get
             {
-                return orderNumber;
+                return _orderNumber;
             }
 
             set
             {
                 if (value != null && value.Length != 0)
                 {
-                    orderNumber = value;
+                    _orderNumber = value;
                 }
                 else
                 {
@@ -137,7 +137,7 @@ namespace Hotel
             }
         }
 
-        private Room room;
+        private Room _room;
 
         /// <summary>
         /// We need this to get and set Order.
@@ -147,14 +147,14 @@ namespace Hotel
         {
             get
             {
-                return room;
+                return _room;
             }
 
             set
             {
                 if (value != null)
                 {
-                    room = value;
+                    _room = value;
                 }
                 else
                 {
@@ -163,7 +163,7 @@ namespace Hotel
             }
         }
 
-        private DateTime dateStart;
+        private DateTime _dateStart;
 
         /// <summary>
         /// We need this to get and set Order.
@@ -173,14 +173,14 @@ namespace Hotel
         {
             get
             {
-                return dateStart;
+                return _dateStart;
             }
 
             set
             {
                 if (value != null)
                 {
-                    DateTime.TryParse(value.ToString(), out dateStart);
+                    _ = DateTime.TryParse(value.ToString(), out _dateStart);
                 }
                 else
                 {
@@ -189,7 +189,7 @@ namespace Hotel
             }
         }
 
-        private DateTime dateEnd;
+        private DateTime _dateEnd;
 
         /// <summary>
         /// We need this to get and set Order.
@@ -199,14 +199,14 @@ namespace Hotel
         {
             get
             {
-                return dateEnd;
+                return _dateEnd;
             }
 
             set
             {
                 if (value != null)
                 {
-                    DateTime.TryParse(value.ToString(), out dateEnd);
+                    _ = DateTime.TryParse(value.ToString(), out _dateEnd);
                 }
                 else
                 {
@@ -219,30 +219,24 @@ namespace Hotel
         public static bool operator !(AbstractOrder order)
         {
             DateTime now = DateTime.Now;
-            System.TimeSpan difference = order.DateEnd.Subtract(now);
-            if (difference.TotalDays > 0)
-                return false;
-            return true;
+            TimeSpan difference = order.DateEnd.Subtract(now);
+            return difference.TotalDays <= 0;
         }
 
         // Перевантажуємо оператор true
         public static bool operator true(AbstractOrder order)
         {
             DateTime now = DateTime.Now;
-            System.TimeSpan difference = order.DateEnd.Subtract(now);
-            if (difference.TotalDays > 0)
-                return true;
-            return false;
+            TimeSpan difference = order.DateEnd.Subtract(now);
+            return difference.TotalDays > 0;
         }
 
         // Перевантажуємо оператор false
         public static bool operator false(AbstractOrder order)
         {
             DateTime now = DateTime.Now;
-            System.TimeSpan difference = order.DateEnd.Subtract(now);
-            if (difference.TotalDays > 0)
-                return false;
-            return true;
+            TimeSpan difference = order.DateEnd.Subtract(now);
+            return difference.TotalDays <= 0;
         }
 
         /// <summary>
